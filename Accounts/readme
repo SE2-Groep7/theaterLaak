@@ -1,0 +1,5 @@
+TheaterLaak application Accounts
+Huidige Stand: 
+Klassen aangemaakt, simpele database aangemaakt met mogelijke data die opgeslagen moet worden
+Let op: Data die afkomstig is van andere microservices is hierin niet verwerkt, het beste is dat bij de andere microservices een tussentable aangemaakt
+wordt verbonden aan een AccountId.
