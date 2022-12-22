@@ -15,13 +15,30 @@ public class dbContext : DbContext
     {
         modelBuilder.Entity<Account>().ToTable("Accounts");
         modelBuilder.Entity<Donateur>().ToTable("Donateurs");
-        modelBuilder.Entity<AccountGenre>().ToTable("AccountGenres");
+        // modelBuilder.Entity<AccountGenre>().ToTable("AccountGenres");
 
-        modelBuilder.Entity<AccountGenre>()
-            .HasKey(t => new { t.AccountId, t.GenreId });
+        // modelBuilder.Entity<AccountGenre>()
+        //     .HasKey(t => new { t.AccountId, t.GenreId });
         
         modelBuilder.Entity<AccountKaart>()
             .HasKey(t => new { t.AccountId, t.KaartId });
+         modelBuilder.Entity<AccountGenre>()
+            .HasKey(x => new  { x.AccountId, x.GenreId });
+
+        modelBuilder.Entity<AccountGenre>()
+            .HasOne(x => x.Account)
+            .WithMany(x => x.Intresses)
+            .HasForeignKey(x => x.AccountId);
+
+
+     modelBuilder.Entity<AccountKaart>()
+            .HasKey(x => new  { x.AccountId, x.KaartId });
+
+        modelBuilder.Entity<AccountKaart>()
+            .HasOne(x => x.Account)
+            .WithMany(x => x.AankoopGeschiedenis)
+            .HasForeignKey(x => x.AccountId);
+
           
             
     }

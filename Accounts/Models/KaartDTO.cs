@@ -10,5 +10,4 @@ using TheaterLaakLibrary;
     {
         public int Id { get; set; }
         public string Waarheidsmerk { get; set; }
-         public List<Account> accounts{ get; set;}
     }
