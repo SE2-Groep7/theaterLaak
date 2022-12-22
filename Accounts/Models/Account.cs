@@ -10,6 +10,7 @@ public class Account : Klant
         public string naam { get; set; }
         public string email { get; set; }
         public string wachtwoord { get; set; }
+        
         public List<IGenre> Intresses { get; set; }
         public List<IKaart> AankoopGeschiedenis { get; set; }
 
@@ -21,11 +22,11 @@ public class Account : Klant
         {
             // Voegt bedrag toe aan de donatie pot
         }
-        public void kaartOverzetten(Kaart kaart, Account account)
+        public void kaartOverzetten(IKaart kaart, Account account)
         {
             // Verplaatst kaart van de ene account naar de andere
         }
-        public void setIntresse(List<Genre> intresses)
+        public void setIntresse(List<IGenre> intresses)
         {
             // Zet de intresses van de account
         }
