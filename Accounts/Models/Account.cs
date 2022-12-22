@@ -11,9 +11,8 @@ public class Account : Klant
         public string naam { get; set; }
         public string email { get; set; }
         public string wachtwoord { get; set; }
-
-        public List<IGenre> Intresses { get; set; }
-        public List<IKaart> AankoopGeschiedenis { get; set; }
+        public List<GenreDTO> Intresses { get; set; }
+        public List<KaartDTO> AankoopGeschiedenis { get; set; }
 
         public void inloggen(string email, string wachtwoord)
         {
@@ -40,3 +39,17 @@ public class Account : Klant
         }
 
     }
+public class AccountGenre
+{
+    public int AccountId { get; set; }
+    public Account Account { get; set; }
+    public int GenreId { get; set; }
+    public GenreDTO Genre { get; set; }
+}
+public class AccountKaart
+{
+    public int AccountId { get; set; }
+    public Account Account { get; set; }
+    public int KaartId { get; set; }
+    public KaartDTO Kaart { get; set; }
+}
