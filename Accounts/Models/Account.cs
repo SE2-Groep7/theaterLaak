@@ -30,6 +30,7 @@ public class Account : Klant
         public void setIntresse(List<IGenre> intresses)
         {
             // Zet de intresses van de account
+            // DIT IS AFGEROND STAAT NU OOK IN ACCOUNT CONTROLLER
         }
         public void resetWachtwoord(string email)
         {
