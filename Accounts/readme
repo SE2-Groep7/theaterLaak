@@ -3,3 +3,16 @@ Huidige Stand:
 Klassen aangemaakt, simpele database aangemaakt met mogelijke data die opgeslagen moet worden
 Let op: Data die afkomstig is van andere microservices is hierin niet verwerkt, het beste is dat bij de andere microservices een tussentable aangemaakt
 wordt verbonden aan een AccountId.
+
+
+
+BELANGRIJK:
+DIT PROJECT MAAKT GEBRUIK VAN PAKET Package manager om ervoor te zorgen dat je altijd je libraries up to date hebt. Dit belangrijk als je alle interfaces kan gebruiken
+
+Om Paket te installeren kan het volgende commando uitvoeren:
+dotnet tool install --global Paket
+
+Vervolgens moet je de volgende commando uitvoeren:
+paket install
+
+Hiermee worden al je libraries geupdate.
