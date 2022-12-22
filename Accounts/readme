@@ -17,5 +17,8 @@ paket install
 
 Hiermee worden al je libraries geupdate.
 
-Als er een update aangekodigd wordt run regelmatig
-paket install en paket restore zodat je altijd de laatste versie hebt
+Als er een update aangekodigd wordt run regelmatig de volgende commands:
+paket install
+paket outdated  --verbose
+ paket restore
+  zodat je altijd de laatste versie hebt
