@@ -2,7 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TheaterLaak;
+using TheaterLaakLibrary;
+
 
 public class Account : Klant
     {   
@@ -10,7 +11,7 @@ public class Account : Klant
         public string naam { get; set; }
         public string email { get; set; }
         public string wachtwoord { get; set; }
-        
+
         public List<IGenre> Intresses { get; set; }
         public List<IKaart> AankoopGeschiedenis { get; set; }
 
