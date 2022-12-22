@@ -17,11 +17,20 @@ public class AccountController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Account>>> GetAccounts()
+    public async Task<ActionResult<IList<AccountDTO>>> GetAccounts()
     {
-        return await _context.Account
+        List<Account> accounts =  await _context.Account
             .Include(x => x.AankoopGeschiedenis).Include(x => x.Intresses)
             .ToListAsync();
+       List<AccountDTO> accountDTOs = new List<AccountDTO>();
+            foreach(Account a in accounts){
+                accountDTOs.Add(new AccountDTO{
+                    Id = a.Id,
+                    naam = a.naam,
+                    email = a.email
+                });
+            }
+            return accountDTOs;
     }
 
     [HttpPut("{accountId}/genres")]
