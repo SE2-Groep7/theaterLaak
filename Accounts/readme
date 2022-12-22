@@ -16,3 +16,6 @@ Vervolgens moet je de volgende commando uitvoeren:
 paket install
 
 Hiermee worden al je libraries geupdate.
+
+Als er een update aangekodigd wordt run regelmatig
+paket install en paket restore zodat je altijd de laatste versie hebt
