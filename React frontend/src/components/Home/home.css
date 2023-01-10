@@ -91,7 +91,7 @@
     z-index: 1;
   }
   
-  .show:hover img {
+  .show:hover img, .show:hover .info {
     transform: scale(1.1);
   }
   .show-overlay {
@@ -116,10 +116,11 @@
     background-color: #b30000; /* Set the button color to a shade of red */
     color: #fff;
     font-size: 14px;
-    padding: 10px 20px;
+    padding: 11px 10px;
     border: none;
     cursor: pointer;
     transition: all 0.3s;
+    border-radius: 6%;
     }
   .show .info{
     position: absolute;
@@ -127,6 +128,8 @@
     left: 0;
     right: 0;
     bottom: 0;
+    border-radius: 10px;
+
     background-color: rgba(0, 0, 0, 0.7); /* Add a dark background color */
     color: #fff;
     font-size: 18px;
@@ -139,3 +142,4 @@
   .show:hover .info{
     opacity: 1; /* Set the hover opacity to 1 */
   }
+  

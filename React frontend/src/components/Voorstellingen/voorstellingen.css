@@ -1,0 +1,25 @@
+.as {
+    width: 500px;
+    padding: 1%;}
+
+.main {
+    flex-wrap: wrap;
+    margin-top: 40%;
+}
+.showBig{
+    width: 100% !important;
+
+}
+.showBig img{
+    width: 500px !important;
+
+    height: 543px !important;
+
+}
+.showBig .info{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+.showBig .info .btnHolder{
+}
