@@ -1,4 +1,4 @@
-import logo from "./components/Layout/logo.png";
+// import logo from "./components/Layout/logo.png";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
@@ -10,7 +10,7 @@ import Tickets from "./components/Tickets/Tickets";
 import OverOns from "./components/OverOns/OverOns";
 import Contact from "./components/Contact/Contacts";
 import Login from "./components/Account/Login/Login";
-import Registreer from "./components/Account/Login/Registreer";
+import Registreer from "./components/Account/Registreer/Registreer";
 import NoPage from "./components/NoPage/NoPage";
 import Disclaimer from "./components/Layout/Disclaimer";
 import Cookies from "./components/Layout/Cookies";
