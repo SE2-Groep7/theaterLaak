@@ -10,6 +10,7 @@ import Tickets from "./components/Tickets/Tickets";
 import OverOns from "./components/OverOns/OverOns";
 import Contact from "./components/Contact/Contacts";
 import Login from "./components/Account/Login/Login";
+import Registreer from "./components/Account/Login/Registreer";
 import NoPage from "./components/NoPage/NoPage";
 import Disclaimer from "./components/Layout/Disclaimer";
 import Cookies from "./components/Layout/Cookies";
@@ -28,6 +29,7 @@ function App() {
           <Route path="overons" element={<OverOns />} />
           <Route path="contact" element={<Contact />} />
           <Route path="login" element={<Login />} />
+          <Route path="registreer" element={<Registreer />} />
           <Route path="disclaimer" element={<Disclaimer />} />
           <Route path="cookies" element={<Cookies />} />
           <Route path="privacystatement" element={<PrivacyStatement />} />
