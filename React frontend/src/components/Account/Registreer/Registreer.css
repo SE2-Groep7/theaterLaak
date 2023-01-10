@@ -25,12 +25,11 @@
   background: #f2f2f2;
   background: linear-gradient(-135deg, #c850c0, #4158d0);
 } */
-
 ::selection{
   background: #4158d0;
   color: #fff;
 }
-.wrapper{
+.Registreerwrapper{
   margin-top: 12%;
   width: 380px;
   height: 80%;
@@ -38,7 +37,7 @@
   border-radius: 18px;
   box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
 }
-.wrapper .title{
+.Registreerwrapper .Registreertitle{
   font-size: 35px;
   font-weight: 600;
   text-align: center;
@@ -46,18 +45,19 @@
   color: #fff;
   user-select: none;
   border-radius: 15px 15px 0 0;
-  background: linear-gradient(-135deg, #5e5e5e, #990000);
+  background: linear-gradient(-135deg, #5e5e5e, #ad0000);
 }
-.wrapper form{
+.Registreerwrapper form{
   padding: 10px 30px 50px 30px;
 }
-.wrapper form .field{
+.Registreerwrapper form .Registreerfield{
   height: 50px;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 25px;
   position: relative;
 }
-.wrapper form .field input{
+.Registreerwrapper form .Registreerfield input{
   height: 100%;
   width: 100%;
   outline: none;
@@ -67,11 +67,11 @@
   border-radius: 25px;
   transition: all 0.3s ease;
 }
-.wrapper form .field input:focus,
-form .field input:valid{
+.Registreerwrapper form .Registreerfield input:focus,
+form .Registreerfield input:valid{
   border-color: #e6b800;
 }
-.wrapper form .field label{
+.Registreerwrapper form .Registreerfield label{
   position: absolute;
   top: 50%;
   left: 20px;
@@ -82,15 +82,15 @@ form .field input:valid{
   transform: translateY(-50%);
   transition: all 0.3s ease;
 }
-form .field input:focus ~ label,
-form .field input:valid ~ label{
+form .Registreerfield input:focus ~ label,
+form .Registreerfield input:valid ~ label{
   top: 0%;
   font-size: 16px;
   color: #e6b800;
   background: #fff;
   transform: translateY(-50%);
 }
-form .content{
+form .Registreercontent{
   display: flex;
   width: 100%;
   height: 50px;
@@ -98,26 +98,25 @@ form .content{
   align-items: center;
   justify-content: space-around;
 }
-form .content .checkbox{
+form .Registreercontent .Registreercheckbox{
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-form .content input{
+form .Registreercontent input{
   width: 15px;
   height: 15px;
   background: red;
 }
-form .content label{
+form .Registreercontent label{
   color: #262626;
   user-select: none;
   padding-left: 5px;
 }
-form .content .pass-link{
+form .Registreercontent .RegistreerWachtwoord-Link{
   color: "";
 }
-form .field input[type="submit"]{
+form .Registreerfield input[type="submit"]{
   color: #fff;
   border: none;
   padding-left: 0;
@@ -128,26 +127,24 @@ form .field input[type="submit"]{
   background: linear-gradient(-135deg, #5e5e5e, #ad0000);
   transition: all 0.3s ease;
 }
-form .field input[type="submit"]:active{
+form .Registreerfield input[type="submit"]:active{
   transform: scale(0.95);
-
 }
-form .field input[type="submit"]:hover{
+form .Registreerfield input[type="submit"]:hover{
   transform: scale(0.95);
   background: linear-gradient(-135deg, #ffffff, #e6b800);;
 }
-
-form .signup-link{
+form .RegistreerAanmmeldenLink{
   color: #262626;
   margin-top: 20px;
   text-align: center;
 }
-form .pass-link a,
-form .signup-link a{
+form .RegistreerWachtwoord-Link a,
+form .RegistreerAanmmeldenLink a{
   color: #e6b800;
   text-decoration: none;
 }
-form .pass-link a:hover,
-form .signup-link a:hover{
+form .RegistreerWachtwoord-Link a:hover,
+form .RegistreerAanmmeldenLink a:hover{
   text-decoration: underline;
 }

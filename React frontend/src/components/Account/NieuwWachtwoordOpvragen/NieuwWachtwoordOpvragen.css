@@ -7,7 +7,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.LoginBox {
+.NieuwWachtwoordOpvragenBox {
   display: flex;
   justify-content: center;
   margin: auto;
@@ -29,16 +29,16 @@
   background: #4158d0;
   color: #fff;
 }
-.Loginwrapper{
+.NieuwWachtwoordOpvragenwrapper{
   margin-top: 12%;
   width: 380px;
-  height: 80%;
+  height: 60%;
   background: #fff;
   border-radius: 18px;
   box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
 }
-.Loginwrapper .Logintitle{
-  font-size: 35px;
+.NieuwWachtwoordOpvragenwrapper .NieuwWachtwoordOpvragentitle{
+  font-size: 28px;
   font-weight: 600;
   text-align: center;
   line-height: 100px;
@@ -47,16 +47,17 @@
   border-radius: 15px 15px 0 0;
   background: linear-gradient(-135deg, #5e5e5e, #ad0000);
 }
-.Loginwrapper form{
+.NieuwWachtwoordOpvragenwrapper form{
   padding: 10px 30px 50px 30px;
 }
-.Loginwrapper form .Loginfield{
+.NieuwWachtwoordOpvragenwrapper form .NieuwWachtwoordOpvragenfield{
   height: 50px;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 30px;
   position: relative;
 }
-.Loginwrapper form .Loginfield input{
+.NieuwWachtwoordOpvragenwrapper form .NieuwWachtwoordOpvragenfield input{
   height: 100%;
   width: 100%;
   outline: none;
@@ -66,11 +67,11 @@
   border-radius: 25px;
   transition: all 0.3s ease;
 }
-.Loginwrapper form .Loginfield input:focus,
-form .Loginfield input:valid{
+.NieuwWachtwoordOpvragenwrapper form .NieuwWachtwoordOpvragenfield input:focus,
+form .NieuwWachtwoordOpvragenfield input:valid{
   border-color: #e6b800;
 }
-.Loginwrapper form .Loginfield label{
+.NieuwWachtwoordOpvragenwrapper form .NieuwWachtwoordOpvragenfield label{
   position: absolute;
   top: 50%;
   left: 20px;
@@ -81,15 +82,15 @@ form .Loginfield input:valid{
   transform: translateY(-50%);
   transition: all 0.3s ease;
 }
-form .Loginfield input:focus ~ label,
-form .Loginfield input:valid ~ label{
+form .NieuwWachtwoordOpvragenfield input:focus ~ label,
+form .NieuwWachtwoordOpvragenfield input:valid ~ label{
   top: 0%;
   font-size: 16px;
   color: #e6b800;
   background: #fff;
   transform: translateY(-50%);
 }
-form .Logincontent{
+form .NieuwWachtwoordOpvragencontent{
   display: flex;
   width: 100%;
   height: 50px;
@@ -97,25 +98,25 @@ form .Logincontent{
   align-items: center;
   justify-content: space-around;
 }
-form .Logincontent .Logincheckbox{
+form .NieuwWachtwoordOpvragencontent .NieuwWachtwoordOpvragencheckbox{
   display: flex;
   align-items: center;
   justify-content: center;
 }
-form .Logincontent input{
+form .NieuwWachtwoordOpvragencontent input{
   width: 15px;
   height: 15px;
   background: red;
 }
-form .Logincontent label{
+form .NieuwWachtwoordOpvragencontent label{
   color: #262626;
   user-select: none;
   padding-left: 5px;
 }
-form .Logincontent .LoginWachtwoord-Link{
+form .NieuwWachtwoordOpvragencontent .NieuwWachtwoordOpvragenWachtwoord-Link{
   color: "";
 }
-form .Loginfield input[type="submit"]{
+form .NieuwWachtwoordOpvragenfield input[type="submit"]{
   color: #fff;
   border: none;
   padding-left: 0;
@@ -126,24 +127,24 @@ form .Loginfield input[type="submit"]{
   background: linear-gradient(-135deg, #5e5e5e, #ad0000);
   transition: all 0.3s ease;
 }
-form .Loginfield input[type="submit"]:active{
+form .NieuwWachtwoordOpvragenfield input[type="submit"]:active{
   transform: scale(0.95);
 }
-form .Loginfield input[type="submit"]:hover{
+form .NieuwWachtwoordOpvragenfield input[type="submit"]:hover{
   transform: scale(0.95);
   background: linear-gradient(-135deg, #ffffff, #e6b800);;
 }
-form .LoginAanmmeldenLink{
+form .NieuwWachtwoordOpvragenAanmmeldenLink{
   color: #262626;
   margin-top: 20px;
   text-align: center;
 }
-form .LoginWachtwoord-Link a,
-form .LoginAanmmeldenLink a{
+form .NieuwWachtwoordOpvragenWachtwoord-Link a,
+form .NieuwWachtwoordOpvragenAanmmeldenLink a{
   color: #e6b800;
   text-decoration: none;
 }
-form .LoginWachtwoord-Link a:hover,
-form .LoginAanmmeldenLink a:hover{
+form .NieuwWachtwoordOpvragenWachtwoord-Link a:hover,
+form .NieuwWachtwoordOpvragenAanmmeldenLink a:hover{
   text-decoration: underline;
 }
