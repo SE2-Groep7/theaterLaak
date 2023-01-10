@@ -4,10 +4,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Layout from "./components/Layout/Layout";
 import Voorstellingen from "./components/Voorstellingen/Voorstellingen";
+import Voorstelling from "./components/Voorstellingen/Voorstelling";
+import Agenda from "./components/Agenda/Agenda";
 import Tickets from "./components/Tickets/Tickets";
 import OverOns from "./components/OverOns/OverOns";
 import Contact from "./components/Contact/Contacts";
-import Login from "./components/Login/Login";
+import Login from "./components/Account/Login/Login";
 import NoPage from "./components/NoPage/NoPage";
 import Disclaimer from "./components/Layout/Disclaimer";
 import Cookies from "./components/Layout/Cookies";
@@ -21,6 +23,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="voorstellingen" element={<Voorstellingen />} />
+          <Route path="voorstelling" element={<Voorstelling />} />
           <Route path="tickets" element={<Tickets />} />
           <Route path="overons" element={<OverOns />} />
           <Route path="contact" element={<Contact />} />
@@ -29,6 +32,7 @@ function App() {
           <Route path="cookies" element={<Cookies />} />
           <Route path="privacystatement" element={<PrivacyStatement />} />
           <Route path="admin" element={<Admin />} />
+          <Route path="agenda" element={<Agenda />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
