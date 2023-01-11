@@ -7,7 +7,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.NieuwWachtwoordOpvragenBox {
+.UitloggenBox {
   display: flex;
   justify-content: center;
   margin: auto;
@@ -16,20 +16,29 @@
   margin-bottom: 25px;
 }
 
+
+/* html,body{
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+  background: #f2f2f2;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+} */
 ::selection{
   background: #4158d0;
   color: #fff;
 }
-.NieuwWachtwoordOpvragenwrapper{
+.Uitloggenwrapper{
   margin-top: 12%;
   width: 380px;
-  height: 60%;
+  height: 40%;
   background: #fff;
   border-radius: 18px;
   box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
 }
-.NieuwWachtwoordOpvragenwrapper .NieuwWachtwoordOpvragentitle{
-  font-size: 28px;
+.Uitloggenwrapper .Uitloggentitle{
+  font-size: 18px;
   font-weight: 600;
   text-align: center;
   line-height: 100px;
@@ -38,17 +47,17 @@
   border-radius: 15px 15px 0 0;
   background: linear-gradient(-135deg, #5e5e5e, #ad0000);
 }
-.NieuwWachtwoordOpvragenwrapper form{
+.Uitloggenwrapper form{
   padding: 10px 30px 50px 30px;
 }
-.NieuwWachtwoordOpvragenwrapper form .NieuwWachtwoordOpvragenfield{
+.Uitloggenwrapper form .Uitloggenfield{
   height: 50px;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 30px;
   position: relative;
 }
-.NieuwWachtwoordOpvragenwrapper form .NieuwWachtwoordOpvragenfield input{
+.Uitloggenwrapper form .Uitloggenfield input{
   height: 100%;
   width: 100%;
   outline: none;
@@ -58,11 +67,11 @@
   border-radius: 25px;
   transition: all 0.3s ease;
 }
-.NieuwWachtwoordOpvragenwrapper form .NieuwWachtwoordOpvragenfield input:focus,
-form .NieuwWachtwoordOpvragenfield input:valid{
+.Uitloggenwrapper form .Uitloggenfield input:focus,
+form .Uitloggenfield input:valid{
   border-color: #e6b800;
 }
-.NieuwWachtwoordOpvragenwrapper form .NieuwWachtwoordOpvragenfield label{
+.Uitloggenwrapper form .Uitloggenfield label{
   position: absolute;
   top: 50%;
   left: 20px;
@@ -73,36 +82,16 @@ form .NieuwWachtwoordOpvragenfield input:valid{
   transform: translateY(-50%);
   transition: all 0.3s ease;
 }
-form .NieuwWachtwoordOpvragenfield input:focus ~ label,
-form .NieuwWachtwoordOpvragenfield input:valid ~ label{
+form .Uitloggenfield input:focus ~ label,
+form .Uitloggenfield input:valid ~ label{
   top: 0%;
   font-size: 16px;
   color: #e6b800;
   background: #fff;
   transform: translateY(-50%);
 }
-form .NieuwWachtwoordOpvragencontent{
-  display: flex;
-  width: 100%;
-  height: 50px;
-  font-size: 16px;
-  align-items: center;
-  justify-content: space-around;
-}
-form .NieuwWachtwoordOpvragencontent input{
-  width: 15px;
-  height: 15px;
-  background: red;
-}
-form .NieuwWachtwoordOpvragencontent label{
-  color: #262626;
-  user-select: none;
-  padding-left: 5px;
-}
-form .NieuwWachtwoordOpvragencontent .NieuwWachtwoordOpvragenWachtwoord-Link{
-  color: "";
-}
-form .NieuwWachtwoordOpvragenfield input[type="submit"]{
+
+form .Uitloggenfield input[type="submit"]{
   color: #fff;
   border: none;
   padding-left: 0;
@@ -113,10 +102,10 @@ form .NieuwWachtwoordOpvragenfield input[type="submit"]{
   background: linear-gradient(-135deg, #5e5e5e, #ad0000);
   transition: all 0.3s ease;
 }
-form .NieuwWachtwoordOpvragenfield input[type="submit"]:active{
+form .Uitloggenfield input[type="submit"]:active{
   transform: scale(0.95);
 }
-form .NieuwWachtwoordOpvragenfield input[type="submit"]:hover{
+form .Uitloggenfield input[type="submit"]:hover{
   transform: scale(0.95);
   background: linear-gradient(-135deg, #ffffff, #e6b800);;
 }

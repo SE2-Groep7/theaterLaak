@@ -3,8 +3,8 @@ import { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import './Agenda.css';
-import Programma2 from "../Voorstellingen/images/komteenvrouwbijdedokter-foto-l-piek_thumbnail.jpg";
-import Programma3 from "../Voorstellingen/images/judeskaairlines-foto-v-ruudbaan_thumbnail.jpg";
+import VoorstellingOphalen from "../Voorstellingen/VoorstellingOphalen";
+
 
 
 
@@ -15,16 +15,23 @@ const Agenda = () => {
         <main>
             <div class="Agenda">
                 <Calendar onChange={onChange} value={value} />
-                <div class="AgendaProgramma">
-                <p>Dianne Liesker, Ellen Dikker & Hanneke Drenth - Tis hier geen hotel 2</p>
-                <img src={Programma2} alt="komteenvrouwbijdedokter-foto-l-piek_thumbnail.jpg" ></img>
-                <p>Jandino Asporaat en anderen - Judeska Airlines</p>
-                <img src={Programma3} alt="judeskaairlines-foto-v-ruudbaan_thumbnail.jpg" ></img>
+                <div id="Agendawrapper">
+                    <div class="Agendascrollbar" id="style-6">
+                    <h2>De volgende voorstellingen zijn op deze datum te zien</h2>
+                        <div class="AgendaProgramma">
+                            <VoorstellingOphalen id={1}/>
+                            <VoorstellingOphalen id={2}/>
+                            <VoorstellingOphalen id={3}/>
+                            <VoorstellingOphalen id={4}/>
+                            <VoorstellingOphalen id={5}/>
+
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </main>
     )
-  };
-  
-  export default Agenda;
-  
+};
+
+export default Agenda;

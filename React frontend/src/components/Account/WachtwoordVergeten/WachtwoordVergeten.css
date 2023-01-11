@@ -90,32 +90,7 @@ form .WachtwoordVergetenfield input:valid ~ label{
   background: #fff;
   transform: translateY(-50%);
 }
-form .WachtwoordVergetencontent{
-  display: flex;
-  width: 100%;
-  height: 50px;
-  font-size: 16px;
-  align-items: center;
-  justify-content: space-around;
-}
-form .WachtwoordVergetencontent .WachtwoordVergetencheckbox{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-form .WachtwoordVergetencontent input{
-  width: 15px;
-  height: 15px;
-  background: red;
-}
-form .WachtwoordVergetencontent label{
-  color: #262626;
-  user-select: none;
-  padding-left: 5px;
-}
-form .WachtwoordVergetencontent .WachtwoordVergetenWachtwoord-Link{
-  color: "";
-}
+
 form .WachtwoordVergetenfield input[type="submit"]{
   color: #fff;
   border: none;
@@ -133,18 +108,4 @@ form .WachtwoordVergetenfield input[type="submit"]:active{
 form .WachtwoordVergetenfield input[type="submit"]:hover{
   transform: scale(0.95);
   background: linear-gradient(-135deg, #ffffff, #e6b800);;
-}
-form .WachtwoordVergetenAanmmeldenLink{
-  color: #262626;
-  margin-top: 20px;
-  text-align: center;
-}
-form .WachtwoordVergetenWachtwoord-Link a,
-form .WachtwoordVergetenAanmmeldenLink a{
-  color: #e6b800;
-  text-decoration: none;
-}
-form .WachtwoordVergetenWachtwoord-Link a:hover,
-form .WachtwoordVergetenAanmmeldenLink a:hover{
-  text-decoration: underline;
 }

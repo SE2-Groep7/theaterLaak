@@ -13,7 +13,8 @@
 .VoorstellingImage {
   justify-content: flex-end;
   display: flex;
-  margin-left: 10%;
+  margin-left: 15%;
+  margin-bottom: 5%;
 
 }
 
@@ -33,11 +34,12 @@
   justify-content: center;
   align-items: center;
   padding-top: 5%;
+  margin-bottom: 2%;
 
 }
 
 .VoorstellingOphalen img {
-  width: 150px;
+  width: 250px;
   height: 150px;
   border-radius: 5%;
 }
@@ -46,19 +48,35 @@
   display: flex;
   flex-direction: column;
   padding-left: 5%;
-  margin-bottom: 2%;
+}
 
+.VoorstellingButton {
+  background-color: #990000;
+  border: none;
+  color: #fff;
+  padding: 20px 40px;
+  margin-left: 5%;
+  font-size: 12px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  -webkit-filter: brightness(100%);
+  filter: brightness(100%);
+  border-radius: 4px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .scrollbar {
-  height: 300px;
-  width: 500px;
+  padding-top: 2%;
+  height: 600px;
+  width: 1000px;
   background: #333333;
   overflow-y: scroll;
-  margin-bottom: 25px;
+  scroll-behavior:smooth;
+  margin-bottom: 5%;
   border-radius: 3%;
-  padding: 5%;
   color: #F5F5F5;
+  
 }
 
 #wrapper {
@@ -76,11 +94,10 @@
 #style-6::-webkit-scrollbar {
   width: 10px;
   background-color: #F5F5F5;
-
 }
 
 #style-6::-webkit-scrollbar-thumb {
-  background-color: #F90;
+  background-color: #ad0000;
   background-image: -webkit-linear-gradient(45deg,
       rgba(255, 255, 255, .2) 25%,
       transparent 25%,
@@ -88,5 +105,5 @@
       rgba(255, 255, 255, .2) 50%,
       rgba(255, 255, 255, .2) 75%,
       transparent 75%,
-      transparent)
+      transparent);
 }

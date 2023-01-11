@@ -21,13 +21,16 @@ const Voorstelling = () => {
             </div>
 
         </div>
-        <div class="VoorstellingInfo">
-            <p>Deze voorstelling is op de volgende datums te zien</p>
+        <div class="VoorstellingInfo">        
             <div id="wrapper">
                 <div class="scrollbar" id="style-6">
-                    <VoorstellingOphalen />
-                    <VoorstellingOphalen />
-                    <VoorstellingOphalen />
+                <h2>Deze voorstelling is op de volgende datums te zien</h2>
+                    <VoorstellingOphalen id={1}/>
+                    <VoorstellingOphalen id={2}/>
+                    <VoorstellingOphalen id={3}/>
+                    <VoorstellingOphalen id={4}/>
+                    <VoorstellingOphalen id={5}/>
+
                 </div>
             </div>
         </div>
