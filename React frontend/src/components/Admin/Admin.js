@@ -23,12 +23,14 @@ const Admin = () => {
   const uploadFile = async (e) => {
     console.log(file);
     const formData = new FormData();
-    formData.append("formFile", file);
-    formData.append("fileName", fileName);
+
+    formData.append("Id", 0);
+    formData.append("FormFile", file);
+    formData.append("showName", fileName);
     formData.append("fotoAlt", fotoAlt);
     formData.append("beschrijving", beschrijving);
     try {
-      const res = await axios.post("http://localhost:5245/api/file",formData);
+      const res = await axios.post("http://localhost:5245/api/show",formData);
       console.log(res);
     }
     catch (ex) {

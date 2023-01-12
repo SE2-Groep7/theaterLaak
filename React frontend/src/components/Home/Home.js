@@ -1,80 +1,76 @@
 import Hero from "./Hero";
 import Card from "./Card";
 import axios from "axios";
-import React, {useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./home.css";
 
 const Home = () => {
-  const [files, setFiles] = useState([]);
+  const [shows, setShows] = useState([]);
   const [loading, setLoading] = useState(true);
   const [scrollPos, setScrollPos] = useState(0);
   // state for the width of the show-slider element
   const showWidth = 300;
-  const [maxPos,setMaxPos] = useState(0);
+  const [maxPos, setMaxPos] = useState(0);
 
-  const getFiles = async () => {
+  const getShows = async () => {
     const res = await axios.get("http://localhost:5245/api/file");
-    const fileNames = res.data;
-    let promises = fileNames.map(async (file) => {
+    const shows = res.data;
+    let promises = shows.map(async (show) => {
       const fileResponse = await axios({
         method: "get",
         responseType: "blob",
-        url: "http://localhost:5245/api/file/" + String(file),
+        url: "http://localhost:5245/api/file/show/" + show.fileName
       });
-      return new Promise((resolve, reject) => {
-        let reader = new window.FileReader();
-        reader.onload = function () {
-          resolve(reader.result);
-        };
-        reader.readAsDataURL(fileResponse.data);
-      });
+      show.file = URL.createObjectURL(new Blob([fileResponse.data]));
+      return new Promise((resolve) => resolve(show));
     });
-    const filess = await Promise.all(promises)
-    setFiles(filess);
-    var length = fileNames.length;
-    setMaxPos(showWidth * (length -1));
+    const allShows = await Promise.all(promises)
+    setShows(allShows);
+    var length = shows.length;
+    setMaxPos(showWidth * (length - 1));
     setLoading(false);
   }
 
 
   useEffect(() => {
-    
-    getFiles();
-
+    getShows();
+    return () => shows.forEach(show => URL.revokeObjectURL(show.file));
   }, []);
-   const handelRightClick = () =>{
+  const handelRightClick = () => {
     setScrollPos(scrollPos + showWidth);
     if (scrollPos > maxPos) {
       setScrollPos(0);
     }
     updateButtonState();
   }
-  const handelLeftClick = () =>{
+  const handelLeftClick = () => {
     setScrollPos(scrollPos - showWidth);
     if (scrollPos < 0) {
       setScrollPos(maxPos);
 
     }
-    updateButtonState();}
+    updateButtonState();
+  }
 
   const updateButtonState = () => {
-const leftButton = document.querySelector('.left');
-const rightButton = document.querySelector('.right');
-const showSlider = document.querySelector('.show-slider');
-console.log(showSlider.offsetWidth);
-console.log(maxPos);
-console.log(scrollPos);
+    const leftButton = document.querySelector('.left');
+    const rightButton = document.querySelector('.right');
+    const showSlider = document.querySelector('.show-slider');
+    console.log(showSlider.offsetWidth);
+    console.log(maxPos);
+    console.log(scrollPos);
     if (scrollPos === 0) {
       leftButton.disabled = true;
     } else {
       leftButton.disabled = false;
     }
-    if (scrollPos+ showSlider.offsetWidth >= maxPos + showWidth) {
+    if (scrollPos + showSlider.offsetWidth >= maxPos + showWidth) {
 
       rightButton.disabled = true;
     } else {
       rightButton.disabled = false;
-    }}
+    }
+  }
   return (
     <>
       <Hero />
@@ -83,20 +79,21 @@ console.log(scrollPos);
         <h2>Uitgelichte voorstellingen</h2>
         <div
           class="show-slider">
-          <div class="show-elements"          
-          style={{
-            left: `-${scrollPos}px`,
-          }}>
-            
+          <div class="show-elements"
+            style={{
+              left: `-${scrollPos}px`,
+            }}>
+
             {!loading &&
-             
-              files.map((file,index) => (
+
+              shows.map((file, index) => (
                 <>
-                
+
                   <Card id={index}
-                    foto={file}
-                    fotoAlt="Foto van baletdanseresses"
-                    beschrijving="D@nce"
+                    foto={file.file}
+                    fotoAlt={file.fotoAlt}
+                    showName={file.showName}
+                    beschrijving={file.beschrijving}
                   />
                 </>
               ))}
