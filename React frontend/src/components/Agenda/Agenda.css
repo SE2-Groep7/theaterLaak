@@ -1,0 +1,110 @@
+.Agenda {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 10%;
+  margin-bottom: 2%;
+
+}
+
+.VoorstellingenOphalen {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-right: 5%;
+}
+
+.VoorstellingenShow {
+  
+}
+
+.VoorstellingenShow img {
+  width: 250px;
+  height: 150px;
+  border-radius: 5%;
+}
+
+.VoorstellingenDatum {
+  width: 200px;
+}
+
+.VoorstellingenTijd {
+  width: 50px;
+}
+
+.VoorstellingenZaal {
+  width: 100px;
+}
+
+.VoorstellingenButton {
+  background-color: #990000;
+  border: none;
+  color: #fff;
+  padding: 20px 40px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  -webkit-filter: brightness(100%);
+  filter: brightness(100%);
+  border-radius: 4px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+
+
+
+.roundCorners{
+  padding-top: 2%;
+  height: 600px;
+  width: 1000px;
+  background: #333333;
+  border-radius: 2%;
+}
+.Agendascrollbar {
+  height: 95%;
+  overflow-y: scroll;
+  scroll-behavior:smooth;
+  color: #ffffff;
+}
+
+#Agendawrapper {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+}
+
+#style-6::-webkit-scrollbar-track {
+  -webkit-box-shadow:0 0 8px #333333 inset;
+
+}
+
+#style-6::-webkit-scrollbar {
+  width: 12px;
+  background-color: #333333;
+  border-radius: 30%;
+
+}
+
+#style-6::-webkit-scrollbar-thumb{
+  background-color:#ff0007;
+  border:1px solid #333333;
+  border-radius:12px;
+}
+#style-6::-webkit-scrollbar-thumb:hover{
+  background-color:#ff0006;
+  border:1px solid #333333;
+}
+#style-6::-webkit-scrollbar-thumb:active{
+  background-color:#ff0009;
+  border:1px solid #333333;
+}
+#style-6::-webkit-scrollbar-corner{
+  background-color:#ff0009;
+  border:1px solid #333333;
+  border-radius: 30%;
+}
