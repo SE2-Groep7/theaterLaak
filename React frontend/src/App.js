@@ -14,6 +14,7 @@ import Registreer from "./components/Account/Registreer/Registreer";
 import WachtwoordVergeten from "./components/Account/WachtwoordVergeten/WachtwoordVergeten";
 import NieuwWachtwoordOpvragen from "./components/Account/NieuwWachtwoordOpvragen/NieuwWachtwoordOpvragen";
 import Uitloggen from "./components/Account/Uitloggen/Uitloggen";
+import GebruikersPortaal from "./components/GebruikersPortaal/GebruikersPortaal";
 import NoPage from "./components/NoPage/NoPage";
 import Disclaimer from "./components/Layout/Disclaimer";
 import Cookies from "./components/Layout/Cookies";
@@ -37,6 +38,7 @@ function App() {
           <Route path="wachtwoordvergeten" element={<WachtwoordVergeten />} />
           <Route path="nieuwwachtwoordopvragen" element={<NieuwWachtwoordOpvragen />} />
           <Route path="uitloggen" element={<Uitloggen />} />
+          <Route path="gebruikersportaal" element={<GebruikersPortaal />} />
           <Route path="disclaimer" element={<Disclaimer />} />
           <Route path="cookies" element={<Cookies />} />
           <Route path="privacystatement" element={<PrivacyStatement />} />
@@ -50,3 +52,4 @@ function App() {
 }
 
 export default App;
+
