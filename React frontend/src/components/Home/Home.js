@@ -15,30 +15,31 @@ const Home = () => {
   const getFiles = async () => {
     const res = await axios.get("http://localhost:5245/api/file");
     const fileNames = res.data;
-    let files = [];
-    fileNames.map(async (file) => {
+    let promises = fileNames.map(async (file) => {
       const fileResponse = await axios({
         method: "get",
         responseType: "blob",
         url: "http://localhost:5245/api/file/" + String(file),
       });
-      let reader = new window.FileReader();
-      reader.readAsDataURL(fileResponse.data);
-      reader.onload = function () {
-        let imageDataUrl = reader.result;
-        files.push(imageDataUrl);
-      };
+      return new Promise((resolve, reject) => {
+        let reader = new window.FileReader();
+        reader.onload = function () {
+          resolve(reader.result);
+        };
+        reader.readAsDataURL(fileResponse.data);
+      });
     });
-    setFiles(files);
+    const filess = await Promise.all(promises)
+    setFiles(filess);
     var length = fileNames.length;
     setMaxPos(showWidth * (length -1));
     setLoading(false);
   }
-  
+
 
   useEffect(() => {
-    getFiles();
     
+    getFiles();
 
   }, []);
    const handelRightClick = () =>{
@@ -86,6 +87,7 @@ console.log(scrollPos);
           style={{
             left: `-${scrollPos}px`,
           }}>
+            
             {!loading &&
              
               files.map((file,index) => (
