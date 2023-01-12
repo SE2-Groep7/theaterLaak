@@ -21,20 +21,18 @@ const Voorstelling = () => {
             </div>
 
         </div>
-        <div class="VoorstellingInfo">        
+        <div class="VoorstellingInfo">
             <div id="wrapper">
                 <div class="VoorstellingRoundCorners">
-                <div class="scrollbar" id="style-6">
-                <h2>Deze voorstelling is op de volgende datums te zien</h2>
-                    <VoorstellingOphalen id={1}/>
-                    <VoorstellingOphalen id={2}/>
-                    <VoorstellingOphalen id={3}/>
-                    <VoorstellingOphalen id={4}/>
-                    <VoorstellingOphalen id={5}/>
-                    <VoorstellingOphalen id={6}/>
-
+                    <div class="scrollbar" id="style-6">
+                        <h2>Deze Voorstelling is op de volgende datums te zien</h2>
+                        <VoorstellingOphalen id={1} />
+                        <VoorstellingOphalen id={2} />
+                        <VoorstellingOphalen id={3} />
+                        <VoorstellingOphalen id={4} />
+                        <VoorstellingOphalen id={5} />
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
 

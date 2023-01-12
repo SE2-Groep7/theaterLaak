@@ -7,19 +7,56 @@
 
 }
 
-.AgendaProgramma {
+.VoorstellingenOphalen {
   display: flex;
-  flex-direction: column;
-  padding-left: 5%;
-  padding-bottom: 5%;
-  margin-top: 2%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-right: 5%;
 }
 
-.AgendaProgramma img {
-  width: 240px;
-  height: 160px;
+.VoorstellingenShow {
+  
+}
+
+.VoorstellingenShow img {
+  width: 250px;
+  height: 150px;
   border-radius: 5%;
 }
+
+.VoorstellingenDatum {
+  width: 200px;
+}
+
+.VoorstellingenTijd {
+  width: 50px;
+}
+
+.VoorstellingenZaal {
+  width: 100px;
+}
+
+.VoorstellingenButton {
+  background-color: #990000;
+  border: none;
+  color: #fff;
+  padding: 20px 40px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  -webkit-filter: brightness(100%);
+  filter: brightness(100%);
+  border-radius: 4px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+
+
+
 .roundCorners{
   padding-top: 2%;
   height: 600px;
