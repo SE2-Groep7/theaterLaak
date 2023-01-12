@@ -11,7 +11,7 @@
   box-sizing: border-box;
 }
 
-.Loginwrapper{
+.LoginWrapper{
   margin-top: 5%;
   width: 380px;
   height: 80%;
@@ -19,7 +19,7 @@
   border-radius: 18px;
   box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
 }
-.Loginwrapper .Logintitle{
+.LoginWrapper .LoginTitle{
   font-size: 35px;
   font-weight: 600;
   text-align: center;
@@ -29,16 +29,16 @@
   border-radius: 15px 15px 0 0;
   background: linear-gradient(-135deg, #5e5e5e, #ad0000);
 }
-.Loginwrapper form{
+.LoginWrapper form{
   padding: 10px 30px 50px 30px;
 }
-.Loginwrapper form .Loginfield{
+.LoginWrapper form .LoginField{
   height: 50px;
   width: 100%;
   margin-top: 10px;
   position: relative;
 }
-.Loginwrapper form .Loginfield input{
+.LoginWrapper form .LoginField input{
   height: 100%;
   width: 100%;
   outline: none;
@@ -48,11 +48,11 @@
   border-radius: 25px;
   transition: all 0.3s ease;
 }
-.Loginwrapper form .Loginfield input:focus,
-form .Loginfield input:valid{
+.LoginWrapper form .LoginField input:focus,
+form .LoginField input:valid{
   border-color: #e6b800;
 }
-.Loginwrapper form .Loginfield label{
+.LoginWrapper form .LoginField label{
   position: absolute;
   top: 50%;
   left: 20px;
@@ -63,15 +63,15 @@ form .Loginfield input:valid{
   transform: translateY(-50%);
   transition: all 0.3s ease;
 }
-form .Loginfield input:focus ~ label,
-form .Loginfield input:valid ~ label{
+form .LoginField input:focus ~ label,
+form .LoginField input:valid ~ label{
   top: 0%;
   font-size: 16px;
   color: #e6b800;
   background: #fff;
   transform: translateY(-50%);
 }
-form .Logincontent{
+form .LoginContent{
   display: flex;
   width: 100%;
   height: 50px;
@@ -79,24 +79,24 @@ form .Logincontent{
   align-items: center;
   justify-content: space-around;
 }
-form .Logincontent .Logincheckbox{
+form .LoginContent .LoginCheckbox{
   display: flex;
   align-items: center;
   justify-content: center;
 }
-form .Logincontent input{
+form .LoginContent input{
   width: 15px;
   height: 15px;
   background: red;
 }
-form .Logincontent label{
+form .LoginContent label{
   color: #262626;
   user-select: none;
 }
-form .Logincontent .LoginWachtwoord-Link{
+form .LoginContent .LoginWachtwoord-Link{
   color: "";
 }
-form .Loginfield input[type="submit"]{
+form .LoginField input[type="submit"]{
   color: #fff;
   border: none;
   padding-left: 0;
@@ -107,10 +107,10 @@ form .Loginfield input[type="submit"]{
   background: linear-gradient(-135deg, #5e5e5e, #ad0000);
   transition: all 0.3s ease;
 }
-form .Loginfield input[type="submit"]:active{
+form .LoginField input[type="submit"]:active{
   transform: scale(0.95);
 }
-form .Loginfield input[type="submit"]:hover{
+form .LoginField input[type="submit"]:hover{
   transform: scale(0.95);
   background: linear-gradient(-135deg, #ffffff, #e6b800);;
 }

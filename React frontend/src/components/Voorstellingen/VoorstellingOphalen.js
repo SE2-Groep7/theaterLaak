@@ -42,7 +42,7 @@ function VoorstellingOphalen(props) {
     <div class="VoorstellingZaal">
       <p>{show.zaal}</p>
     </div>
-    <div class="VoorstellingButtonPos">
+    <div class="VoorstellingButtonDiv">
       <button class="VoorstellingButton">Tickets Bestellen</button>
     </div>
   </div>

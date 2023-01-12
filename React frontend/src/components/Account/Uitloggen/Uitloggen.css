@@ -6,7 +6,7 @@
   width: 700px;
 }
 
-.Uitloggenwrapper{
+.UitloggenWrapper{
   margin-top: 15%;
   width: 380px;
   height: 40%;
@@ -14,7 +14,7 @@
   border-radius: 18px;
   box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
 }
-.Uitloggenwrapper .Uitloggentitle{
+.UitloggenWrapper .UitloggenTitle{
   font-size: 18px;
   font-weight: 600;
   text-align: center;
@@ -24,17 +24,17 @@
   border-radius: 15px 15px 0 0;
   background: linear-gradient(-135deg, #5e5e5e, #ad0000);
 }
-.Uitloggenwrapper form{
+.UitloggenWrapper form{
   padding: 10px 30px 50px 30px;
 }
-.Uitloggenwrapper form .Uitloggenfield{
+.UitloggenWrapper form .UitloggenField{
   height: 50px;
   width: 100%;
   margin-top: 40px;
   margin-bottom: 30px;
   position: relative;
 }
-.Uitloggenwrapper form .Uitloggenfield input{
+.UitloggenWrapper form .UitloggenField input{
   height: 100%;
   width: 100%;
   outline: none;
@@ -44,11 +44,11 @@
   border-radius: 25px;
   transition: all 0.3s ease;
 }
-.Uitloggenwrapper form .Uitloggenfield input:focus,
-form .Uitloggenfield input:valid{
+.UitloggenWrapper form .UitloggenField input:focus,
+form .UitloggenField input:valid{
   border-color: #e6b800;
 }
-.Uitloggenwrapper form .Uitloggenfield label{
+.UitloggenWrapper form .UitloggenField label{
   position: absolute;
   top: 50%;
   left: 20px;
@@ -59,8 +59,8 @@ form .Uitloggenfield input:valid{
   transform: translateY(-50%);
   transition: all 0.3s ease;
 }
-form .Uitloggenfield input:focus ~ label,
-form .Uitloggenfield input:valid ~ label{
+form .UitloggenField input:focus ~ label,
+form .UitloggenField input:valid ~ label{
   top: 0%;
   font-size: 16px;
   color: #e6b800;
@@ -68,7 +68,7 @@ form .Uitloggenfield input:valid ~ label{
   transform: translateY(-50%);
 }
 
-form .Uitloggenfield input[type="submit"]{
+form .UitloggenField input[type="submit"]{
   color: #fff;
   border: none;
   padding-left: 0;
@@ -79,10 +79,10 @@ form .Uitloggenfield input[type="submit"]{
   background: linear-gradient(-135deg, #5e5e5e, #ad0000);
   transition: all 0.3s ease;
 }
-form .Uitloggenfield input[type="submit"]:active{
+form .UitloggenField input[type="submit"]:active{
   transform: scale(0.95);
 }
-form .Uitloggenfield input[type="submit"]:hover{
+form .UitloggenField input[type="submit"]:hover{
   transform: scale(0.95);
   background: linear-gradient(-135deg, #ffffff, #e6b800);;
 }
