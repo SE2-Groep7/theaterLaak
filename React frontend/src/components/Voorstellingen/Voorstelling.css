@@ -60,7 +60,6 @@
 }
 
 .VoorstellingButton {
-  background-color: #990000;
   border: none;
   color: #fff;
   padding: 20px 40px;
@@ -86,46 +85,54 @@
 }
 
 
-.scrollbar {
+.VoorstellingScrollbar {
   height: 95%;
   overflow-y: scroll;
   scroll-behavior:smooth;
   color: #ffffff;
 }
 
-#wrapper {
+#VoorstellingWrapper {
   display: flex;
   text-align: center;
   justify-content: center;
   margin: auto;
 }
 
-#style-6::-webkit-scrollbar-track {
+#style-2::-webkit-scrollbar-track {
   -webkit-box-shadow:0 0 8px #333333 inset;
   border-radius: 30%;
 }
 
-#style-6::-webkit-scrollbar {
+#style-2::-webkit-scrollbar {
   width: 12px;
   background-color: #333333;
   border-radius: 30%;
 }
 
-#style-6::-webkit-scrollbar-thumb{
-  background-color:#ff0007;
+#style-2::-webkit-scrollbar-thumb{
+  background-color:#ad0000;
   border:1px solid #333333;
   border-radius:12px;
 }
-#style-6::-webkit-scrollbar-thumb:hover{
-  background-color:#ff0006;
+#style-2::-webkit-scrollbar-thumb:hover{
+  background-color:#e6b800;
   border:1px solid #333333;
 }
-#style-6::-webkit-scrollbar-thumb:active{
-  background-color:#ff0009;
+#style-2::-webkit-scrollbar-thumb:active{
+  background-color:#e6b800;
   border:1px solid #333333;
 }
-#style-6::-webkit-scrollbar-corner{
-  background-color:#ff0009;
-  border:1px solid #333333;
-  border-radius: 30%;
+
+.VoorstellingButton{
+  cursor: pointer;
+  background: linear-gradient(-135deg, #5e5e5e, #ad0000);
+  transition: all 0.3s ease;
+}
+.VoorstellingButton:active{
+  transform: scale(0.95);
+}
+.VoorstellingButton:hover{
+  transform: scale(0.95);
+  background: #e6b800;
 }

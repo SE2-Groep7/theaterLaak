@@ -22,9 +22,9 @@ const Voorstelling = () => {
 
         </div>
         <div class="VoorstellingInfo">
-            <div id="wrapper">
+            <div id="VoorstellingWrapper">
                 <div class="VoorstellingRoundCorners">
-                    <div class="scrollbar" id="style-6">
+                    <div class="VoorstellingScrollbar" id="style-2">
                         <h2>Deze Voorstelling is op de volgende datums te zien</h2>
                         <VoorstellingOphalen id={1} />
                         <VoorstellingOphalen id={2} />

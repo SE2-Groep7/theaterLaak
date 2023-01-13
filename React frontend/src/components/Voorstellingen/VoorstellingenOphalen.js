@@ -14,7 +14,7 @@ function VoorstellingenOphalen(props) {
     <div class="VoorstellingenZaal">
       <p>Zaal : {props.show.zaalId}</p>
     </div>
-    <div class="VoorstellingenButtonPos">
+    <div class="VoorstellingButtonDiv">
       <button class="VoorstellingenButton">Tickets Bestellen</button>
     </div>
   </div>

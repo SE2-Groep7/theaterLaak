@@ -4,14 +4,14 @@ import "./WachtwoordVergeten.css"
 const WachtwoordVergeten = () => {
   return <main>
     <div class="WachtwoordVergetenBox">
-      <div class="WachtwoordVergetenwrapper">
-        <div class="WachtwoordVergetentitle">Wachtwoord Vergeten?</div>
+      <div class="WachtwoordVergetenWrapper">
+        <div class="WachtwoordVergetenTitle">Wachtwoord Vergeten?</div>
         <form action="#">
-          <div class="WachtwoordVergetenfield">
+          <div class="WachtwoordVergetenField">
             <input type="email" required></input>
             <label>Emailadres</label>
           </div>
-          <div class="WachtwoordVergetenfield">
+          <div class="WachtwoordVergetenField">
             <input type="submit" value="Wachtwoord Opvragen"></input>
           </div>
         </form>
