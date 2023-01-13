@@ -1,7 +1,7 @@
 import Card from "../Home/Card";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import "./Voorstellingen.css"
+import "./voorstellingen.css"
 const Voorstellingen = () => {
   const [shows, setShows] = useState([]);
   const [loading, setLoading] = useState(true);
