@@ -1,0 +1,23 @@
+.disclaimer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+
+    .disclaimer-title {
+    align-self: center;
+    width: 80%;
+    padding: 0 5%;
+    }
+
+    .disclaimer-text {
+    width: 80%;
+    padding: 0 5%;
+    align-self: center;
+    margin-bottom: 2%;
+    }
+
+    .disclaimer-info {
+    display: inline;
+    text-align: center;
+    }
