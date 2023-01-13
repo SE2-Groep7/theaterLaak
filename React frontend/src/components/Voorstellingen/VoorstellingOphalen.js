@@ -14,6 +14,7 @@ function VoorstellingOphalen(props) {
 
     ],
   };
+  useEffect(() => {
   var getShow = () => {
     shows.show.map(element => {
       if (element.id === props.id) {
@@ -23,11 +24,9 @@ function VoorstellingOphalen(props) {
 
     });
   }
-  useEffect(() => {
-    getShow();
+  getShow();
+}, []);
 
-
-  }, []);
   return <div class="VoorstellingOphalen">
     <div class="VoorstellingShow">
       <img src={show.img} alt="new" />
