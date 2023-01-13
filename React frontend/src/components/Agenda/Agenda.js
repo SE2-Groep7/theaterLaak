@@ -15,9 +15,9 @@ const Agenda = () => {
         <main>
             <div class="Agenda">
                 <Calendar onChange={onChange} value={value} />
-                <div id="Agendawrapper">
-                    <div class="roundCorners">
-                        <div class="Agendascrollbar" id="style-6">
+                <div id="AgendaWrapper">
+                    <div class="AgendaRoundCorners">
+                        <div class="AgendaScrollbar" id="style-1">
                             <h2>De volgende Voorstellingen zijn op deze datum te zien</h2>
                             <VoorstellingenOphalen id={1} />
                             <VoorstellingenOphalen id={2} />

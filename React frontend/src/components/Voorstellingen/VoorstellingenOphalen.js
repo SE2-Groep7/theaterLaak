@@ -17,20 +17,23 @@ function VoorstellingenOphalen(props) {
 
     ],
   };
+  useEffect(() => {
   var getShow = () => {
     shows.show.map(element => {
-      if (element.id == props.id) {
+      if (element.id === props.id) {
         setShow(element);
 
       }
 
     });
   }
-  useEffect(() => {
-    getShow();
+  getShow();
+})
+  // useEffect(() => {
+  //   getShow();
 
 
-  }, []);
+  // }, []);
   return <div class="VoorstellingenOphalen">
     <div class="VoorstellingenShow">
       <img src={show.img} alt="new" />
@@ -45,7 +48,7 @@ function VoorstellingenOphalen(props) {
     <div class="VoorstellingenZaal">
       <p>{show.zaal}</p>
     </div>
-    <div class="VoorstellingenButtonPos">
+    <div class="VoorstellingButtonDiv">
       <button class="VoorstellingenButton">Tickets Bestellen</button>
     </div>
   </div>
