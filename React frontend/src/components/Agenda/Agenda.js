@@ -1,36 +1,76 @@
-import React from "react";
+import React, {  useEffect } from "react";
 import { useState } from 'react';
 import Calendar from 'react-calendar';
+import axios from "axios";
 import 'react-calendar/dist/Calendar.css';
 import './Agenda.css';
 import VoorstellingenOphalen from "../Voorstellingen/VoorstellingenOphalen";
 
-
-
-
-
 const Agenda = () => {
-    const [value, onChange] = useState(new Date());
+    const [value, setValue] = useState(new Date());
+    const [shows, setShows] = useState([]);
+    const [loading, setLoading] = useState(true);
+  
+    const formatDate = date => {
+      let d = new Date(date),
+          month = '' + (d.getMonth() + 1),
+          day = '' + d.getDate(),
+          year = d.getFullYear();
+  
+      if (month.length < 2) 
+          month = '0' + month;
+      if (day.length < 2) 
+          day = '0' + day;
+  
+      return [year, month, day].join('-') + 'T00:00:00'
+    }
+  
+    const getShows = async (date) => {
+      const showsOnDate = await axios.get(`http://localhost:5245/api/Show/date/${formatDate(date)}`);
+      const showsOnDateIds = showsOnDate.data.map(show => show.showId);  // get an array of showIds
+      // Create a map of showIds to zaalIds
+      const showsOnDateMap = showsOnDate.data.reduce((showMap, show) => {
+        showMap[show.showId] = show.zaalId;
+        return showMap;
+      }, {});
+  
+      const res = await axios.get("http://localhost:5245/api/file");
+      const shows = res.data;
+      let promises = shows.filter(show => showsOnDateIds.includes(show.id)).map(async (show) => {  // filter the shows based on the showIds
+        const fileResponse = await axios({
+          method: "get",
+          responseType: "blob",
+          url: "http://localhost:5245/api/file/show/" + show.fileName
+        });
+        show.file = URL.createObjectURL(new Blob([fileResponse.data]));
+        show.zaalId = showsOnDateMap[show.id]; // add the zaalId from the showsOnDateMap
+        return new Promise((resolve) => resolve(show));
+      });
+      const allShows = await Promise.all(promises)
+      setShows(allShows);
+      setLoading(false);
+    }
+  
+    useEffect(() => {
+      getShows(value);
+      return () => shows.forEach(show => URL.revokeObjectURL(show.file));
+    }, [value]);
+  
     return (
-        <main>
-            <div class="Agenda">
-                <Calendar onChange={onChange} value={value} />
-                <div id="Agendawrapper">
-                    <div class="roundCorners">
-                        <div class="Agendascrollbar" id="style-6">
-                            <h2>De volgende Voorstellingen zijn op deze datum te zien</h2>
-                            <VoorstellingenOphalen id={1} />
-                            <VoorstellingenOphalen id={2} />
-                            <VoorstellingenOphalen id={3} />
-                            <VoorstellingenOphalen id={4} />
-                            <VoorstellingenOphalen id={5} />
-                        </div>
-                    </div>
-                </div>
-
+      <main>
+        <div class="Agenda">
+          <Calendar onChange={setValue} value={value} />
+          <div id="Agendawrapper">
+            <div class="roundCorners">
+              <div class="Agendascrollbar" id="style-6">
+              <h2>De volgende Voorstellingen zijn op deze datum te zien</h2>
+              {loading ? <p>Loading...</p> : shows.length ? shows.map(show => <VoorstellingenOphalen show={show} />) : <p>Geen voorstellingen op geselecteerde datum</p>}
             </div>
-        </main>
-    )
+          </div>
+        </div>
+      </div>
+    </main>
+  )
 };
-
+  
 export default Agenda;
