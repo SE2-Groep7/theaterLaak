@@ -30,7 +30,7 @@ jobs:
           # Run commands to deploy code to your Raspberry Pi here
           echo "Deploying code to Raspberry Pi..."
           cd theaterLaak
-          git pull
+          sudo git pull
           cd deployment
           cd docker-compose
           sudo docker-compose up -d --build
