@@ -21,6 +21,7 @@ import Disclaimer from "./components/Layout/Disclaimer";
 import Cookies from "./components/Layout/Cookies";
 import PrivacyStatement from "./components/Layout/PrivacyStatement";
 import Admin from "./components/Admin/Admin";
+import Cart from "./components/Cart/Cart";
 
 
 function App() {
@@ -46,6 +47,8 @@ function App() {
           <Route path="privacystatement" element={<PrivacyStatement />} />
           <Route path="admin" element={<Admin />} />
           <Route path="agenda" element={<Agenda />} />
+          <Route path="cart" element={<Cart />} />
+
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

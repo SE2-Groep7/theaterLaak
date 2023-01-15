@@ -3,46 +3,36 @@ import Programma1 from "./images/judeskaairlines-foto-v-ruudbaan_thumbnail.jpg";
 
 
 function VoorstellingOphalen(props) {
-  const [show, setShow] = useState({});
-  const shows = {
-    show: [
-      { id: 1, img: Programma1, naam: "Judeska Airlines", datum: "Donderdag 16 februari 2023", tijd: "20.15", zaal: "Zaal 1",},
-      { id: 2, img: Programma1, naam: "Judeska Airlines", datum: "Vrijdag 17 februari 2023", tijd: "20.30", zaal: "Zaal 2" },
-      { id: 3, img: Programma1, naam: "Judeska Airlines", datum: "Zaterdag 18 februari 2023", tijd: "19.45", zaal: "Zaal 3",},
-      { id: 4, img: Programma1, naam: "Judeska Airlines", datum: "Zondag 19 februari 2023", tijd: "20.00", zaal: "Zaal 4" },
-      { id: 5, img: Programma1, naam: "Judeska Airlines", datum: "Maandag 20 februari 2023", tijd: "21:00", zaal: "Zaal 5",},
+  const show = useState({});
+  const formatDate = date => {
+    let d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
 
-    ],
-  };
-  useEffect(() => {
-  var getShow = () => {
-    shows.show.map(element => {
-      if (element.id === props.id) {
-        setShow(element);
+    if (month.length < 2) 
+        month = '0' + month;
+    if (day.length < 2) 
+        day = '0' + day;
 
-      }
-
-    });
+    return [year+"/"+ month+"/"+ day];
   }
-  getShow();
-}, []);
-
-  return <div class="VoorstellingOphalen">
-    <div class="VoorstellingShow">
-      <img src={show.img} alt="new" />
-      <p>{show.naam}</p>
+  const date = new Date(props.show.scheduleDate);
+  console.log(props.show.scheduleDate);
+  const time = date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+  return <div class="VoorstellingenOphalen">
+    <div class="VoorstellingenShow">
+      <img src={props.show.file} alt={props.show.fotoAlt} />
+      <p>{props.show.showName}</p>
     </div>
-    <div class="VoorstellingDatum">
-      <p>{show.datum}</p>
+    <div class="VoorstellingenTijd">
+      <p>{formatDate(props.show.scheduleDate) +" " + time}</p>
     </div>
-    <div class="VoorstellingTijd">
-      <p>{show.tijd}</p>
-    </div>
-    <div class="VoorstellingZaal">
-      <p>{show.zaal}</p>
+    <div class="VoorstellingenZaal">
+      <p>Zaal : {props.show.zaalId}</p>
     </div>
     <div class="VoorstellingButtonDiv">
-      <button class="VoorstellingButton">Tickets Bestellen</button>
+      <button class="VoorstellingenButton">Tickets Bestellen</button>
     </div>
   </div>
 }

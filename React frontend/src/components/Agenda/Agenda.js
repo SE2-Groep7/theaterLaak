@@ -22,16 +22,16 @@ const Agenda = () => {
       if (day.length < 2) 
           day = '0' + day;
   
-      return [year, month, day].join('-') + 'T00:00:00'
+      return [year, month, day];
     }
   
     const getShows = async (date) => {
-      const showsOnDate = await axios.get(`http://localhost:5245/api/Show/date/${formatDate(date)}`);
+      const showsOnDate = await axios.get(`http://localhost:5245/api/Show/date?date=${formatDate(date)}`);
       const showsOnDateIds = showsOnDate.data.map(show => show.showId);  // get an array of showIds
       // Create a map of showIds to zaalIds
       const showsOnDateMap = showsOnDate.data.reduce((showMap, show) => {
-        showMap[show.showId] = show.zaalId;
-        return showMap;
+        showMap[show.showId] = {zaalId: show.zaalId, date: show.scheduleDate};
+                return showMap;
       }, {});
   
       const res = await axios.get("http://localhost:5245/api/file");
@@ -43,7 +43,11 @@ const Agenda = () => {
           url: "http://localhost:5245/api/file/show/" + show.fileName
         });
         show.file = URL.createObjectURL(new Blob([fileResponse.data]));
-        show.zaalId = showsOnDateMap[show.id]; // add the zaalId from the showsOnDateMap
+
+        const showDateMap = showsOnDateMap[show.id];
+        show.zaalId = showDateMap.zaalId; 
+        show.date = showDateMap.date;
+        
         return new Promise((resolve) => resolve(show));
       });
       const allShows = await Promise.all(promises)

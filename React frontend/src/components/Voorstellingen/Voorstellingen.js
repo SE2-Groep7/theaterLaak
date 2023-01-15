@@ -48,6 +48,7 @@ const Voorstellingen = () => {
                       fotoAlt={file.fotoAlt}
                       showName={file.showName}
                       beschrijving={file.beschrijving}
+                      shp
                     />
                   </div>
 

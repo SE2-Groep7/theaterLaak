@@ -5,7 +5,8 @@ const Card = (props) => {
                      <div class="info">  
                     <h2>{props.showName}</h2>
                     <p>{props.beschrijving}</p>
-                    <div class="btn-holder"><button class="show-btn">Buy Tickets</button></div>
+                    <div class="btn-holder">
+                    <button class="show-btn" onClick={() => window.location.href = `voorstelling?showName=${props.showName}`}>Meer info</button>              </div>
                     </div>
                     
         </div>

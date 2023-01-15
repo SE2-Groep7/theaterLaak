@@ -1,23 +1,75 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
 import VoorstellingOphalen from "./VoorstellingOphalen";
 import './Voorstelling.css';
-import Programma3 from "./images/judeskaairlines-foto-v-ruudbaan_thumbnail.jpg";
-
-
+import { useLocation } from 'react-router-dom';
 const Voorstelling = () => {
+    
+    const location = useLocation();
+    const params = new URLSearchParams(location.search);
+    const showName = params.get('showName');
+    const [showFinal, setShow] = useState({});
+    const [shows, setShows] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [scheduleCalled, setScheduleCalled] = useState(false);
+
+      const getShow = async () => {
+        
+            const showResponse = await axios.get("http://localhost:5245/api/File/Show?showName=" + showName);
+            const show = showResponse.data;
+            const fileResponse = await axios({
+                method: "get",
+                responseType: "blob",
+                url: "http://localhost:5245/api/file/show/" + show.fileName
+            });
+            show.file = URL.createObjectURL(new Blob([fileResponse.data]));
+            setShow(show);
+
+  
+            console.log("im here");
+            console.log(showFinal.id);
+    
+    };
+      const getSchedule = async (showId) => {
+        console.log("Im called");
+        if(!scheduleCalled) {
+            setScheduleCalled(true);
+          const response = await axios.get(`http://localhost:5245/api/Show/shows/${showId}/schedule`);
+          const schedule = response.data;
+          const updateShows = async () => {
+            schedule.forEach(show => {
+                show.file= showFinal.file;
+            }
+            
+            );
+        }
+          await updateShows();
+
+          setShows(schedule);
+      
+          setLoading(false);
+        
+      }}
+
+
+      useEffect(() => {
+        getShow();
+
+      }, []);
+      
+      useEffect(() => {
+        console.log("im here");
+        if(showFinal.id)
+        getSchedule(showFinal.id)}, [showFinal]);
+    
     return <main>
         <div class="Voorstelling">
             <div class="VoorstellingText">
-                <h2>Jandino Asporaat en anderen - Judeska Airlines</h2>
-                <p>Na vier succesvolle films en twee uitverkochte theatertournees keert Judeska terug in een gloednieuwe hilarische klucht.
-                    Nadat Judeska voor de zoveelste keer is ontslagen, krijgt ze nog één kans van het uitzendbureau.
-                    Ze mag als stewardess aan de slag. Judeska ziet het helemaal zitten. Verre reizen, dure hotels en cocktails drinken aan zwembaden.
-                    Met andere woorden: glamour. Maar dat zit er tot haar ongenoegen allemaal niet in, want ze blijft aan de grond. Ze wordt namelijk grondstewardess.
-                    Haar realiteit is dealen met overvolle koffers, ongeduldige passagiers en krijsende kinderen. Judeska kent maar één manier om hier mee om te gaan.
-                    Alles moet tegen de vlakte. Te midden van al deze hectiek en chaos is iedereen op zoek naar geluk.
-                    Het is maar goed dat grondstewardess Judeska er is om ze in de juiste richting te wijzen. Of niet?</p></div>
+                <h2>{showFinal.showName}</h2>
+                <p>{showFinal.beschrijving}</p></div>
             <div class="VoorstellingImage">
-                <img src={Programma3} alt="judeskaairlines-foto-v-ruudbaan_thumbnail.jpg" ></img>
+                <img src={showFinal.file} alt={showFinal.fotoAlt} ></img>
             </div>
 
         </div>
@@ -26,11 +78,7 @@ const Voorstelling = () => {
                 <div class="VoorstellingRoundCorners">
                     <div class="VoorstellingScrollbar" id="style-2">
                         <h2>Deze Voorstelling is op de volgende datums te zien</h2>
-                        <VoorstellingOphalen id={1} />
-                        <VoorstellingOphalen id={2} />
-                        <VoorstellingOphalen id={3} />
-                        <VoorstellingOphalen id={4} />
-                        <VoorstellingOphalen id={5} />
+                        {loading ? <p>Loading...</p> : shows.length ? shows.map(show => <VoorstellingOphalen show={show} />) : <p>Geen voorstellingen op geselecteerde datum</p>}
                     </div>
                 </div>
             </div>

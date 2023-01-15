@@ -1,0 +1,38 @@
+.seat {
+    background-image: url("./seatImg.png");
+    background-size: cover;
+    cursor:pointer;
+    border:none;
+    width:64px;
+    height:64px;
+    background-color: transparent;
+    
+}
+.seatOccupied {
+    background-image: url("./seatDisabledImg.png");
+    background-size: cover;
+    cursor:pointer;
+    border:none;
+    width:64px;
+    height:64px;
+    background-color: transparent;
+}
+.seatSelected {
+    background-image: url("./seatSelectedImg.png");
+    background-size: cover;
+    cursor:pointer;
+    border:none;
+    width:64px;
+    height:64px;
+    background-color: transparent;
+}
+.theaterHall {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height:65vh ;
+}
+
+.row {
+    margin: 0.3%;
+}

@@ -28,10 +28,13 @@ const Nav = () => {
           <li>
             <Link to="/contact">Contact</Link>
           </li>
+
                
             </ul>
             <ul>
-
+            <li>
+            <Link to="/cart">Cart</Link>
+          </li>
             <li>
             <Link to="/registreer">
               {" "}
