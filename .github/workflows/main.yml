@@ -32,6 +32,8 @@ jobs:
           # Run commands to deploy code to your Raspberry Pi here
           echo "Deploying code to Raspberry Pi..."
           cd theaterLaak
+          git fetch --all
+          git reset --hard origin/main
           git pull --force
           cd deployment
           cd docker-compose
