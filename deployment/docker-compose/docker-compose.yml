@@ -40,7 +40,6 @@ services:
       - showapi
       - frontend
       - laakdb
-      - firefox
   laakdb:
     image: "mcr.microsoft.com/azure-sql-edge:latest"
     container_name: laakdb
