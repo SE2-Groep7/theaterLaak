@@ -26,7 +26,7 @@ const Agenda = () => {
     }
   
     const getShows = async (date) => {
-      const showsOnDate = await axios.get(`http://localhost:5245/api/Show/date?date=${formatDate(date)}`);
+      const showsOnDate = await axios.get(`http://showapi/api/Show/date?date=${formatDate(date)}`);
       const showsOnDateIds = showsOnDate.data.map(show => show.showId);  // get an array of showIds
       // Create a map of showIds to zaalIds
       const showsOnDateMap = showsOnDate.data.reduce((showMap, show) => {
@@ -34,13 +34,13 @@ const Agenda = () => {
                 return showMap;
       }, {});
   
-      const res = await axios.get("http://localhost:5245/api/file");
+      const res = await axios.get("http://showapi/api/file");
       const shows = res.data;
       let promises = shows.filter(show => showsOnDateIds.includes(show.id)).map(async (show) => {  // filter the shows based on the showIds
         const fileResponse = await axios({
           method: "get",
           responseType: "blob",
-          url: "http://localhost:5245/api/file/show/" + show.fileName
+          url: "http://showapi/api/file/show/" + show.fileName
         });
         show.file = URL.createObjectURL(new Blob([fileResponse.data]));
 

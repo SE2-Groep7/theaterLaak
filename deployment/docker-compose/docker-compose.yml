@@ -1,13 +1,21 @@
 version: "3.9"  # optional since v1.27.0
 services:
-  # todoapi:
-  #   container_name: todoapi
-  #   build:
-  #     context: ../../code/TodoApi
-  #     dockerfile: ../../code/TodoApi/Dockerfile
-  #   ports:
-  #     - "8080:80"
-  #   restart: always
+  showapi:
+    container_name: showapi
+    build:
+      context: ../../code/showApi
+      dockerfile: ../../code/showApi/Dockerfile
+    ports:
+      - "8080:80"
+    restart: always
+  ticketapi:
+    container_name: ticketapi
+    build:
+      context: ../../code/ticketsapi
+      dockerfile: ../../code/ticketsapi/Dockerfile
+    ports:
+      - "8080:80"
+    restart: always
   frontend:
     container_name: "frontend"
     build:
@@ -24,5 +32,6 @@ services:
     ports:
       - 80:80
     depends_on:
-      # - todoapi
+      - ticketapi
+      - showapi
       - frontend

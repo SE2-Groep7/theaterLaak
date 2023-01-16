@@ -16,12 +16,12 @@ const Voorstelling = () => {
 
       const getShow = async () => {
         
-            const showResponse = await axios.get("http://localhost:5245/api/File/Show?showName=" + showName);
+            const showResponse = await axios.get("http://showapi/api/File/Show?showName=" + showName);
             const show = showResponse.data;
             const fileResponse = await axios({
                 method: "get",
                 responseType: "blob",
-                url: "http://localhost:5245/api/file/show/" + show.fileName
+                url: "http://showapi/api/file/show/" + show.fileName
             });
             show.file = URL.createObjectURL(new Blob([fileResponse.data]));
             setShow(show);
@@ -35,7 +35,7 @@ const Voorstelling = () => {
         console.log("Im called");
         if(!scheduleCalled) {
             setScheduleCalled(true);
-          const response = await axios.get(`http://localhost:5245/api/Show/shows/${showId}/schedule`);
+          const response = await axios.get(`http://showapi/api/Show/shows/${showId}/schedule`);
           const schedule = response.data;
           const updateShows = async () => {
             schedule.forEach(show => {
