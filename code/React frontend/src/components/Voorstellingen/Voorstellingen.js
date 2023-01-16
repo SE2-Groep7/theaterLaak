@@ -6,13 +6,13 @@ const Voorstellingen = () => {
   const [shows, setShows] = useState([]);
   const [loading, setLoading] = useState(true);
   const getShows = async () => {
-    const res = await axios.get("http://showapi/api/file");
+    const res = await axios.get("https://mohieddin.nl/showapi/api/file");
     const shows = res.data;
     let promises = shows.map(async (show) => {
       const fileResponse = await axios({
         method: "get",
         responseType: "blob",
-        url: "http://showapi/api/file/show/" + show.fileName
+        url: "https://mohieddin.nl/showapi/api/file/show/" + show.fileName
       });
       show.file = URL.createObjectURL(new Blob([fileResponse.data]));
       return new Promise((resolve) => resolve(show));

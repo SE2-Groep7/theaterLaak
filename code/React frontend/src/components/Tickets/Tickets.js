@@ -14,7 +14,7 @@ const Tickets = () => {
   const getHall = async () => {
     setLoading(true);
     await axios
-      .get("http://ticketapi/api/Hall/" + datum + "/" +zaalId )
+      .get("https://mohieddin.nl/ticketsapi/api/Hall/" + datum + "/" +zaalId )
       .then((response) => {
         setHall(response.data);
         setLoading(false);
