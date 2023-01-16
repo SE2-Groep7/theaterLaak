@@ -1,31 +1,33 @@
 .contact {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* veranderd naar column */
     align-items: center;
     }
 
     .contact-title {
     align-self: flex-start;
-    margin-left: 4.8%;
+    margin-left: 5%;
     }
 
     .contact-text {
-    width: 50%;
+    width: 50%; /* kan aangepast worden voor de grootte van de tekst */
     padding: 0 5%;
     align-self: flex-start;
     }
 
     .contact-images {
-        display: flex;
-        margin-top: 2%;
+    display: flex;
+    margin-top: -20%;
+    margin-left: 50%;
+    flex-direction: row; /* veranderd van column naar row */
     }
 
     .contact-images img {
-        width: 350px;
-        height: 250px;
-        margin-right: 2%;
-        margin-bottom: 2%;
-        border-radius: 2%;
+    width: 350px;
+    height: 400px;
+    margin-left: 2%; /* veranderd van margin-right naar margin-left */
+    margin-bottom: 2%;
+    border-radius: 2%;
     }
 
     .contact-info {
