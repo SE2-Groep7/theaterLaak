@@ -103,7 +103,7 @@ public async Task<IActionResult> AddShow(int showId, int zaalId, DateTime schedu
     // Make a post request to create the hall with the seats
     var client = new HttpClient();
     var content = new StringContent(JsonConvert.SerializeObject(json), Encoding.UTF8, "application/json");
-    var response = await client.PostAsync("http://localhost:5203/api/Hall", content);
+    var response = await client.PostAsync("http://ticketapi/api/Hall", content);
     if (!response.IsSuccessStatusCode)
     {
         return StatusCode((int)response.StatusCode);
