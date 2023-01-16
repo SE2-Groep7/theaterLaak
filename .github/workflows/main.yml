@@ -15,15 +15,13 @@ jobs:
       run: |
         # Run your tests here
         echo "Running tests..."
+    - name: Create environment file
+      run: echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" > .env
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: Create environment file
-      run: |
-          cd theaterLaak/deployment/docker-compose
-          echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" > .env
     - name: Deploy to Raspberry Pi
       uses: appleboy/ssh-action@v0.1.7
       with:
