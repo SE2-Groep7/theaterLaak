@@ -20,6 +20,8 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+    - name: Set environment variable
+      run: echo "::set-env name=DB_PASSWORD::${{ secrets.DB_PASSWORD }}"
     - name: Deploy to Raspberry Pi
       uses: appleboy/ssh-action@v0.1.7
       with:
@@ -34,5 +36,4 @@ jobs:
           cd deployment
           cd docker-compose
           echo "Running docker compose"
-          sudo docker-compose up -d --build
-
+          sudo docker-compose up -d --build -e DB_PASSWORD=${{ env.DB_PASSWORD }}

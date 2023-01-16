@@ -35,3 +35,13 @@ services:
       - ticketapi
       - showapi
       - frontend
+
+  testdb:
+    image: "mcr.microsoft.com/azure-sql-edge:latest"
+    container_name: laakdb
+    ports: # not actually needed, because the two services are on the same network
+      - "1434:1433"
+    environment:
+      - ACCEPT_EULA=y
+      - SA_PASSWORD=${{ env.DB_PASSWORD }}
+    restart: always
