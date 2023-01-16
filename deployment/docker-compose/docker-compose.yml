@@ -12,7 +12,7 @@ services:
     container_name: ticketapi
     build:
       context: ../../code/ticketsapi
-      dockerfile: ../../code/ticketapi/Dockerfile
+      dockerfile: ../../code/ticketsapi/Dockerfile
     ports:
       - "8081:80"
     restart: always
