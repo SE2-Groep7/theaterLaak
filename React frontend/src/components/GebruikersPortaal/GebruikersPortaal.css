@@ -50,3 +50,69 @@
   border-radius: 15px 15px 0 0;
   background: linear-gradient(-135deg, #5e5e5e, #ad0000);
 }
+
+.GebruikersPortaalField {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.GebruikersPortaalWrapper .GebruikersPortaalField{
+  height: 50px;
+  width: 100%;
+  margin-top: 10px;
+  position: relative;
+}
+.GebruikersPortaalWrapper .GebruikersPortaalField button{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding-left: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+.GebruikersPortaalWrapper .GebruikersPortaalField button:focus,
+.GebruikersPortaalField button:valid{
+  border-color: #e6b800;
+}
+.GebruikersPortaalWrapper .GebruikersPortaalField label{
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  color: #999999;
+  font-weight: 400;
+  font-size: 17px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+.GebruikersPortaalField button:focus ~ label,
+.GebruikersPortaalField button:valid ~ label{
+  top: 0%;
+  font-size: 16px;
+  color: #e6b800;
+  background: #fff;
+  transform: translateY(-50%);
+}
+
+.GebruikersPortaalField button[type="submit"]{
+  color: #fff;
+  border: none;
+  padding-left: 0;
+  margin-top: -10px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background: linear-gradient(-135deg, #5e5e5e, #ad0000);
+  transition: all 0.3s ease;
+}
+.GebruikersPortaalField button[type="submit"]:active{
+  transform: scale(0.95);
+}
+.GebruikersPortaalField button[type="submit"]:hover{
+  transform: scale(0.95);
+  background: linear-gradient(-135deg, #ffffff, #e6b800);;
+}
