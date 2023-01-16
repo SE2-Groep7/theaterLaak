@@ -37,3 +37,11 @@ jobs:
           cd docker-compose
           echo "Running docker compose"
           sudo docker-compose up -d --build
+          cd ..
+          cd ..
+          cd code
+          cd showApi
+          dotnet ef database update
+          cd ..
+          cd ticketsapi
+          dotnet ef database update

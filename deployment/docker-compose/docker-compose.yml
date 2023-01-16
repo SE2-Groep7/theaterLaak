@@ -7,6 +7,8 @@ services:
       dockerfile: ../../code/showApi/Dockerfile
     ports:
       - "8080:80"
+    env_file:
+      - .env
     restart: always
   ticketapi:
     container_name: ticketapi
@@ -15,6 +17,8 @@ services:
       dockerfile: ../../code/ticketsapi/Dockerfile
     ports:
       - "8081:80"
+    env_file:
+      - .env
     restart: always
   frontend:
     container_name: "frontend"

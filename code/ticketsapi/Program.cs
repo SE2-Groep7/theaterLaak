@@ -19,9 +19,10 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddControllers();
 
-builder.Services.AddDbContext<DatabaseContext>(opt =>
-    opt.UseInMemoryDatabase("ShowList"));
-
+builder.Services.AddDbContext<DatabaseContext>(options =>{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DatabaseContext") ?? throw new InvalidOperationException("Connection string 'DatabaseContext' not found."));
+    options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);});
+    
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
