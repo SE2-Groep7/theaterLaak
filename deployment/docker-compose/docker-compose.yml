@@ -40,6 +40,7 @@ services:
       - showapi
       - frontend
       - laakdb
+      - firefox
   laakdb:
     image: "mcr.microsoft.com/azure-sql-edge:latest"
     container_name: laakdb
@@ -52,3 +53,18 @@ services:
       - .env
     restart: always
 
+  firefox:
+    image: lscr.io/linuxserver/firefox:latest
+    container_name: firefox
+    security_opt:
+      - seccomp:unconfined #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+    volumes:
+      - /path/to/config:/config
+    ports:
+      - 3001:3000
+    shm_size: "1gb"
+    restart: unless-stopped
