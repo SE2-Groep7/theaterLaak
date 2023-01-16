@@ -54,7 +54,6 @@ services:
     restart: always
   firefox:
     image: overclockedllama/docker-chromium
-    build: .
     ports:
       - "5800:5800"
     volumes:
