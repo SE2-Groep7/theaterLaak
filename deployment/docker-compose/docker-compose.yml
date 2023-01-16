@@ -47,7 +47,7 @@ services:
       - "1439:1433"
     environment:
       - ACCEPT_EULA=y
-      - SA_PASSWORD=${DB_PASSWORD}
+      - SA_PASSWORD=Pass@word
     env_file:
       - .env
     restart: always
