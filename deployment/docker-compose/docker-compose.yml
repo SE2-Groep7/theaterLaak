@@ -52,19 +52,10 @@ services:
     env_file:
       - .env
     restart: always
-
   firefox:
-    image: lscr.io/linuxserver/firefox:latest
-    container_name: firefox
-    security_opt:
-      - seccomp:unconfined #optional
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London
-    volumes:
-      - /path/to/config:/config
+    image: overclockedllama/docker-chromium
+    build: .
     ports:
-      - 3001:3000
-    shm_size: "1gb"
-    restart: unless-stopped
+      - "5800:5800"
+    volumes:
+      - "/docker/appdata/chromium:/config:rw"
