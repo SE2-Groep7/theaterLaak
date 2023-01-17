@@ -33,11 +33,12 @@ jobs:
           # Run commands to deploy code to your Raspberry Pi here
           echo "Deploying code to Raspberry Pi..."
           echo $SA_PASSWORD
-          cd theaterLaak
-          git fetch --all
-          git reset --hard origin/main
-          git pull --force
-          cd deployment
-          cd docker-compose
-          echo "Running docker compose"
-          sudo docker-compose up -d --build --remove-orphans
+          echo $SA_PASSWORD
+          # cd theaterLaak
+          # git fetch --all
+          # git reset --hard origin/main
+          # git pull --force
+          # cd deployment
+          # cd docker-compose
+          # echo "Running docker compose"
+          # sudo docker-compose up -d --build --remove-orphans
