@@ -32,6 +32,7 @@ jobs:
         script: |
           # Run commands to deploy code to your Raspberry Pi here
           echo "Deploying code to Raspberry Pi..."
+          echo $SA_PASSWORD
           cd theaterLaak
           git fetch --all
           git reset --hard origin/main
