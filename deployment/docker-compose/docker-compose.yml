@@ -1,4 +1,4 @@
-version: "4.0" 
+version: "3.9" 
 services:
   showapi:
     container_name: showapi
@@ -39,7 +39,7 @@ services:
       - ticketapi
       - showapi
       - frontend
-      - laakdb2
+      - laakdb
   laakdb:
     image: "mcr.microsoft.com/azure-sql-edge:latest"
     container_name: laakdb
