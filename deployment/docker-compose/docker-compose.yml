@@ -59,6 +59,7 @@ services:
     environment:
       - ACCEPT_EULA=y
       - SA_PASSWORD= ${SA_PASSWORD}
+      - MSSQL_ALLOW_REMOTE_CONNECTIONS=true
     env_file:
       - .env
 
