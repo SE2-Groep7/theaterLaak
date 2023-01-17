@@ -1,0 +1,110 @@
+.GebruikersPortaalBox {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  height: 1000px;
+  width: 1500px;
+  margin-bottom: 5%;
+}
+
+.GebruikersPortaalWrapper{
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}
+.GebruikersPortaalWrapper .GebruikersPortaalTitle{
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  user-select: none;
+  border-radius: 15px 15px 0 0;
+  background: linear-gradient(-135deg, #5e5e5e, #ad0000);
+}
+.GebruikersPortaalContentBox {
+  display: flex;
+  flex-wrap: wrap ;
+  justify-content: center;
+  margin-top: 2%;
+  
+}
+
+.GebruikersPortaalContentWrapper {
+  width: 400px;
+  height: 300px;
+  margin: 3%;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0px 15px 20px rgb(0 0 0 / 10%);
+}
+.GebruikersPortaalContentWrapper .GebruikersPortaalContentTitle{
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  user-select: none;
+  border-radius: 15px 15px 0 0;
+  background: linear-gradient(-135deg, #5e5e5e, #ad0000);
+}
+
+.GebruikersPortaalField {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.GebruikersPortaalWrapper .GebruikersPortaalField{
+  height: 50px;
+  width: 100%;
+  margin-top: 10px;
+  position: relative;
+}
+.GebruikersPortaalWrapper .GebruikersPortaalField button{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding-left: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+.GebruikersPortaalWrapper .GebruikersPortaalField button:focus,
+.GebruikersPortaalField button:valid{
+  border-color: #e6b800;
+}
+.GebruikersPortaalWrapper .GebruikersPortaalField label{
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  color: #999999;
+  font-weight: 400;
+  font-size: 17px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+.GebruikersPortaalField button:focus ~ label,
+.GebruikersPortaalField button:valid ~ label{
+  top: 0%;
+  font-size: 16px;
+  color: #e6b800;
+  background: #fff;
+  transform: translateY(-50%);
+}
+
+.GebruikersPortaalField button[type="submit"]{
+  color: rgb(0, 0, 0);
+  border: none;
+  padding-left: 0;
+  margin-top: -10px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}

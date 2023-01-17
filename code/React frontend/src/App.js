@@ -14,7 +14,12 @@ import Registreer from "./components/Account/Registreer/Registreer";
 import WachtwoordVergeten from "./components/Account/WachtwoordVergeten/WachtwoordVergeten";
 import NieuwWachtwoordOpvragen from "./components/Account/NieuwWachtwoordOpvragen/NieuwWachtwoordOpvragen";
 import Uitloggen from "./components/Account/Uitloggen/Uitloggen";
-import GebruikersPortaal from "./components/GebruikersPortaal/GebruikersPortaal";
+import GebruikersPortaal from "./components/Portaal/GebruikersPortaal/GebruikersPortaal/GebruikersPortaal";
+import MijnPortaal from "./components/Portaal/MijnPortaal/MijnPortaal/MijnPortaal";
+import MedewerkersPortaal from "./components/Portaal/MedewerkersPortaal/MedewerkersPortaal/MedewerkersPortaal";
+import AdminPortaal from "./components/Portaal/AdminPortaal/AdminPortaal/AdminPortaal";
+import BegunstigersPortaal from "./components/Portaal/BegunstigersPortaal/BegunstigersPortaal/BegunstigersPortaal";
+import BetrokkenPersonenPortaal from "./components/Portaal/BetrokkenPersonenPortaal/BetrokkenPersonenPortaal/BetrokkenPersonenPortaal";
 import GegevensWijzigen from "./components/Account/GegevensWijzigen/GegevensWijzigen/GegevensWijzigen";
 import NoPage from "./components/NoPage/NoPage";
 import Disclaimer from "./components/Layout/Disclaimer";
@@ -41,6 +46,11 @@ function App() {
           <Route path="nieuwwachtwoordopvragen" element={<NieuwWachtwoordOpvragen />} />
           <Route path="uitloggen" element={<Uitloggen />} />
           <Route path="gebruikersportaal" element={<GebruikersPortaal />} />
+          <Route path="mijnportaal" element={<MijnPortaal />} />
+          <Route path="medewerkersportaal" element={<MedewerkersPortaal />} />
+          <Route path="adminportaal" element={<AdminPortaal />} />
+          <Route path="begunstigersportaal" element={<BegunstigersPortaal />} />
+          <Route path="betrokkenpersonenportaal" element={<BetrokkenPersonenPortaal />} />
           <Route path="gegevenswijzigen" element={<GegevensWijzigen />} />
           <Route path="disclaimer" element={<Disclaimer />} />
           <Route path="cookies" element={<Cookies />} />
