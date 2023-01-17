@@ -15,7 +15,7 @@ import WachtwoordVergeten from "./components/Account/WachtwoordVergeten/Wachtwoo
 import NieuwWachtwoordOpvragen from "./components/Account/NieuwWachtwoordOpvragen/NieuwWachtwoordOpvragen";
 import Uitloggen from "./components/Account/Uitloggen/Uitloggen";
 import GebruikersPortaal from "./components/GebruikersPortaal/GebruikersPortaal";
-import GegevensWijzigen from "./components/Account/GegevensWijzigen/GegevensWijzigen";
+import GegevensWijzigen from "./components/Account/GegevensWijzigen/GegevensWijzigen/GegevensWijzigen";
 import NoPage from "./components/NoPage/NoPage";
 import Disclaimer from "./components/Layout/Disclaimer";
 import Cookies from "./components/Layout/Cookies";
