@@ -33,13 +33,11 @@ jobs:
           # Run commands to deploy code to your Raspberry Pi here
           echo "Deploying code to Raspberry Pi..."
           export SAPASSWORD=${{ secrets.DB_PASSWORD }}
-          echo $SAPASSWORD
-          echo $SAPASSWORD
-          # cd theaterLaak
-          # git fetch --all
-          # git reset --hard origin/main
-          # git pull --force
-          # cd deployment
-          # cd docker-compose
-          # echo "Running docker compose"
-          # sudo docker-compose up -d --build --remove-orphans
+          cd theaterLaak
+          git fetch --all
+          git reset --hard origin/main
+          git pull --force
+          cd deployment
+          cd docker-compose
+          echo "Running docker compose"
+          sudo docker-compose up -d --build --remove-orphans
