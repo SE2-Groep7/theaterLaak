@@ -24,7 +24,7 @@ jobs:
     - name: Deploy to Raspberry Pi
       uses: appleboy/ssh-action@v0.1.7
       env:
-        SA_PASSWORD: ${{ secrets.DB_PASSWORD }}
+        SAPASSWORD: ${{ secrets.DB_PASSWORD }}
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
@@ -32,8 +32,9 @@ jobs:
         script: |
           # Run commands to deploy code to your Raspberry Pi here
           echo "Deploying code to Raspberry Pi..."
-          echo $SA_PASSWORD
-          echo $SA_PASSWORD
+          export SAPASSWORD=${{ secrets.DB_PASSWORD }}
+          echo $SAPASSWORD
+          echo $SAPASSWORD
           # cd theaterLaak
           # git fetch --all
           # git reset --hard origin/main
