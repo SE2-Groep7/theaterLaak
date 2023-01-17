@@ -39,7 +39,7 @@ services:
       - ticketapi
       - showapi
       - frontend
-      - laakdb
+      - laakdb2
   # laakdb:
   #   image: "mcr.microsoft.com/azure-sql-edge:latest"
   #   container_name: laakdb
@@ -51,7 +51,7 @@ services:
   #   env_file:
   #     - .env
   #   restart: always
-laakdb2:
+  laakdb2:
     image: "mcr.microsoft.com/azure-sql-edge:latest"
     container_name: laakdb2
     ports:
