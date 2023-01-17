@@ -15,8 +15,7 @@ jobs:
       run: |
         # Run your tests here
         echo "Running tests..."
-    - name: Create environment file
-      run: echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" > .env
+
 
   deploy:
     needs: build
@@ -24,6 +23,8 @@ jobs:
     steps:
     - name: Deploy to Raspberry Pi
       uses: appleboy/ssh-action@v0.1.7
+      env:
+        SA_PASSWORD: ${{ secrets.DB_PASSWORD }}
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}

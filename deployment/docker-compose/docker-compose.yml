@@ -40,14 +40,24 @@ services:
       - showapi
       - frontend
       - laakdb
-  laakdb:
+  # laakdb:
+  #   image: "mcr.microsoft.com/azure-sql-edge:latest"
+  #   container_name: laakdb
+  #   ports:
+  #     - "1439:1433"
+  #   environment:
+  #     - ACCEPT_EULA=y
+  #     - SA_PASSWORD=Pass@word
+  #   env_file:
+  #     - .env
+  #   restart: always
+laakdb2:
     image: "mcr.microsoft.com/azure-sql-edge:latest"
-    container_name: laakdb
+    container_name: laakdb2
     ports:
       - "1439:1433"
     environment:
       - ACCEPT_EULA=y
-      - SA_PASSWORD=Pass@word
-    env_file:
-      - .env
+      - SA_PASSWORD=${SA_PASSWORD}
+
     restart: always
