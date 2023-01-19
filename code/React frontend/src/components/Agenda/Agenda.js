@@ -64,7 +64,7 @@ const Agenda = () => {
   };
     useEffect(() => {
       getShows(value);
-      var connection = new signalR.HubConnectionBuilder().withUrl("http://localhost:5245/showhub").build()
+      var connection = new signalR.HubConnectionBuilder().withUrl("http://mohieddin.nl/showapi/showhub").build()
       connection.on("newShow", handleNewShow);
       connection.start().then(() => {
         setConnection(connection);
