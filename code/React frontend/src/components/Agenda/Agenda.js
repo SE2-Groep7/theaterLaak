@@ -1,4 +1,8 @@
 import React, {  useEffect } from "react";
+import { HubConnection, JsonHubProtocol } from "@microsoft/signalr";
+import * as signalR from '@microsoft/signalr';
+
+
 import { useState } from 'react';
 import Calendar from 'react-calendar';
 import axios from "axios";
@@ -10,7 +14,8 @@ const Agenda = () => {
     const [value, setValue] = useState(new Date());
     const [shows, setShows] = useState([]);
     const [loading, setLoading] = useState(true);
-  
+    const [connection, setConnection] = useState(null);
+
     const formatDate = date => {
       let d = new Date(date),
           month = '' + (d.getMonth() + 1),
@@ -54,10 +59,19 @@ const Agenda = () => {
       setShows(allShows);
       setLoading(false);
     }
-  
+    const handleNewShow = (newShow) => {
+      getShows(value)
+  };
     useEffect(() => {
       getShows(value);
-      return () => shows.forEach(show => URL.revokeObjectURL(show.file));
+      var connection = new signalR.HubConnectionBuilder().withUrl("http://localhost:5245/showhub").build()
+      connection.on("newShow", handleNewShow);
+      connection.start().then(() => {
+        setConnection(connection);
+      });
+      return () => {
+        connection.stop();
+      };
     }, [value]);
   
     return (

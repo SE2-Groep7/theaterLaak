@@ -28,6 +28,7 @@ builder.Services.AddDbContext<DatabaseContext>(opt =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 
@@ -39,10 +40,14 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 app.UseRouting();
-app.UseCors(MyAllowSpecificOrigins);
-
+app.UseCors(policy => policy.WithOrigins("http://localhost", "http://localhost:3000","https://mohieddin.nl/agenda").AllowAnyMethod().AllowAnyHeader().AllowCredentials().SetPreflightMaxAge(TimeSpan.FromMinutes(10)).Build());app.UseAuthorization();
+app.UseEndpoints(endpoints =>
+    {
+        endpoints.MapHub<ShowHub>("/showHub");
+        // ...
+    });
+    
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

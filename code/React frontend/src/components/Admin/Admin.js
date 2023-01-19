@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+
 const Admin = () => {
+
   const [file, setFile] = useState();
   const [fileName, setFileName] = useState();
   const [fotoAlt, setFotoAlt] = useState();
@@ -39,7 +41,7 @@ const Admin = () => {
   };
 
   return (
-    <div>
+    <div class="main">
       <input type="file" onChange={saveFile} />
       <input type="text" onChange={saveAlt} />
       <input type="text" onChange={saveBesch} />
