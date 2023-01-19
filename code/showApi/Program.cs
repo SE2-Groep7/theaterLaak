@@ -40,8 +40,8 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 app.UseRouting();
-    app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-// app.UseCors(policy => policy.WithOrigins("http://localhost", "http://localhost:3000","https://mohieddin.nl/","http://mohieddin.nl").AllowAnyMethod().AllowAnyHeader().AllowCredentials().SetPreflightMaxAge(TimeSpan.FromMinutes(10)).Build());app.UseAuthorization();
+    // app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+app.UseCors(policy => policy.WithOrigins("http://localhost", "http://localhost:3000","https://mohieddin.nl/","http://mohieddin.nl").AllowAnyMethod().AllowAnyHeader().AllowCredentials().SetPreflightMaxAge(TimeSpan.FromMinutes(10)).Build());app.UseAuthorization();
 app.UseEndpoints(endpoints =>
     {
         endpoints.MapHub<ShowHub>("/showHub");
