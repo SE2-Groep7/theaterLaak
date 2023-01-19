@@ -64,14 +64,20 @@ const Agenda = () => {
   };
     useEffect(() => {
       getShows(value);
-      var connection = new signalR.HubConnectionBuilder().withUrl("https://mohieddin.nl/showapi/showhub").build()
-      connection.on("newShow", handleNewShow);
-      connection.start().then(() => {
-        setConnection(connection);
-      });
-      return () => {
-        connection.stop();
+      const ws = new WebSocket("ws://mohieddin.nl/showapi/showhub/");
+      ws.onopen = (event) => {
+        ws.send(JSON.stringify("hallo"));
       };
+      ws.onmessage = (event) => {
+        handleNewShow(event.data);}
+      // var connection = new signalR.HubConnectionBuilder().withUrl("wss://mohieddin.nl/showapi/showhub").build();
+      // connection.on("newShow", handleNewShow);
+      // connection.start().then(() => {
+      //   setConnection(connection);
+      // });
+      // return () => {
+      //   connection.stop();
+      // };
     }, [value]);
   
     return (
