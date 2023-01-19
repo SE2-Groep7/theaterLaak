@@ -6,6 +6,8 @@ using System.IO;
 using Newtonsoft.Json;
 using System.Text;
 using Microsoft.AspNetCore.SignalR;
+using Microsoft.AspNetCore.Cors;
+
 [Route("api/[controller]")]
 [ApiController]
 
@@ -20,6 +22,7 @@ public class ShowController : Controller
     }
 
     [HttpGet("date")]
+    [EnableCors]
     public IActionResult GetShowsByDate(DateTime date)
     {
         var shows = _context.ShowSchedules
