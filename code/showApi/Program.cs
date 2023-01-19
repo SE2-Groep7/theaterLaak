@@ -40,7 +40,7 @@ var app = builder.Build();
 
 app.UseHttpsRedirection();
 app.UseRouting();
-app.UseCors(policy => policy.WithOrigins("http://localhost", "http://localhost:3000","https://mohieddin.nl/agenda").AllowAnyMethod().AllowAnyHeader().AllowCredentials().SetPreflightMaxAge(TimeSpan.FromMinutes(10)).Build());app.UseAuthorization();
+app.UseCors(policy => policy.WithOrigins("http://localhost", "http://localhost:3000","https://mohieddin.nl/").AllowAnyMethod().AllowAnyHeader().AllowCredentials().SetPreflightMaxAge(TimeSpan.FromMinutes(10)).Build());app.UseAuthorization();
 app.UseEndpoints(endpoints =>
     {
         endpoints.MapHub<ShowHub>("/showHub");
