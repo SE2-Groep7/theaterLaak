@@ -1,4 +1,4 @@
-.AdminPortaalBox {
+.MedewerkersPortaalComponentBox {
   display: flex;
   justify-content: center;
   margin: auto;
@@ -7,14 +7,14 @@
   margin-bottom: 5%;
 }
 
-.AdminPortaalWrapper{
+.MedewerkersPortaalComponentWrapper{
   width: 100%;
   height: 100%;
   background: #fff;
   border-radius: 18px;
   box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
 }
-.AdminPortaalWrapper .AdminPortaalTitle{
+.MedewerkersPortaalComponentWrapper .MedewerkersPortaalComponentTitle{
   font-size: 18px;
   font-weight: 600;
   text-align: center;
@@ -24,14 +24,15 @@
   border-radius: 15px 15px 0 0;
   background: linear-gradient(-135deg, #5e5e5e, #ad0000);
 }
-.AdminPortaalContentBox {
+.MedewerkersPortaalComponentContentBox {
   display: flex;
   flex-wrap: wrap ;
   justify-content: center;
   margin-top: 2%;
   
 }
-.AdminPortaalContentWrapper {
+
+.MedewerkersPortaalComponentContentWrapper {
   width: 400px;
   height: 300px;
   margin: 3%;
@@ -39,7 +40,7 @@
   border-radius: 18px;
   box-shadow: 0px 15px 20px rgb(0 0 0 / 10%);
 }
-.AdminPortaalContentWrapper .AdminPortaalContentTitle{
+.MedewerkersPortaalComponentContentWrapper .MedewerkersPortaalComponentContentTitle{
   font-size: 18px;
   font-weight: 600;
   text-align: center;
@@ -50,20 +51,20 @@
   background: linear-gradient(-135deg, #5e5e5e, #ad0000);
 }
 
-.AdminPortaalField {
+.MedewerkersPortaalComponentField {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.AdminPortaalWrapper .AdminPortaalField{
+.MedewerkersPortaalComponentWrapper .MedewerkersPortaalComponentField{
   height: 50px;
   width: 100%;
   margin-top: 10px;
   position: relative;
 }
-.AdminPortaalWrapper .AdminPortaalField button{
+.MedewerkersPortaalComponentWrapper .MedewerkersPortaalComponentField button{
   height: 100%;
   width: 100%;
   outline: none;
@@ -73,11 +74,11 @@
   border-radius: 25px;
   transition: all 0.3s ease;
 }
-.AdminPortaalWrapper .AdminPortaalField button:focus,
-.AdminPortaalField button:valid{
+.MedewerkersPortaalComponentWrapper .MedewerkersPortaalComponentField button:focus,
+.MedewerkersPortaalComponentField button:valid{
   border-color: #e6b800;
 }
-.AdminPortaalWrapper .AdminPortaalField label{
+.MedewerkersPortaalComponentWrapper .MedewerkersPortaalComponentField label{
   position: absolute;
   top: 50%;
   left: 20px;
@@ -88,8 +89,8 @@
   transform: translateY(-50%);
   transition: all 0.3s ease;
 }
-.AdminPortaalField button:focus ~ label,
-.AdminPortaalField button:valid ~ label{
+.MedewerkersPortaalComponentField button:focus ~ label,
+.MedewerkersPortaalComponentField button:valid ~ label{
   top: 0%;
   font-size: 16px;
   color: #e6b800;
@@ -97,7 +98,7 @@
   transform: translateY(-50%);
 }
 
-.AdminPortaalField button[type="submit"]{
+.MedewerkersPortaalComponentField button[type="submit"]{
   color: rgb(0, 0, 0);
   border: none;
   padding-left: 0;

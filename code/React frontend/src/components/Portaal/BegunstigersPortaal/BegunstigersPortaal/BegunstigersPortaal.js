@@ -24,14 +24,6 @@ const BegunstigersPortaal = () => {
                 </Link>
               </div>
             </div>
-            <div class="BegunstigersPortaalContentWrapper">
-              <h2 class="BegunstigersPortaalContentTitle">Uitloggen</h2>
-              <div class="BegunstigersPortaalField">
-                <Link to="/uitloggen">
-                  <button type="submit">Uitloggen</button>
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
       </div>

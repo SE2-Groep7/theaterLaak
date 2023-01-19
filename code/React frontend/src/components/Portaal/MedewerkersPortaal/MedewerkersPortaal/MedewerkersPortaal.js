@@ -32,14 +32,6 @@ const MedewerkersPortaal = () => {
                 </Link>
               </div>
             </div>
-            <div class="MedewerkersPortaalContentWrapper">
-              <h2 class="MedewerkersPortaalContentTitle">Uitloggen</h2>
-              <div class="MedewerkersPortaalField">
-                <Link to="/uitloggen">
-                  <button type="submit">Uitloggen</button>
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
       </div>

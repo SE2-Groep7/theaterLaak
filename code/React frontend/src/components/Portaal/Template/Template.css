@@ -1,4 +1,4 @@
-.AdminPortaalBox {
+.TemplateBox {
   display: flex;
   justify-content: center;
   margin: auto;
@@ -7,14 +7,14 @@
   margin-bottom: 5%;
 }
 
-.AdminPortaalWrapper{
+.TemplateWrapper{
   width: 100%;
   height: 100%;
   background: #fff;
   border-radius: 18px;
   box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
 }
-.AdminPortaalWrapper .AdminPortaalTitle{
+.TemplateWrapper .TemplateTitle{
   font-size: 18px;
   font-weight: 600;
   text-align: center;
@@ -24,22 +24,22 @@
   border-radius: 15px 15px 0 0;
   background: linear-gradient(-135deg, #5e5e5e, #ad0000);
 }
-.AdminPortaalContentBox {
+.TemplateContentBox {
   display: flex;
   flex-wrap: wrap ;
   justify-content: center;
   margin-top: 2%;
   
 }
-.AdminPortaalContentWrapper {
-  width: 400px;
-  height: 300px;
+.TemplateContentWrapper {
+  width: 1200px;
+  height: 700px;
   margin: 3%;
   background: #fff;
   border-radius: 18px;
   box-shadow: 0px 15px 20px rgb(0 0 0 / 10%);
 }
-.AdminPortaalContentWrapper .AdminPortaalContentTitle{
+.TemplateContentWrapper .TemplateContentTitle{
   font-size: 18px;
   font-weight: 600;
   text-align: center;
@@ -50,20 +50,20 @@
   background: linear-gradient(-135deg, #5e5e5e, #ad0000);
 }
 
-.AdminPortaalField {
+.TemplateField {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.AdminPortaalWrapper .AdminPortaalField{
+.TemplateWrapper .TemplateField{
   height: 50px;
   width: 100%;
   margin-top: 10px;
   position: relative;
 }
-.AdminPortaalWrapper .AdminPortaalField button{
+.TemplateWrapper .TemplateField button{
   height: 100%;
   width: 100%;
   outline: none;
@@ -73,11 +73,11 @@
   border-radius: 25px;
   transition: all 0.3s ease;
 }
-.AdminPortaalWrapper .AdminPortaalField button:focus,
-.AdminPortaalField button:valid{
+.TemplateWrapper .TemplateField button:focus,
+.TemplateField button:valid{
   border-color: #e6b800;
 }
-.AdminPortaalWrapper .AdminPortaalField label{
+.TemplateWrapper .TemplateField label{
   position: absolute;
   top: 50%;
   left: 20px;
@@ -88,8 +88,8 @@
   transform: translateY(-50%);
   transition: all 0.3s ease;
 }
-.AdminPortaalField button:focus ~ label,
-.AdminPortaalField button:valid ~ label{
+.TemplateField button:focus ~ label,
+.TemplateField button:valid ~ label{
   top: 0%;
   font-size: 16px;
   color: #e6b800;
@@ -97,7 +97,7 @@
   transform: translateY(-50%);
 }
 
-.AdminPortaalField button[type="submit"]{
+.TemplateField button[type="submit"]{
   color: rgb(0, 0, 0);
   border: none;
   padding-left: 0;

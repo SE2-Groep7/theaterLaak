@@ -7,20 +7,20 @@ const TwoFactorAuth = () => {
       <div class="TwoFactorAuthWrapper">
         <div class="TwoFactorAuthTitle">Two Factor Authentication</div>
         <form action="#">
-        <div class="TwoFactorAuthField">
+          <div class="TwoFactorAuthField">
             <input type="email" required></input>
             <label>Emailadres</label>
-        </div>
-        <div class="TwoFactorAuthCheckbox">
+          </div>
+          <div class="TwoFactorAuthCheckbox">
             <input type="checkbox" id="remember-me"></input>
             <label for="remember-me">2FA toepassen</label>
           </div>
-        <div class="TwoFactorAuthField">
-          <input type="submit" value="Opslaan"></input>
-        </div>
+          <div class="TwoFactorAuthField">
+            <input type="submit" value="Opslaan"></input>
+          </div>
         </form>
       </div>
-      
+
     </div>
   </main>
 };

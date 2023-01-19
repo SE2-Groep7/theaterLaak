@@ -17,26 +17,10 @@ const GebruikersPortaal = () => {
               </div>
             </div>
             <div class="GebruikersPortaalContentWrapper">
-              <h2 class="GebruikersPortaalContentTitle">Persoonlijke Agenda</h2>
-              <div class="GebruikersPortaalField">
-                <Link to="/voorstelling">
-                  <button type="submit">Persoonlijke Agenda</button>
-                </Link>
-              </div>
-            </div>
-            <div class="GebruikersPortaalContentWrapper">
               <h2 class="GebruikersPortaalContentTitle">Mijn Tickets</h2>
               <div class="GebruikersPortaalField">
-                <Link to="/voorstelling">
+                <Link to="/mijntickets">
                   <button type="submit">Mijn Tickets</button>
-                </Link>
-              </div>
-            </div>
-            <div class="GebruikersPortaalContentWrapper">
-              <h2 class="GebruikersPortaalContentTitle">Doneren</h2>
-              <div class="GebruikersPortaalField">
-                <Link to="/voorstelling">
-                  <button type="submit">Doneren</button>
                 </Link>
               </div>
             </div>
@@ -49,10 +33,18 @@ const GebruikersPortaal = () => {
               </div>
             </div>
             <div class="GebruikersPortaalContentWrapper">
-              <h2 class="GebruikersPortaalContentTitle">Uitloggen</h2>
+              <h2 class="GebruikersPortaalContentTitle">Tickets Overzetten</h2>
               <div class="GebruikersPortaalField">
-                <Link to="/uitloggen">
-                  <button type="submit">Uitloggen</button>
+                <Link to="/ticketsoverzetten">
+                  <button type="submit">Tickets Overzetten</button>
+                </Link>
+              </div>
+            </div>
+            <div class="GebruikersPortaalContentWrapper">
+              <h2 class="GebruikersPortaalContentTitle">Doneren</h2>
+              <div class="GebruikersPortaalField">
+                <Link to="/voorstelling">
+                  <button type="submit">Doneren</button>
                 </Link>
               </div>
             </div>

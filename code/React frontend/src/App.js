@@ -15,9 +15,12 @@ import WachtwoordVergeten from "./components/Account/WachtwoordVergeten/Wachtwoo
 import NieuwWachtwoordOpvragen from "./components/Account/NieuwWachtwoordOpvragen/NieuwWachtwoordOpvragen";
 import Uitloggen from "./components/Account/Uitloggen/Uitloggen";
 import GebruikersPortaal from "./components/Portaal/GebruikersPortaal/GebruikersPortaal/GebruikersPortaal";
+import MijnTickets from "./components/Portaal/GebruikersPortaal/MijnTickets/MijnTickets";
+import TicketsOverzetten from "./components/Portaal/GebruikersPortaal/TicketsOverzetten/TicketsOverzetten";
 import MijnPortaal from "./components/Portaal/MijnPortaal/MijnPortaal/MijnPortaal";
 import MedewerkersPortaal from "./components/Portaal/MedewerkersPortaal/MedewerkersPortaal/MedewerkersPortaal";
 import AdminPortaal from "./components/Portaal/AdminPortaal/AdminPortaal/AdminPortaal";
+import Template from "./components/Portaal/Template/Template";
 import BegunstigersPortaal from "./components/Portaal/BegunstigersPortaal/BegunstigersPortaal/BegunstigersPortaal";
 import BetrokkenPersonenPortaal from "./components/Portaal/BetrokkenPersonenPortaal/BetrokkenPersonenPortaal/BetrokkenPersonenPortaal";
 import GegevensWijzigen from "./components/Account/GegevensWijzigen/GegevensWijzigen/GegevensWijzigen";
@@ -46,9 +49,12 @@ function App() {
           <Route path="nieuwwachtwoordopvragen" element={<NieuwWachtwoordOpvragen />} />
           <Route path="uitloggen" element={<Uitloggen />} />
           <Route path="gebruikersportaal" element={<GebruikersPortaal />} />
+          <Route path="mijntickets" element={<MijnTickets />} />
+          <Route path="ticketsoverzetten" element={<TicketsOverzetten />} />
           <Route path="mijnportaal" element={<MijnPortaal />} />
           <Route path="medewerkersportaal" element={<MedewerkersPortaal />} />
           <Route path="adminportaal" element={<AdminPortaal />} />
+          <Route path="template" element={<Template />} />
           <Route path="begunstigersportaal" element={<BegunstigersPortaal />} />
           <Route path="betrokkenpersonenportaal" element={<BetrokkenPersonenPortaal />} />
           <Route path="gegevenswijzigen" element={<GegevensWijzigen />} />

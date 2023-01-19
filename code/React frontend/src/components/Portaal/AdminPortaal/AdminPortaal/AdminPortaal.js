@@ -48,14 +48,6 @@ const AdminPortaal = () => {
                 </Link>
               </div>
             </div>
-            <div class="AdminPortaalContentWrapper">
-              <h2 class="AdminPortaalContentTitle">Uitloggen</h2>
-              <div class="AdminPortaalField">
-                <Link to="/uitloggen">
-                  <button type="submit">Uitloggen</button>
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
       </div>

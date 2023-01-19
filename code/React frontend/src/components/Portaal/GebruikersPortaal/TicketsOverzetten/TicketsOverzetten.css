@@ -1,4 +1,4 @@
-.AdminPortaalBox {
+.TicketsOverzettenBox {
   display: flex;
   justify-content: center;
   margin: auto;
@@ -7,14 +7,14 @@
   margin-bottom: 5%;
 }
 
-.AdminPortaalWrapper{
+.TicketsOverzettenWrapper{
   width: 100%;
   height: 100%;
   background: #fff;
   border-radius: 18px;
   box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
 }
-.AdminPortaalWrapper .AdminPortaalTitle{
+.TicketsOverzettenWrapper .TicketsOverzettenTitle{
   font-size: 18px;
   font-weight: 600;
   text-align: center;
@@ -24,22 +24,29 @@
   border-radius: 15px 15px 0 0;
   background: linear-gradient(-135deg, #5e5e5e, #ad0000);
 }
-.AdminPortaalContentBox {
+.TicketsOverzettenContentBox {
   display: flex;
   flex-wrap: wrap ;
   justify-content: center;
   margin-top: 2%;
   
 }
-.AdminPortaalContentWrapper {
+
+.TicketsOverzettenContentWrapper * {
+  box-sizing: border-box;
+}
+
+
+.TicketsOverzettenContentWrapper {
   width: 400px;
-  height: 300px;
+  height: 400px;
   margin: 3%;
   background: #fff;
   border-radius: 18px;
   box-shadow: 0px 15px 20px rgb(0 0 0 / 10%);
 }
-.AdminPortaalContentWrapper .AdminPortaalContentTitle{
+
+.TicketsOverzettenContentWrapper .TicketsOverzettenContentTitle{
   font-size: 18px;
   font-weight: 600;
   text-align: center;
@@ -50,20 +57,26 @@
   background: linear-gradient(-135deg, #5e5e5e, #ad0000);
 }
 
-.AdminPortaalField {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.TicketsOverzettenWrapper form{
+  padding: 10px 30px 50px 30px;
 }
 
-.AdminPortaalWrapper .AdminPortaalField{
-  height: 50px;
+
+
+
+.TicketsOverzettenCheckbox{
+  display: flex;
+  justify-content: center;
+}
+
+.TicketsOverzettenWrapper .TicketsOverzettenField{
+  height: 40px;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 30px;
   position: relative;
 }
-.AdminPortaalWrapper .AdminPortaalField button{
+.TicketsOverzettenWrapper .TicketsOverzettenField input{
   height: 100%;
   width: 100%;
   outline: none;
@@ -73,11 +86,11 @@
   border-radius: 25px;
   transition: all 0.3s ease;
 }
-.AdminPortaalWrapper .AdminPortaalField button:focus,
-.AdminPortaalField button:valid{
+.TicketsOverzettenWrapper .TicketsOverzettenField input:focus,
+.TicketsOverzettenField input:valid{
   border-color: #e6b800;
 }
-.AdminPortaalWrapper .AdminPortaalField label{
+.TicketsOverzettenWrapper .TicketsOverzettenField label{
   position: absolute;
   top: 50%;
   left: 20px;
@@ -88,22 +101,47 @@
   transform: translateY(-50%);
   transition: all 0.3s ease;
 }
-.AdminPortaalField button:focus ~ label,
-.AdminPortaalField button:valid ~ label{
+.TicketsOverzettenField input:focus ~ label,
+.TicketsOverzettenField input:valid ~ label{
   top: 0%;
   font-size: 16px;
   color: #e6b800;
   background: #fff;
   transform: translateY(-50%);
 }
-
-.AdminPortaalField button[type="submit"]{
-  color: rgb(0, 0, 0);
+.TicketsOverzettenContent{
+  display: flex;
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  align-items: center;
+  justify-content: space-around;
+}
+.TicketsOverzettenContent input{
+  width: 15px;
+  height: 15px;
+  background: red;
+}
+.TicketsOverzettenContent label{
+  color: #262626;
+  user-select: none;
+  padding-left: 5px;
+}
+.TicketsOverzettenField input[type="submit"]{
+  color: #fff;
   border: none;
   padding-left: 0;
   margin-top: -10px;
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
+  background: linear-gradient(-135deg, #5e5e5e, #ad0000);
   transition: all 0.3s ease;
+}
+.TicketsOverzettenField input[type="submit"]:active{
+  transform: scale(0.95);
+}
+.TicketsOverzettenField input[type="submit"]:hover{
+  transform: scale(0.95);
+  background: linear-gradient(-135deg, #ffffff, #e6b800);;
 }

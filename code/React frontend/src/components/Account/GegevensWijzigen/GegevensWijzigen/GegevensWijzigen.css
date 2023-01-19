@@ -85,12 +85,12 @@
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 1.0s ease;
 }
 .GegevensWijzigenButton:active{
   transform: scale(0.95);
 }
 .GegevensWijzigenButton:hover{
   transform: scale(0.95);
-  background: linear-gradient(-135deg, #ffffff, #ad0000);;
+  background-color: #868686;
 }
