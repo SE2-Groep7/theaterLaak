@@ -13,7 +13,7 @@ import Registreer from './components/Account/Registreer/Registreer';
 import WachtwoordVergeten from './components/Account/WachtwoordVergeten/WachtwoordVergeten';
 import NieuwWachtwoordOpvragen from './components/Account/NieuwWachtwoordOpvragen/NieuwWachtwoordOpvragen';
 import Uitloggen from './components/Account/Uitloggen/Uitloggen';
-import GebruikersPortaal from './components/GebruikersPortaal/GebruikersPortaal';
+import GebruikersPortaal from './components/Portaal/GebruikersPortaal/GebruikersPortaal/GebruikersPortaal';
 import MijnTickets from "./components/Portaal/GebruikersPortaal/MijnTickets/MijnTickets";
 import TicketsOverzetten from "./components/Portaal/GebruikersPortaal/TicketsOverzetten/TicketsOverzetten";
 import MijnPortaal from "./components/Portaal/MijnPortaal/MijnPortaal/MijnPortaal";
@@ -22,7 +22,7 @@ import AdminPortaal from "./components/Portaal/AdminPortaal/AdminPortaal/AdminPo
 import Template from "./components/Portaal/Template/Template";
 import BegunstigersPortaal from "./components/Portaal/BegunstigersPortaal/BegunstigersPortaal/BegunstigersPortaal";
 import BetrokkenPersonenPortaal from "./components/Portaal/BetrokkenPersonenPortaal/BetrokkenPersonenPortaal/BetrokkenPersonenPortaal";
-import GegevensWijzigen from './components/Account/GegevensWijzigen/GegevensWijzigen';
+import GegevensWijzigen from './components/Account/GegevensWijzigen/GegevensWijzigen/GegevensWijzigen';
 import NoPage from './components/NoPage/NoPage';
 import Disclaimer from './components/Layout/Disclaimer';
 import CookiesPage from './components/Layout/Cookies';
