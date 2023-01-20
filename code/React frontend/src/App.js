@@ -1,27 +1,3 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home/Home";
-import Layout from "./components/Layout/Layout";
-import Voorstellingen from "./components/Voorstellingen/Voorstellingen";
-import Voorstelling from "./components/Voorstellingen/Voorstelling";
-import Agenda from "./components/Agenda/Agenda";
-import Tickets from "./components/Tickets/Tickets";
-import OverOns from "./components/OverOns/OverOns";
-import Contact from "./components/Contact/Contacts";
-import Login from "./components/Account/Login/Login";
-import Registreer from "./components/Account/Registreer/Registreer";
-import WachtwoordVergeten from "./components/Account/WachtwoordVergeten/WachtwoordVergeten";
-import NieuwWachtwoordOpvragen from "./components/Account/NieuwWachtwoordOpvragen/NieuwWachtwoordOpvragen";
-import Uitloggen from "./components/Account/Uitloggen/Uitloggen";
-import GebruikersPortaal from "./components/Portaal/GebruikersPortaal/GebruikersPortaal/GebruikersPortaal";
-
-import GegevensWijzigen from "./components/Account/GegevensWijzigen/GegevensWijzigen/GegevensWijzigen";
-import NoPage from "./components/NoPage/NoPage";
-import Disclaimer from "./components/Layout/Disclaimer";
-import Cookies from "./components/Layout/Cookies";
-import PrivacyStatement from "./components/Layout/PrivacyStatement";
-import Admin from "./components/Admin/Admin";
-import Cart from "./components/Cart/Cart";
-
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home/Home';
