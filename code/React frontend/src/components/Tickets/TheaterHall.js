@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-
 import "./style.css";
 
 // The TheaterHall component takes in a prop called "seats" which is an array of seat objects
-const TheaterHall = ({ seats,zaalId,datum }) => {
+const TheaterHall = ({ seats,zaalId,showName,datum }) => {
   // Declare the selectedSeats state variable with the useState hook
   const [selectedSeats, setSelectedSeats] = useState([]);
 
@@ -23,9 +22,12 @@ const TheaterHall = ({ seats,zaalId,datum }) => {
       seats.push({
         date: datum,
         zaalId: zaalId,
+        showName: showName,
         seats: selectedSeats
       });
     }
+    document.cookie = `selectedSeats=${ JSON.stringify(seats)}`;
+
     localStorage.setItem("selectedSeats", JSON.stringify(seats));
     setSelectedSeats([]);
   }

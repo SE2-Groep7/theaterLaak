@@ -1,4 +1,10 @@
 import React, {  useEffect } from "react";
+import { HubConnection, JsonHubProtocol } from "@microsoft/signalr";
+import * as signalR from '@microsoft/signalr';
+import { useRef } from 'react';
+
+
+
 import { useState } from 'react';
 import Calendar from 'react-calendar';
 import axios from "axios";
@@ -10,7 +16,9 @@ const Agenda = () => {
     const [value, setValue] = useState(new Date());
     const [shows, setShows] = useState([]);
     const [loading, setLoading] = useState(true);
-  
+    const connectionRef = useRef(null);
+    const intervalRef = useRef(null);
+
     const formatDate = date => {
       let d = new Date(date),
           month = '' + (d.getMonth() + 1),
@@ -25,12 +33,14 @@ const Agenda = () => {
       return [year, month, day];
     }
   
-    const getShows = async (date) => {
-      const showsOnDate = await axios.get(`https://mohieddin.nl/showapi/api/Show/date?date=${formatDate(date)}`);
-      const showsOnDateIds = showsOnDate.data.map(show => show.showId);  // get an array of showIds
+    const getShows = async (givenShows) => {
+      givenShows = JSON.parse(givenShows);
+      let showsOnDate = givenShows;
+      console.log(showsOnDate);
+      const showsOnDateIds = showsOnDate.map(show => show.ShowId);  // get an array of showIds
       // Create a map of showIds to zaalIds
-      const showsOnDateMap = showsOnDate.data.reduce((showMap, show) => {
-        showMap[show.showId] = {zaalId: show.zaalId, date: show.scheduleDate};
+      const showsOnDateMap = showsOnDate.reduce((showMap, show) => {
+        showMap[show.ShowId] = {zaalId: show.ZaalId, date: show.ScheduleDate};
                 return showMap;
       }, {});
   
@@ -43,7 +53,6 @@ const Agenda = () => {
           url: "https://mohieddin.nl/showapi/api/file/show/" + show.fileName
         });
         show.file = URL.createObjectURL(new Blob([fileResponse.data]));
-
         const showDateMap = showsOnDateMap[show.id];
         show.zaalId = showDateMap.zaalId; 
         show.date = showDateMap.date;
@@ -54,13 +63,44 @@ const Agenda = () => {
       setShows(allShows);
       setLoading(false);
     }
+  //   const handleNewShow = (newShow) => {
+  //     getShows(value)
+  // };
+  const connection = new signalR.HubConnectionBuilder()
+  .withUrl("https://mohieddin.nl/showapi/showhub")
+  .build();
+  useEffect(() => {
+    if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+    }
+    if (connectionRef.current) {
+        connectionRef.current.stop();
+    }
   
-    useEffect(() => {
-      getShows(value);
-      return () => shows.forEach(show => URL.revokeObjectURL(show.file));
-    }, [value]);
-  
-    return (
+
+    connection.on("ReceiveShows", data => {
+        getShows(data);
+    });
+
+    connection.start().then(() => {
+        connectionRef.current = connection;
+        connection.invoke("GetShowsByDate", value);
+
+        intervalRef.current = setInterval(() => {
+            connection.invoke("GetShowsByDate", value);
+        }, 10000);
+    });
+    return () => {
+        if (connectionRef.current) {
+            connectionRef.current.stop();
+        }
+        if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+        }
+    };
+}, [value]);
+
+   return (
       <main>
         <div class="Agenda">
           <Calendar onChange={setValue} value={value} />

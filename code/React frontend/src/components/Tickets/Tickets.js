@@ -7,6 +7,7 @@ const Tickets = () => {
     const params = new URLSearchParams(location.search);
     const zaalId = params.get('zaal');
     const datum = params.get('datum');
+    const showName = params.get('showName');
 
   const [hall, setHall] = useState({});
   const [loading, setLoading] = useState(true);
@@ -30,7 +31,7 @@ const Tickets = () => {
 
   return (
     <div className="App">
-      {loading ? <div>loading...</div> : <TheaterHall seats={hall.seats} zaalId={zaalId} datum={datum} />}
+      {loading ? <div>loading...</div> : <TheaterHall seats={hall.seats} zaalId={zaalId} datum={datum} showName={showName} />}
       
     </div>
   );
