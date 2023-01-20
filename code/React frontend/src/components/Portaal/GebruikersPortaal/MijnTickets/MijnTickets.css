@@ -55,6 +55,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+
 }
 
 .MijnTicketsWrapper .MijnTicketsField{
@@ -161,4 +162,8 @@
 .MijnTicketsButton:hover{
   transform: scale(0.95);
   background: #e6b800;
+}
+
+.MijnTicketsInfo {
+  
 }

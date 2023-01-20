@@ -9,10 +9,10 @@ const BetrokkenPersonenPortaal = () => {
           <h2 class="BetrokkenPersonenPortaalTitle">BetrokkenPersonenPortaal</h2>
           <div class="BetrokkenPersonenPortaalContentBox">
             <div class="BetrokkenPersonenPortaalContentWrapper">
-              <h2 class="BetrokkenPersonenPortaalContentTitle">Mijn Voorstelling Beheren</h2>
+              <h2 class="BetrokkenPersonenPortaalContentTitle">Mijn Voorstellingen</h2>
               <div class="BetrokkenPersonenPortaalField">
                 <Link to="/gegevenswijzigen">
-                  <button type="submit">Mijn Voorstelling Beheren</button>
+                  <button type="submit">Mijn Voorstellingen</button>
                 </Link>
               </div>
             </div>
