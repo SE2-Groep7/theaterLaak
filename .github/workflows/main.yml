@@ -38,6 +38,10 @@ jobs:
           git reset --hard origin/main
           git pull --force
           cd deployment
+          cd reverse_proxy
+          echo "${{ secrets.SSL_KEY }}" >> mohieddin.nl.key
+          echo "${{ secrets.SSL.CERT }}" >> mohieddin.nl.pem
+          cd ..
           cd docker-compose
           echo "SA_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
           echo "Running docker compose"
@@ -45,3 +49,7 @@ jobs:
           echo "removing env file"
           cat .env
           rm .env
+          cd ..
+          cd reverse_proxy
+          rm mohieddin.nl.key
+          rm mohieddin.nl.pem
