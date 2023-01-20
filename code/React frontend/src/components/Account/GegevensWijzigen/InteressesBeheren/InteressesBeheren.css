@@ -1,0 +1,111 @@
+
+.InteressesBeherenBox {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.InteressesBeherenBox *{
+  box-sizing: border-box;
+}
+
+.InteressesBeherenWrapper{
+  width: 800px;
+  height: 100%;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}
+.InteressesBeherenWrapper .InteressesBeherenTitle{
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  user-select: none;
+  border-radius: 15px 15px 0 0;
+  background: linear-gradient(-135deg, #5e5e5e, #ad0000);
+}
+.InteressesBeherenWrapper form{
+  display: flex;
+  flex-direction: column;
+  padding: 10px 30px 50px 30px;
+}
+.InteressesBeherenWrapper form .InteressesBeherenField{
+  height: 40px;
+  width: 50%;
+  margin-top: 20px;
+  position: relative;
+}
+.InteressesBeherenWrapper form .InteressesBeherenField input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding-left: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+.InteressesBeherenWrapper form .InteressesBeherenField input:focus,
+form .InteressesBeherenField input:valid{
+  border-color: #e6b800;
+}
+.InteressesBeherenWrapper form .InteressesBeherenField label{
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  color: #999999;
+  font-weight: 400;
+  font-size: 17px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+form .InteressesBeherenField input:focus ~ label,
+form .InteressesBeherenField input:valid ~ label{
+  top: 0%;
+  font-size: 16px;
+  color: #e6b800;
+  background: #fff;
+  transform: translateY(-50%);
+}
+form .InteressesBeherencontent{
+  display: flex;
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  align-items: center;
+  justify-content: space-around;
+}
+form .InteressesBeherencontent input{
+  width: 15px;
+  height: 15px;
+  background: red;
+}
+form .InteressesBeherencontent label{
+  color: #262626;
+  user-select: none;
+  padding-left: 5px;
+}
+form .InteressesBeherencontent .InteressesBeherenWachtwoord-Link{
+  color: "";
+}
+form .InteressesBeherenField input[type="submit"]{
+  color: #fff;
+  border: none;
+  padding-left: 0;
+  margin-top: -10px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background: linear-gradient(-135deg, #5e5e5e, #ad0000);
+  transition: all 0.3s ease;
+}
+form .InteressesBeherenField input[type="submit"]:active{
+  transform: scale(0.95);
+}
+form .InteressesBeherenField input[type="submit"]:hover{
+  transform: scale(0.95);
+  background: linear-gradient(-135deg, #ffffff, #e6b800);;
+}

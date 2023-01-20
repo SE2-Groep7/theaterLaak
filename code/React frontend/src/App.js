@@ -1,3 +1,27 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/Home/Home";
+import Layout from "./components/Layout/Layout";
+import Voorstellingen from "./components/Voorstellingen/Voorstellingen";
+import Voorstelling from "./components/Voorstellingen/Voorstelling";
+import Agenda from "./components/Agenda/Agenda";
+import Tickets from "./components/Tickets/Tickets";
+import OverOns from "./components/OverOns/OverOns";
+import Contact from "./components/Contact/Contacts";
+import Login from "./components/Account/Login/Login";
+import Registreer from "./components/Account/Registreer/Registreer";
+import WachtwoordVergeten from "./components/Account/WachtwoordVergeten/WachtwoordVergeten";
+import NieuwWachtwoordOpvragen from "./components/Account/NieuwWachtwoordOpvragen/NieuwWachtwoordOpvragen";
+import Uitloggen from "./components/Account/Uitloggen/Uitloggen";
+import GebruikersPortaal from "./components/Portaal/GebruikersPortaal/GebruikersPortaal/GebruikersPortaal";
+
+import GegevensWijzigen from "./components/Account/GegevensWijzigen/GegevensWijzigen/GegevensWijzigen";
+import NoPage from "./components/NoPage/NoPage";
+import Disclaimer from "./components/Layout/Disclaimer";
+import Cookies from "./components/Layout/Cookies";
+import PrivacyStatement from "./components/Layout/PrivacyStatement";
+import Admin from "./components/Admin/Admin";
+import Cart from "./components/Cart/Cart";
+
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home/Home';
@@ -14,6 +38,14 @@ import WachtwoordVergeten from './components/Account/WachtwoordVergeten/Wachtwoo
 import NieuwWachtwoordOpvragen from './components/Account/NieuwWachtwoordOpvragen/NieuwWachtwoordOpvragen';
 import Uitloggen from './components/Account/Uitloggen/Uitloggen';
 import GebruikersPortaal from './components/GebruikersPortaal/GebruikersPortaal';
+import MijnTickets from "./components/Portaal/GebruikersPortaal/MijnTickets/MijnTickets";
+import TicketsOverzetten from "./components/Portaal/GebruikersPortaal/TicketsOverzetten/TicketsOverzetten";
+import MijnPortaal from "./components/Portaal/MijnPortaal/MijnPortaal/MijnPortaal";
+import MedewerkersPortaal from "./components/Portaal/MedewerkersPortaal/MedewerkersPortaal/MedewerkersPortaal";
+import AdminPortaal from "./components/Portaal/AdminPortaal/AdminPortaal/AdminPortaal";
+import Template from "./components/Portaal/Template/Template";
+import BegunstigersPortaal from "./components/Portaal/BegunstigersPortaal/BegunstigersPortaal/BegunstigersPortaal";
+import BetrokkenPersonenPortaal from "./components/Portaal/BetrokkenPersonenPortaal/BetrokkenPersonenPortaal/BetrokkenPersonenPortaal";
 import GegevensWijzigen from './components/Account/GegevensWijzigen/GegevensWijzigen';
 import NoPage from './components/NoPage/NoPage';
 import Disclaimer from './components/Layout/Disclaimer';
@@ -74,6 +106,14 @@ function App() {
           <Route path="nieuwwachtwoordopvragen" element={<NieuwWachtwoordOpvragen />} />
           <Route path="uitloggen" element={<Uitloggen />} />
           <Route path="gebruikersportaal" element={<GebruikersPortaal />} />
+          <Route path="mijntickets" element={<MijnTickets />} />
+          <Route path="ticketsoverzetten" element={<TicketsOverzetten />} />
+          <Route path="mijnportaal" element={<MijnPortaal />} />
+          <Route path="medewerkersportaal" element={<MedewerkersPortaal />} />
+          <Route path="adminportaal" element={<AdminPortaal />} />
+          <Route path="template" element={<Template />} />
+          <Route path="begunstigersportaal" element={<BegunstigersPortaal />} />
+          <Route path="betrokkenpersonenportaal" element={<BetrokkenPersonenPortaal />} />
           <Route path="gegevenswijzigen" element={<GegevensWijzigen />} />
           <Route path="disclaimer" element={<Disclaimer />} />
           <Route path="cookies" element={<CookiesPage />} />
