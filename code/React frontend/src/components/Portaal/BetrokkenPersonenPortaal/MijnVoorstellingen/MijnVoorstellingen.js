@@ -29,27 +29,6 @@ const MijnVoorstellingen = () => {
                       <p>Zaal: {voorstellingZaal}</p>
                       <h>Begint om: {startDateTimeFormatted}</h>
                     </div>
-                    <div class="MijnVoorstellingenInfo">
-                      <h2>{voorstellingTitel}</h2>
-                      <h5>VoorstellingId: {voorstellingId}</h5>
-                      <p>Acteurs: {voorstellingActeurs}</p>
-                      <p>Zaal: {voorstellingZaal}</p>
-                      <h>Begint om: {startDateTimeFormatted}</h>
-                    </div>
-                    <div class="MijnVoorstellingenInfo">
-                      <h2>{voorstellingTitel}</h2>
-                      <h5>VoorstellingId: {voorstellingId}</h5>
-                      <p>Acteurs: {voorstellingActeurs}</p>
-                      <p>Zaal: {voorstellingZaal}</p>
-                      <h>Begint om: {startDateTimeFormatted}</h>
-                    </div>
-                    <div class="MijnVoorstellingenInfo">
-                      <h2>{voorstellingTitel}</h2>
-                      <h5>VoorstellingId: {voorstellingId}</h5>
-                      <p>Acteurs: {voorstellingActeurs}</p>
-                      <p>Zaal: {voorstellingZaal}</p>
-                      <h>Begint om: {startDateTimeFormatted}</h>
-                    </div>
                   </div>
                 </div>
               </div>

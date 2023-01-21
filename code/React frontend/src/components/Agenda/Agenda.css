@@ -54,10 +54,8 @@
 }
 
 .AgendaRoundCorners{
-  padding-top: 2%;
-  height: 600px;
-  width: 1000px;
-  background: #333333;
+  height: 500px;
+  width: 1100px;
   border-radius: 2%;
 }
 
@@ -65,7 +63,7 @@
   height: 95%;
   overflow-y: scroll;
   scroll-behavior:smooth;
-  color: #ffffff;
+  color: #000000;
 }
 
 #AgendaWrapper {
@@ -75,27 +73,25 @@
   margin: auto;
 }
 
-#style-1::-webkit-scrollbar-track {
-  -webkit-box-shadow:0 0 8px #333333 inset;
+#style-3::-webkit-scrollbar-track {
   border-radius: 30%;
 }
 
-#style-1::-webkit-scrollbar {
+#style-3::-webkit-scrollbar {
   width: 12px;
-  background-color: #333333;
-  border-radius: 30%;
+  background-color: #ffffff;
 }
 
-#style-1::-webkit-scrollbar-thumb{
+#style-3::-webkit-scrollbar-thumb{
   background-color:#ad0000;
   border:1px solid #333333;
   border-radius:12px;
 }
-#style-1::-webkit-scrollbar-thumb:hover{
+#style-3::-webkit-scrollbar-thumb:hover{
   background-color:#e6b800;
   border:1px solid #333333;
 }
-#style-1::-webkit-scrollbar-thumb:active{
+#style-3::-webkit-scrollbar-thumb:active{
   background-color:#e6b800;
   border:1px solid #333333;
 }
@@ -113,4 +109,31 @@
 .VoorstellingenButton:hover{
   transform: scale(0.95);
   background:#e6b800;
+}
+
+.AgendaContentBox {
+  display: flex;
+  flex-wrap: wrap ;
+  justify-content: center;
+  margin-top: 2%;
+  margin-left: 5%;
+  
+}
+.AgendaContentWrapper {
+  width: 1200px;
+  height: 700px;
+  margin: 3%;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0px 15px 20px rgb(0 0 0 / 10%);
+}
+.AgendaContentWrapper .AgendaContentTitle{
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  user-select: none;
+  border-radius: 15px 15px 0 0;
+  background: linear-gradient(-135deg, #5e5e5e, #ad0000);
 }
