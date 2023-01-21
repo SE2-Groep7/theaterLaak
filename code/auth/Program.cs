@@ -16,7 +16,6 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 
 var config = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
-                .AddEnvironmentVariables()
                 .Build();
 
 builder.Services.AddAuthentication(options =>

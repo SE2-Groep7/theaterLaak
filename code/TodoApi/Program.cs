@@ -11,8 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var config = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json").AddEnvironmentVariables().Build();
-                string signingKey = config.GetValue<string>("SigningKey");
+                .AddJsonFile("appsettings.json").Build();
 
 builder.Services.AddAuthentication(options =>
 {
@@ -28,7 +27,8 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuerSigningKey = true,
         ValidIssuer = config.GetValue<string>("JWT:Issuer"),
         ValidAudience = config.GetValue<string>("JWT:Audience"),
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(signingKey))    };
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config.GetValue<string>("JWT:SigningKey")))
+           };
 });
 
 builder.Services.AddControllers();
