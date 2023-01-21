@@ -51,7 +51,7 @@ jobs:
           sudo docker-compose up -d --build --remove-orphans
           echo "removing env file"
           cat .env
-          rm .env
+          # rm .env
           cd ..
           cd reverse_proxy
           rm mohieddin.nl.key
