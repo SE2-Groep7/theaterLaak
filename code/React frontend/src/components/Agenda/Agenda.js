@@ -37,8 +37,6 @@ const Agenda = () => {
       givenShows = JSON.parse(givenShows);
       let showsOnDate = givenShows;
       console.log(showsOnDate);
-      const showsOnDateIds = showsOnDate.map(show => show.ShowId);  // get an array of showIds
-      // Create a map of showIds to zaalIds
       const showsOnDateMap = showsOnDate.reduce((showMap, show) => {
         showMap[show.ShowId] = {zaalId: show.ZaalId, date: show.ScheduleDate};
                 return showMap;
@@ -46,7 +44,7 @@ const Agenda = () => {
   
       const res = await axios.get("https://mohieddin.nl/showapi/api/file");
       const shows = res.data;
-      let promises = shows.filter(show => showsOnDateIds.includes(show.id)).map(async (show) => {  // filter the shows based on the showIds
+      let promises = shows.map(async (show) => {
         const fileResponse = await axios({
           method: "get",
           responseType: "blob",
@@ -54,30 +52,31 @@ const Agenda = () => {
         });
         show.file = URL.createObjectURL(new Blob([fileResponse.data]));
         const showDateMap = showsOnDateMap[show.id];
-        show.zaalId = showDateMap.zaalId; 
-        show.date = showDateMap.date;
-        
+        if(showDateMap) {
+          show.zaalId = showDateMap.zaalId; 
+          show.date = showDateMap.date;
+        }
         return new Promise((resolve) => resolve(show));
       });
       const allShows = await Promise.all(promises)
       setShows(allShows);
       setLoading(false);
     }
+
   //   const handleNewShow = (newShow) => {
   //     getShows(value)
   // };
   const connection = new signalR.HubConnectionBuilder()
   .withUrl("https://mohieddin.nl/showapi/showhub")
   .build();
-  useEffect(() => {
-    console.log(formatDate(value))
-    if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-    }
+  const handleDateChange = (date) => {
+    setValue(date);
     if (connectionRef.current) {
         connectionRef.current.stop();
     }
-  
+    if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+    }
 
     connection.on("ReceiveShows", data => {
         getShows(data);
@@ -85,12 +84,15 @@ const Agenda = () => {
 
     connection.start().then(() => {
         connectionRef.current = connection;
-        connection.invoke("GetShowsByDate", formatDate(value));
+        connection.invoke("GetShowsByDate", formatDate(date));
 
         intervalRef.current = setInterval(() => {
-            connection.invoke("GetShowsByDate", formatDate(value));
+            connection.invoke("GetShowsByDate", formatDate(date));
         }, 10000);
     });
+};
+
+useEffect(() => {
     return () => {
         if (connectionRef.current) {
             connectionRef.current.stop();
@@ -99,12 +101,12 @@ const Agenda = () => {
             clearInterval(intervalRef.current);
         }
     };
-}, [value]);
+}, []);
 
    return (
       <main>
         <div class="Agenda">
-          <Calendar onChange={setValue} value={value} />
+          <Calendar onChange={handleDateChange} value={value} />
           <div id="AgendaWrapper">
             <div class="AgendaRoundCorners">
               <div class="AgendaScrollbar" id="style-1">
