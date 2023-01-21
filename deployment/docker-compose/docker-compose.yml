@@ -28,11 +28,6 @@ services:
       dockerfile: ../../code/auth/Dockerfile
     ports:
       - "8082:80"
-    environment:
-      - SigningKey=${SigningKey}
-      - TEST="test"
-    env_file:
-      - .env
     restart: always  
   todoapi:
     container_name: todoapi
@@ -41,12 +36,6 @@ services:
       dockerfile: ../../code/TodoApi/Dockerfile
     ports:
       - "8083:80"
-    environment:
-      - SigningKey=${SigningKey}
-      - TEST="test"
-
-    env_file:
-      - .env
     restart: always  
   frontend:
     container_name: "frontend"
