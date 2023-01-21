@@ -30,6 +30,7 @@ services:
       - "8082:80"
     environment:
       - SigningKey=${SigningKey}
+      - TEST="test"
     env_file:
       - .env
     restart: always  
@@ -42,6 +43,8 @@ services:
       - "8083:80"
     environment:
       - SigningKey=${SigningKey}
+      - TEST="test"
+
     env_file:
       - .env
     restart: always  
