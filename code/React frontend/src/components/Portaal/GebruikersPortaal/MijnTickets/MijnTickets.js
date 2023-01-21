@@ -1,16 +1,18 @@
 import "./MijnTickets.css";
 import { Link } from 'react-router-dom';
+import QRCode from 'react-qr-code';
 import moment from 'moment';
+import { SHA256 } from 'crypto-js';
+
 
 const MijnTickets = () => {
   const ticketId = '#12345';
   const ticketHolder = 'Alex van Unen';
   const startDateTime = '20230119T180000'; // 19-Jan-2023, 18:00 PM in local time (not UTC) format
-  const endDateTime = '20230119T200000'; // 19-Jan-2023, 20:00 PM in local time (not UTC) format
+  const endDateTime = '20230119T180000'; // 19-Jan-2023, 20:00 PM in local time (not UTC) format
   const startDateTimeFormatted = moment(startDateTime, 'YYYYMMDDTHHmmss').format('MM/DD/YYYY hh:mm a');
-  const endDateTimeFormatted = moment(endDateTime, 'YYYYMMDDTHHmmss').format('MM/DD/YYYY hh:mm a');
   const title = 'Judeska Airlines';
-  const ticketPurchaseDate = '20230119T140000';
+  const ticketPurchaseDate = '20230119T140000'; // 19-Jan-2023, 14:00 PM in local time (not UTC) format
   const ticketPurchaseDateFormatted = moment(ticketPurchaseDate, 'YYYYMMDDTHHmmss').format('MM/DD/YYYY hh:mm a');
 
   function generateICal() {
@@ -38,10 +40,12 @@ const MijnTickets = () => {
                   <div class="MijnTicketsField">
                     <div class="MijnTicketsInfo">
                       <h2>{title}</h2>
-                      <h5>Ticket ID: {ticketId} <br/> Gekocht op: {ticketPurchaseDateFormatted}</h5>
+                      <h5>Gekocht op: {ticketPurchaseDateFormatted}</h5>
                       <p>Naam: {ticketHolder}</p>
                       <h>Begint om: {startDateTimeFormatted}</h>
-                      <p>Eindigd om: {endDateTimeFormatted}</p>
+                    </div>
+                    <div class="MijnTicketsQR">
+                      <QRCode fgColor="#5e5e5e"level="M"size={128} value={SHA256(ticketId).toString()}/>
                     </div>
                     <Link class="MijnTicketsLink" to="/MijnTickets">
                       <button class="MijnTicketsButton" type="submit" onClick={generateICal}>Download je ticket</button>
@@ -58,4 +62,5 @@ const MijnTickets = () => {
 };
 
 export default MijnTickets;
+
 

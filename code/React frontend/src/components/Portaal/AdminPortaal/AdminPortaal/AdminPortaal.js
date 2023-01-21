@@ -9,17 +9,9 @@ const AdminPortaal = () => {
           <h2 class="AdminPortaalTitle">AdminPortaal</h2>
           <div class="AdminPortaalContentBox">
             <div class="AdminPortaalContentWrapper">
-              <h2 class="AdminPortaalContentTitle">Theater Beheren</h2>
-              <div class="AdminPortaalField">
-                <Link to="/gegevenswijzigen">
-                  <button type="submit">Theater Beheren</button>
-                </Link>
-              </div>
-            </div>
-            <div class="AdminPortaalContentWrapper">
               <h2 class="AdminPortaalContentTitle">Tickets Beheren</h2>
               <div class="AdminPortaalField">
-                <Link to="/voorstelling">
+                <Link to="/ticketsbeheren">
                   <button type="submit">Tickets Beheren</button>
                 </Link>
               </div>
@@ -27,16 +19,16 @@ const AdminPortaal = () => {
             <div class="AdminPortaalContentWrapper">
               <h2 class="AdminPortaalContentTitle">Zalen Beheren</h2>
               <div class="AdminPortaalField">
-                <Link to="/voorstelling">
+                <Link to="/zalenbeheren">
                   <button type="submit">Zalen Beheren</button>
                 </Link>
               </div>
             </div>
-            <div class="AdminPortaalContentWrapper">
-              <h2 class="AdminPortaalContentTitle">Winkel Beheren</h2>
-              <div class="AdminPortaalField">
-                <Link to="/voorstelling">
-                  <button type="submit">Winkel Beheren</button>
+            <div class="MedewerkersPortaalContentWrapper">
+              <h2 class="MedewerkersPortaalContentTitle">Kortingsregels Beheren</h2>
+              <div class="MedewerkersPortaalField">
+                <Link to="/kortingsregelsbeheren">
+                  <button type="submit">Kortingsregels Beheren</button>
                 </Link>
               </div>
             </div>

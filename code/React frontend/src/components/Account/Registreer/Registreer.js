@@ -9,7 +9,8 @@ const Registreer = () => {
         <form action="#">
           <div class="RegistreerField">
             <input type="text" required></input>
-            <label>Gebruikersnaam</label></div>
+            <label>Gebruikersnaam</label>
+            </div>
           <div class="RegistreerField">
             <input type="email" required></input>
             <label>Emailadres</label>

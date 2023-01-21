@@ -1,4 +1,4 @@
-.TicketsOverzettenBox {
+.KortingsRegelsBeherenBox {
   display: flex;
   justify-content: center;
   margin: auto;
@@ -7,14 +7,14 @@
   margin-bottom: 5%;
 }
 
-.TicketsOverzettenWrapper{
+.KortingsRegelsBeherenWrapper{
   width: 100%;
   height: 100%;
   background: #fff;
   border-radius: 18px;
   box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
 }
-.TicketsOverzettenWrapper .TicketsOverzettenTitle{
+.KortingsRegelsBeherenWrapper .KortingsRegelsBeherenTitle{
   font-size: 18px;
   font-weight: 600;
   text-align: center;
@@ -24,19 +24,19 @@
   border-radius: 15px 15px 0 0;
   background: linear-gradient(-135deg, #5e5e5e, #ad0000);
 }
-.TicketsOverzettenContentBox {
+.KortingsRegelsBeherenContentBox {
   display: flex;
   flex-wrap: wrap ;
   justify-content: center;
   
 }
 
-.TicketsOverzettenContentWrapper * {
+.KortingsRegelsBeherenContentWrapper * {
   box-sizing: border-box;
 }
 
 
-.TicketsOverzettenContentWrapper {
+.KortingsRegelsBeherenContentWrapper {
   width: 400px;
   height: 400px;
   margin: 3%;
@@ -46,7 +46,7 @@
   margin-top: 10%;
 }
 
-.TicketsOverzettenContentWrapper .TicketsOverzettenContentTitle{
+.KortingsRegelsBeherenContentWrapper .KortingsRegelsBeherenContentTitle{
   font-size: 18px;
   font-weight: 600;
   text-align: center;
@@ -57,26 +57,26 @@
   background: linear-gradient(-135deg, #5e5e5e, #ad0000);
 }
 
-.TicketsOverzettenWrapper form{
+.KortingsRegelsBeherenWrapper form{
   padding: 10px 30px 50px 30px;
 }
 
 
-.TicketsOverzettenCheckbox{
+.KortingsRegelsBeherenCheckbox{
   display: flex;
   justify-content: center;
   padding-top: 2%;
   padding-bottom: 2%;
 }
 
-.TicketsOverzettenWrapper .TicketsOverzettenField{
+.KortingsRegelsBeherenWrapper .KortingsRegelsBeherenField{
   height: 40px;
   width: 100%;
   margin-top: 5%;
   margin-bottom: 5%;
   position: relative;
 }
-.TicketsOverzettenWrapper .TicketsOverzettenField input{
+.KortingsRegelsBeherenWrapper .KortingsRegelsBeherenField input{
   height: 100%;
   width: 100%;
   outline: none;
@@ -86,11 +86,11 @@
   border-radius: 25px;
   transition: all 0.3s ease;
 }
-.TicketsOverzettenWrapper .TicketsOverzettenField input:focus,
-.TicketsOverzettenField input:valid{
+.KortingsRegelsBeherenWrapper .KortingsRegelsBeherenField input:focus,
+.KortingsRegelsBeherenField input:valid{
   border-color: #e6b800;
 }
-.TicketsOverzettenWrapper .TicketsOverzettenField label{
+.KortingsRegelsBeherenWrapper .KortingsRegelsBeherenField label{
   position: absolute;
   top: 50%;
   left: 20px;
@@ -101,15 +101,15 @@
   transform: translateY(-50%);
   transition: all 0.3s ease;
 }
-.TicketsOverzettenField input:focus ~ label,
-.TicketsOverzettenField input:valid ~ label{
+.KortingsRegelsBeherenField input:focus ~ label,
+.KortingsRegelsBeherenField input:valid ~ label{
   top: 0%;
   font-size: 16px;
   color: #e6b800;
   background: #fff;
   transform: translateY(-50%);
 }
-.TicketsOverzettenContent{
+.KortingsRegelsBeherenContent{
   display: flex;
   width: 100%;
   height: 50px;
@@ -117,17 +117,17 @@
   align-items: center;
   justify-content: space-around;
 }
-.TicketsOverzettenContent input{
+.KortingsRegelsBeherenContent input{
   width: 15px;
   height: 15px;
   background: red;
 }
-.TicketsOverzettenContent label{
+.KortingsRegelsBeherenContent label{
   color: #262626;
   user-select: none;
   padding-left: 5px;
 }
-.TicketsOverzettenField input[type="submit"]{
+.KortingsRegelsBeherenField input[type="submit"]{
   color: #fff;
   border: none;
   padding-left: 0;
@@ -138,10 +138,10 @@
   background: linear-gradient(-135deg, #5e5e5e, #ad0000);
   transition: all 0.3s ease;
 }
-.TicketsOverzettenField input[type="submit"]:active{
+.KortingsRegelsBeherenField input[type="submit"]:active{
   transform: scale(0.95);
 }
-.TicketsOverzettenField input[type="submit"]:hover{
+.KortingsRegelsBeherenField input[type="submit"]:hover{
   transform: scale(0.95);
   background: linear-gradient(-135deg, #ffffff, #e6b800);;
 }
