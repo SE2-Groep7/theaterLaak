@@ -39,6 +39,9 @@ import Cart from './components/Cart/Cart';
 import { useNavigate } from "react-router-dom";
 import Unauthorized from './components/NoPage/Unauthorized';
 import Cookies  from "js-cookie";
+import Forma from './components/Testi/Forma';
+import Payed from './components/Testi/Payed';
+
 
 const ProtectedComponent = ({component: WrappedComponent, roles}) => {
   const navigate = useNavigate();
@@ -111,6 +114,9 @@ function App() {
           <Route path="agenda" element={<Agenda />} />
           <Route path="cart" element={<Cart />} />
           <Route path="unauthorized" element={<Unauthorized />} />
+          <Route path="forma" element={<Forma />} />
+          <Route path="payed" element={<Payed />} />
+
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

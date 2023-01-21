@@ -20,6 +20,23 @@ services:
     env_file:
       - .env
     restart: always
+
+  auth:
+    container_name: auth
+    build:
+      context: ../../code/auth
+      dockerfile: ../../code/auth/Dockerfile
+    ports:
+      - "8082:80"
+    restart: always  
+  todoapi:
+    container_name: todoapi
+    build:
+      context: ../../code/TodoApi
+      dockerfile: ../../code/TodoApi/Dockerfile
+    ports:
+      - "8083:80"
+    restart: always  
   frontend:
     container_name: "frontend"
     build:
@@ -41,6 +58,8 @@ services:
       - showapi
       - frontend
       - laakdb
+      - auth
+      - todoapi
   laakdb:
     image: "mcr.microsoft.com/azure-sql-edge:latest"
     container_name: laakdb

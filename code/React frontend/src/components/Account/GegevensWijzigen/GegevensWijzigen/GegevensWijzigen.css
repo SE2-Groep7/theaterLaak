@@ -27,13 +27,13 @@
 .GegevensWijzigenContentBox {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 5%;
 }
 
 .GegevensWijzigenNavWrapper {
   width: 300px;
   height: 800px;
   margin-left: 5%;
-  margin-top: 1%;
   background: #fff;
   border-radius: 18px;
   box-shadow: 0px 15px 20px rgb(0 0 0 / 10%);
@@ -53,7 +53,6 @@
   width: 1000px;
   height: 800px;
   margin-left: 5%;
-  margin-top: 1%;
   background: #fff;
   border-radius: 18px;
   box-shadow: 0px 15px 20px rgb(0 0 0 / 10%);

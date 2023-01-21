@@ -3,7 +3,7 @@
   flex-direction: row;
   align-items: center;
   margin-left: 10%;
-  margin-bottom: 2%;
+
 
 }
 
@@ -71,27 +71,28 @@
   text-align: center;
   justify-content: center;
   margin: auto;
+  margin-bottom: 2%;
 }
 
-#style-3::-webkit-scrollbar-track {
+#style-4::-webkit-scrollbar-track {
   border-radius: 30%;
 }
 
-#style-3::-webkit-scrollbar {
+#style-4::-webkit-scrollbar {
   width: 12px;
   background-color: #ffffff;
 }
 
-#style-3::-webkit-scrollbar-thumb{
+#style-4::-webkit-scrollbar-thumb{
   background-color:#ad0000;
   border:1px solid #333333;
   border-radius:12px;
 }
-#style-3::-webkit-scrollbar-thumb:hover{
+#style-4::-webkit-scrollbar-thumb:hover{
   background-color:#e6b800;
   border:1px solid #333333;
 }
-#style-3::-webkit-scrollbar-thumb:active{
+#style-4::-webkit-scrollbar-thumb:active{
   background-color:#e6b800;
   border:1px solid #333333;
 }

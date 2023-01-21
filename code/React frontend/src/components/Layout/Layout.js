@@ -5,16 +5,16 @@ import "./style.css";
 
 const Layout = () => {
   return (
-    <>
-    <Nav />
+    
+    <div class="flex flex-col h-screen justify-between">
 
 
+    <Nav className="h-10" />
 
+      <Outlet className="mb-auto h-10" />
 
-      <Outlet />
-
-      <Footer />
-    </>
+      <Footer className ="h-10"/>
+      </div>
   );
 };
 

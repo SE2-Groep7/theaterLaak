@@ -76,7 +76,7 @@ const Home = () => {
       <Hero />
       {loading && <div>loading...</div>}
       <section class="shows" >
-        <h2>Uitgelichte voorstellingen</h2>
+        <h2 className="text-4xl">Uitgelichte voorstellingen</h2>
         <div
           class="show-slider">
           <div class="show-elements"
