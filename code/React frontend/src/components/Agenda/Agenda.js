@@ -33,39 +33,58 @@ const Agenda = () => {
       return year + "-" + month + "-" + day;
     }
   
-    const getShows = async (givenShows) => {
-      givenShows = JSON.parse(givenShows);
-      let showsOnDate = givenShows;
-      console.log(showsOnDate);
-      const showsOnDateMap = showsOnDate.reduce((showMap, show) => {
-        showMap[show.ShowId] = {zaalId: show.ZaalId, date: show.ScheduleDate};
-                return showMap;
-      }, {});
-  
-      const res = await axios.get("https://mohieddin.nl/showapi/api/file");
-      const shows = res.data;
-      let promises = shows.map(async (show) => {
+    
+async function getShows(givenShows) {
+  givenShows = JSON.parse(givenShows);
+  try {
+      // Stap 1: Haal array A op van alle shows vanuit de API
+      const response = await axios.get('https://mohieddin.nl/showapi/api/file');
+      let arrayA = response.data;
+
+      // Stap 2: Maak API-call voor elk element in array A om foto op te halen
+      const filePromises = arrayA.map(async element => {
         const fileResponse = await axios({
           method: "get",
           responseType: "blob",
-          url: "https://mohieddin.nl/showapi/api/file/show/" + show.fileName
+          url: "https://mohieddin.nl/showapi/api/file/show/" + element.fileName
         });
-        show.file = URL.createObjectURL(new Blob([fileResponse.data]));
-        const showDateMap = showsOnDateMap[show.id];
-        if(showDateMap) {
-          show.zaalId = showDateMap.zaalId; 
-          show.date = showDateMap.date;
-        }
-        return new Promise((resolve) => resolve(show));
+          return {...element, file: URL.createObjectURL(new Blob([fileResponse.data]))
+          };
       });
-      const allShows = await Promise.all(promises)
-      setShows(allShows);
-      setLoading(false);
-    }
+      const arrayAWithFiles = await Promise.all(filePromises);
 
-  //   const handleNewShow = (newShow) => {
-  //     getShows(value)
-  // };
+      // Stap 3: Houd alleen shows over die dezelfde id hebben als in de givenShows-array
+      arrayA = arrayAWithFiles.filter(element => {
+          let showId = givenShows.find(show => show.ShowId == element.id);
+          return showId !== undefined;
+      });
+
+      // Stap 4: Maak Array B aan door schedule en show-data te combineren
+      let arrayB = givenShows.map(schedule => {
+          let show = arrayA.find(element => element.id === schedule.ShowId);
+          console.log(show.file);
+          return {
+              "id": schedule.Id,
+              "showName": schedule.ShowName,
+              "fileName": show.fileName,
+              "formFile": show.formFile,
+              "fotoAlt": show.fotoAlt,
+              "beschrijving": show.beschrijving,
+              "showSchedules": show.showSchedules,
+              "file": show.file,
+              "zaalId": schedule.ZaalId,
+              "date": schedule.ScheduleDate
+          }
+      });
+
+      // Stap 5: Zet shows en zet loading op false
+      setShows(arrayB);
+      setLoading(false);
+  } catch (error) {
+      console.log(error);
+  }
+}
+
   const connection = new signalR.HubConnectionBuilder()
   .withUrl("https://mohieddin.nl/showapi/showhub")
   .build();
