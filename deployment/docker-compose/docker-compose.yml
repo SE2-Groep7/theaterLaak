@@ -36,8 +36,8 @@ services:
   todoapi:
     container_name: todoapi
     build:
-      context: ../../code/todoapi
-      dockerfile: ../../code/todoapi/Dockerfile
+      context: ../../code/TodoApi
+      dockerfile: ../../code/TodoApi/Dockerfile
     ports:
       - "8083:80"
     environment:
