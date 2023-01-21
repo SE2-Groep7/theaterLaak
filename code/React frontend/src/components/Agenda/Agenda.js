@@ -30,7 +30,7 @@ const Agenda = () => {
       if (day.length < 2) 
           day = '0' + day;
   
-      return [year, month, day];
+      return year + "-" + month + "-" + day;
     }
   
     const getShows = async (givenShows) => {
@@ -70,6 +70,7 @@ const Agenda = () => {
   .withUrl("https://mohieddin.nl/showapi/showhub")
   .build();
   useEffect(() => {
+    console.log(formatDate(value))
     if (intervalRef.current) {
         clearInterval(intervalRef.current);
     }
@@ -84,10 +85,10 @@ const Agenda = () => {
 
     connection.start().then(() => {
         connectionRef.current = connection;
-        connection.invoke("GetShowsByDate", value);
+        connection.invoke("GetShowsByDate", formatDate(value));
 
         intervalRef.current = setInterval(() => {
-            connection.invoke("GetShowsByDate", value);
+            connection.invoke("GetShowsByDate", formatDate(value));
         }, 10000);
     });
     return () => {
