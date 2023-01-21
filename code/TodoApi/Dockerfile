@@ -5,6 +5,7 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["TodoApi.csproj", "./"]
+RUN echo "$SigningKey"
 RUN dotnet restore "./TodoApi.csproj"
 COPY . .
 WORKDIR "/src/."

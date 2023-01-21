@@ -25,6 +25,7 @@ jobs:
       uses: appleboy/ssh-action@v0.1.7
       env:
         SAPASSWORD: ${{ secrets.DB_PASSWORD }}
+        SIGNING_KEY: ${{ secrets.SIGNING_KEY }}
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
@@ -33,6 +34,7 @@ jobs:
           # Run commands to deploy code to your Raspberry Pi here
           echo "Deploying code to Raspberry Pi..."
           export SAPASSWORD=${{ secrets.DB_PASSWORD }}
+          export SigningKey=${{ secrets.SIGNING_KEY }}
           cd theaterLaak
           git fetch --all
           git reset --hard origin/main
@@ -44,6 +46,7 @@ jobs:
           cd ..
           cd docker-compose
           echo "SA_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
+          echo "SigningKey=${{ secrets.SIGNING_KEY }}" >> .env
           echo "Running docker compose"
           sudo docker-compose up -d --build --remove-orphans
           echo "removing env file"
