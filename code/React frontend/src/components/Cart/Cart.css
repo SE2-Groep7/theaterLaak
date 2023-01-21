@@ -1,6 +1,4 @@
-.Cart{
-    min-height: 69vh;
-}
+
 .CartList{
     display: flex;
     flex-direction: column;

@@ -20,7 +20,7 @@ function OverOns() {
           <p>We danken onze publiek en donateurs voor hun steun en kijken ernaar uit om u binnenkort te verwelkomen in Theater Laak.</p>
         </div>
       </div>
-      <div className="about-us-images">
+      <div className="about-us-images flex">
         <img src={foto1} alt="Over Ons Foto1" />
         <img src={foto2} alt="Over Ons Foto2" />
         <img src={foto3} alt="Over Ons Foto3" />
