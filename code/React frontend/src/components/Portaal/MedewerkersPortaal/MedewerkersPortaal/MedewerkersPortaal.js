@@ -9,26 +9,18 @@ const MedewerkersPortaal = () => {
           <h2 class="MedewerkersPortaalTitle">MedewerkersPortaal</h2>
           <div class="MedewerkersPortaalContentBox">
             <div class="MedewerkersPortaalContentWrapper">
-              <h2 class="MedewerkersPortaalContentTitle">Overzicht Voorstellingen</h2>
-              <div class="MedewerkersPortaalField">
-                <Link to="/gegevenswijzigen">
-                  <button type="submit">Overzicht Voorstellingen</button>
-                </Link>
-              </div>
-            </div>
-            <div class="MedewerkersPortaalContentWrapper">
               <h2 class="MedewerkersPortaalContentTitle">Voorstelling Beheren</h2>
               <div class="MedewerkersPortaalField">
-                <Link to="/voorstelling">
+                <Link to="/voorstellingbeheren">
                   <button type="submit">Voorstelling Beheren</button>
                 </Link>
               </div>
             </div>
             <div class="MedewerkersPortaalContentWrapper">
-              <h2 class="MedewerkersPortaalContentTitle">Kortingsregels Toepassen</h2>
+              <h2 class="MedewerkersPortaalContentTitle">Kortingsregels Beheren</h2>
               <div class="MedewerkersPortaalField">
-                <Link to="/voorstelling">
-                  <button type="submit">Kortingsregels Toepassen</button>
+                <Link to="/kortingsregelsbeheren">
+                  <button type="submit">Kortingsregels Beheren</button>
                 </Link>
               </div>
             </div>
