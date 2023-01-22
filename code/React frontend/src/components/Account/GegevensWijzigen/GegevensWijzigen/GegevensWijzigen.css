@@ -13,6 +13,7 @@
   background: #fff;
   border-radius: 18px;
   box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+  margin-bottom: 5%;
 }
 .GegevensWijzigenWrapper .GegevensWijzigenTitle{
   font-size: 18px;
@@ -32,7 +33,7 @@
 
 .GegevensWijzigenNavWrapper {
   width: 300px;
-  height: 800px;
+  height: 750px;
   margin-left: 5%;
   background: #fff;
   border-radius: 18px;
@@ -51,7 +52,7 @@
 
 .GegevensWijzigenContentWrapper {
   width: 1000px;
-  height: 800px;
+  height: 750px;
   margin-left: 5%;
   background: #fff;
   border-radius: 18px;
@@ -70,7 +71,7 @@
 }
 
 .GegevensWijzigenButton{
-  height: 100px;
+  height: 75px;
   width: 90%;
   outline: none;
   font-size: 18px;

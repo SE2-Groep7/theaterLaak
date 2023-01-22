@@ -41,6 +41,8 @@ import Unauthorized from './components/NoPage/Unauthorized';
 import Cookies  from "js-cookie";
 import Forma from './components/Testi/Forma';
 import Payed from './components/Testi/Payed';
+import RegistreerStap1 from './components/Account/Registreer/RegistreerStap1/RegistreerStap1';
+import RegistreerStap2 from './components/Account/Registreer/RegistreerStap2/RegistreerStap2';
 
 
 const ProtectedComponent = ({component: WrappedComponent, roles}) => {
@@ -116,6 +118,8 @@ function App() {
           <Route path="unauthorized" element={<Unauthorized />} />
           <Route path="forma" element={<Forma />} />
           <Route path="payed" element={<Payed />} />
+          <Route path="registreerstap1" element={<RegistreerStap1 />} />
+          <Route path="registreerstap2" element={<RegistreerStap2 />} />
 
           <Route path="*" element={<NoPage />} />
         </Route>
