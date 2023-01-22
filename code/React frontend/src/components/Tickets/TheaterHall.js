@@ -2,7 +2,7 @@ import React, { useState , Fragment } from "react";
 import "./style.css";
 import { Dialog , Transition } from '@headlessui/react'
 // The TheaterHall component takes in a prop called "seats" which is an array of seat objects
-const TheaterHall = ({ seats,zaalId,showName,datum }) => {
+const TheaterHall = ({ seats,zaalId,showName,datum,showId }) => {
   // Declare the selectedSeats state variable with the useState hook
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [selectedSeatsIds, setSelectedSeatsIds] = useState([]);
@@ -39,6 +39,7 @@ const TheaterHall = ({ seats,zaalId,showName,datum }) => {
             date: datum,
             zaalId: zaalId,
             showName: showName,
+            showId: showId,
             seats: selectedSeats
         });
     }

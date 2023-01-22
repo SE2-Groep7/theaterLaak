@@ -8,6 +8,7 @@ const Tickets = () => {
     const zaalId = params.get('zaal');
     const datum = params.get('datum');
     const showName = params.get('showName');
+    const showId = params.get('showId');
 
   const [hall, setHall] = useState({});
   const [loading, setLoading] = useState(true);
@@ -31,7 +32,7 @@ const Tickets = () => {
 
   return (
     <div className="App">
-      {loading ? <div>loading...</div> : <TheaterHall seats={hall.seats} zaalId={zaalId} datum={datum} showName={showName} />}
+      {loading ? <div>loading...</div> : <TheaterHall seats={hall.seats} zaalId={zaalId} datum={datum} showName={showName} showId={showId} />}
       
     </div>
   );

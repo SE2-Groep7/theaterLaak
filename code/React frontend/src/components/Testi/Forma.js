@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
-
+import Cookies from 'js-cookie';
 const Forma = () => {
   const [account, setAccount] = useState('');
   const [succes, setSucces] = useState(false);
@@ -18,12 +18,45 @@ const Forma = () => {
       //   reference: 34,
       // })
       //   .then(res => {
-          window.location.href = 'payed';
-          localStorage.removeItem("selectedSeats");
-        // })
-        // .catch(error => {
-        //   console.log(error);
-        // });
+
+          const jwt = Cookies.get("jwt");
+          
+          var initArray = JSON.parse(localStorage.getItem("selectedSeats"));
+          console.log(initArray);
+          
+          initArray.forEach(async (item, index) => {
+              const seats = item.seats;
+              console.log(seats);
+              seats.forEach(async (actualSeat) => {
+                  try {
+                      await axios.put(`https://mohieddin.nl/ticketsapi/api/Seat/${actualSeat.id}`, {
+                          id: actualSeat.id,
+                          row: actualSeat.row,
+                          column: actualSeat.column,
+                          status: 'occupied',
+                          rank: actualSeat.rank,
+                          hallId: actualSeat.hallId
+                      });
+                      await axios.post('https://mohieddin.nl/todoapi/api/todoapi/Tickets', {
+                          showId: initArray[index].showId,
+                          zaalId: initArray[index].zaalId,
+                          showDate: initArray[index].date
+                      }, {
+                          headers: {
+                              Authorization: `Bearer ${jwt}`
+                          }
+                      });
+                      console.log(initArray[index].date);
+                  } catch (error) {
+                      console.log(error);
+                  }
+              });
+
+          });
+          alert("Betaald.");
+
+          // window.location.href = 'payed';
+          // localStorage.removeItem("selectedSeats");
     }
     else {
       alert("Het account heeft niet genoeg geld.");

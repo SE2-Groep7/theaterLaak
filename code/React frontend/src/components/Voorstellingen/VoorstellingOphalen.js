@@ -18,6 +18,7 @@ function VoorstellingOphalen(props) {
     return [year+"/"+ month+"/"+ day];
   }
   const date = new Date(props.show.scheduleDate);
+  
   console.log(props.show.scheduleDate);
   const time = date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
   return <div class="VoorstellingenOphalen">
@@ -32,7 +33,7 @@ function VoorstellingOphalen(props) {
       <p>Zaal : {props.show.zaalId}</p>
     </div>
     <div class="VoorstellingButtonDiv">
-      <button class="VoorstellingenButton" onClick={() => window.location.href = `tickets?zaal=${props.show.zaalId}&&datum=${props.show.scheduleDate}&&showName=${props.show.showName}`}>Tickets Bestellen</button>
+      <button class="VoorstellingenButton" onClick={() => window.location.href = `tickets?zaal=${props.show.zaalId}&&datum=${props.show.scheduleDate}&&showName=${props.show.showName}&&showId=${props.show.id}`}>Tickets Bestellen</button>
     </div>
   </div>
 }

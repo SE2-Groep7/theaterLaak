@@ -123,6 +123,7 @@ public class TicketsController : ControllerBase
     {
         return new TicketDTO
         {
+            Id = ticket.Id,
             ShowId = ticket.ShowId,
             ZaalId = ticket.ZaalId,
             ShowDate = ticket.ShowDate

@@ -14,7 +14,7 @@ import WachtwoordVergeten from './components/Account/WachtwoordVergeten/Wachtwoo
 import NieuwWachtwoordOpvragen from './components/Account/NieuwWachtwoordOpvragen/NieuwWachtwoordOpvragen';
 import Uitloggen from './components/Account/Uitloggen/Uitloggen';
 import GebruikersPortaal from './components/Portaal/GebruikersPortaal/GebruikersPortaal/GebruikersPortaal';
-import MijnTickets from "./components/Portaal/GebruikersPortaal/MijnTickets/MijnTickets";
+import MijnTickets from "./components/Portaal/GebruikersPortaal/MijnTickets/MijnTickets/MijnTickets";
 import TicketsOverzetten from "./components/Portaal/GebruikersPortaal/TicketsOverzetten/TicketsOverzetten";
 import MedewerkersPortaal from "./components/Portaal/MedewerkersPortaal/MedewerkersPortaal/MedewerkersPortaal";
 import VoorstellingBeheren from "./components/Portaal/MedewerkersPortaal/VoorstellingBeheren/VoorstellingBeheren";

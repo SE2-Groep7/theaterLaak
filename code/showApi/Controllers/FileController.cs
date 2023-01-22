@@ -62,6 +62,18 @@ public class FileController : ControllerBase
 
     return show;
 }
+[HttpGet("Show/{id}")]
+public async Task<ActionResult<FileModel>> GetShowById(int id)
+{
+    var show = await _context.FileModels.FirstOrDefaultAsync(f => f.Id == id);
+
+    if (show == null)
+    {
+        return NotFound();
+    }
+
+    return show;
+}
 
     [HttpGet]
     public ActionResult<List<FileModel>> Get()
