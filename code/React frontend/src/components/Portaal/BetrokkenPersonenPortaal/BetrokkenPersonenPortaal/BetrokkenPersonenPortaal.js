@@ -11,16 +11,16 @@ const BetrokkenPersonenPortaal = () => {
             <div class="BetrokkenPersonenPortaalContentWrapper">
               <h2 class="BetrokkenPersonenPortaalContentTitle">Mijn Voorstellingen</h2>
               <div class="BetrokkenPersonenPortaalField">
-                <Link to="/gegevenswijzigen">
+                <Link to="/mijnvoorstellingen">
                   <button type="submit">Mijn Voorstellingen</button>
                 </Link>
               </div>
             </div>
             <div class="BetrokkenPersonenPortaalContentWrapper">
-              <h2 class="BetrokkenPersonenPortaalContentTitle">Voorstelling Aanmelden</h2>
+              <h2 class="BetrokkenPersonenPortaalContentTitle">Ruimte Reserveren</h2>
               <div class="BetrokkenPersonenPortaalField">
-                <Link to="/voorstelling">
-                  <button type="submit">Voorstelling Aanmelden</button>
+                <Link to="/ruimtereserveren">
+                  <button type="submit">Ruimte Reserveren</button>
                 </Link>
               </div>
             </div>

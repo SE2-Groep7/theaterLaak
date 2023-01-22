@@ -8,7 +8,7 @@ function Contact() {
       <div className="contact-Wrapper">
         <div className="contact-text">
           <div className="contact-title">
-            <h2>Contact</h2>
+            <h2 class="font-medium leading-tight text-4xl mt-0 mb-2 text-black-600">Contact</h2>
           </div>
           <p>Theater Laak is gelegen in het hart van het Laakkwartier en is gemakkelijk te bereiken. Of u nu met de auto, openbaar vervoer of te voet komt, wij zijn gemakkelijk te vinden.</p>
           <p>Voor vragen, opmerkingen of reserveringen kunt u contact met ons opnemen via onze contactpagina op onze website, een e-mail sturen naar <a href="mailto: info@theaterlaak.nl">info@theaterlaak.nl</a>, of telefonisch contact opnemen via <a href="tel: (070)-44588889">(070)-44588889</a>. Onze klantenservice is beschikbaar van maandag tot en met vrijdag tussen 9:00 en 17:00 uur.</p>

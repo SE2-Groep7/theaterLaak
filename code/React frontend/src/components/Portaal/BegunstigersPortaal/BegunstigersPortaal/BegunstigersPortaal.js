@@ -9,17 +9,9 @@ const BegunstigersPortaal = () => {
           <h2 class="BegunstigersPortaalTitle">BegunstigersPortaal</h2>
           <div class="BegunstigersPortaalContentBox">
             <div class="BegunstigersPortaalContentWrapper">
-              <h2 class="BegunstigersPortaalContentTitle">Mijn Voordelen</h2>
-              <div class="BegunstigersPortaalField">
-                <Link to="/gegevenswijzigen">
-                  <button type="submit">Mijn Voordelen</button>
-                </Link>
-              </div>
-            </div>
-            <div class="BegunstigersPortaalContentWrapper">
               <h2 class="BegunstigersPortaalContentTitle">Conceptplanning Bekijken</h2>
               <div class="BegunstigersPortaalField">
-                <Link to="/voorstelling">
+                <Link to="/conceptplanningbekijken">
                   <button type="submit">Conceptplanning Bekijken</button>
                 </Link>
               </div>

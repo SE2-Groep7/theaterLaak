@@ -16,12 +16,17 @@ import Uitloggen from './components/Account/Uitloggen/Uitloggen';
 import GebruikersPortaal from './components/Portaal/GebruikersPortaal/GebruikersPortaal/GebruikersPortaal';
 import MijnTickets from "./components/Portaal/GebruikersPortaal/MijnTickets/MijnTickets";
 import TicketsOverzetten from "./components/Portaal/GebruikersPortaal/TicketsOverzetten/TicketsOverzetten";
-import MijnPortaal from "./components/Portaal/MijnPortaal/MijnPortaal/MijnPortaal";
 import MedewerkersPortaal from "./components/Portaal/MedewerkersPortaal/MedewerkersPortaal/MedewerkersPortaal";
+import VoorstellingBeheren from "./components/Portaal/MedewerkersPortaal/VoorstellingBeheren/VoorstellingBeheren";
+import KortingsRegelsBeheren from "./components/Portaal/MedewerkersPortaal/KortingsRegelsBeheren/KortingsRegelsBeheren";
 import AdminPortaal from "./components/Portaal/AdminPortaal/AdminPortaal/AdminPortaal";
-import Template from "./components/Portaal/Template/Template";
+import TicketsBeheren from "./components/Portaal/AdminPortaal/TicketsBeheren/TicketsBeheren";
+import ZalenBeheren from "./components/Portaal/AdminPortaal/ZalenBeheren/ZalenBeheren";
 import BegunstigersPortaal from "./components/Portaal/BegunstigersPortaal/BegunstigersPortaal/BegunstigersPortaal";
+import ConceptPlanningBekijken from "./components/Portaal/BegunstigersPortaal/ConceptPlanningBekijken/ConceptPlanningBekijken";
 import BetrokkenPersonenPortaal from "./components/Portaal/BetrokkenPersonenPortaal/BetrokkenPersonenPortaal/BetrokkenPersonenPortaal";
+import RuimteReserveren from "./components/Portaal/BetrokkenPersonenPortaal/RuimteReserveren/RuimteReserveren";
+import MijnVoorstellingen from "./components/Portaal/BetrokkenPersonenPortaal/MijnVoorstellingen/MijnVoorstellingen";
 import GegevensWijzigen from './components/Account/GegevensWijzigen/GegevensWijzigen/GegevensWijzigen';
 import NoPage from './components/NoPage/NoPage';
 import Disclaimer from './components/Layout/Disclaimer';
@@ -98,12 +103,17 @@ function App() {
           <Route path="gebruikersportaal" element={<GebruikersPortaal />} />
           <Route path="mijntickets" element={<MijnTickets />} />
           <Route path="ticketsoverzetten" element={<TicketsOverzetten />} />
-          <Route path="mijnportaal" element={<MijnPortaal />} />
           <Route path="medewerkersportaal" element={<MedewerkersPortaal />} />
-          <Route path="adminportaal" element={<ProtectedComponent component={AdminPortaal}   roles={['admin']} />} />
-          <Route path="template" element={<Template />} />
+          <Route path="voorstellingbeheren" element={<VoorstellingBeheren />} />
+          <Route path="kortingsregelsbeheren" element={<KortingsRegelsBeheren />} />
+          <Route path="adminportaal" element={<AdminPortaal />} />
+          <Route path="ticketsbeheren" element={<TicketsBeheren />} />
+          <Route path="zalenbeheren" element={<ZalenBeheren />} />
           <Route path="begunstigersportaal" element={<BegunstigersPortaal />} />
+          <Route path="conceptplanningbekijken" element={<ConceptPlanningBekijken />} />
           <Route path="betrokkenpersonenportaal" element={<BetrokkenPersonenPortaal />} />
+          <Route path="ruimtereserveren" element={<RuimteReserveren />} />
+          <Route path="mijnvoorstellingen" element={<MijnVoorstellingen />} />
           <Route path="gegevenswijzigen" element={<GegevensWijzigen />} />
           <Route path="disclaimer" element={<Disclaimer />} />
           <Route path="cookies" element={<CookiesPage />} />

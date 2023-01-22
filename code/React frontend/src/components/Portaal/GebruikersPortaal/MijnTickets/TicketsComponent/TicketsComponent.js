@@ -29,33 +29,19 @@ const MijnTickets = () => {
 
   return (
     <>
-      <div class="MijnTicketsBox">
-        <div class="MijnTicketsWrapper">
-          <h2 class="MijnTicketsTitle">Mijn Tickets</h2>
-          <div class="MijnTicketsContentBox">
-            <div class="MijnTicketsContentWrapper">
-              <h2 class="MijnTicketsContentTitle">Mijn Tickets</h2>
-              <div class="MijnTicketsRoundCorners">
-                <div class="MijnTicketsScrollbar" id="style-3">
-                  <div class="MijnTicketsField">
-                    <div class="MijnTicketsInfo">
-                      <h2>{title}</h2>
-                      <h5>Gekocht op: {ticketPurchaseDateFormatted}</h5>
-                      <p>Naam: {ticketHolder}</p>
-                      <h>Begint om: {startDateTimeFormatted}</h>
-                    </div>
-                    <div class="MijnTicketsQR">
-                      <QRCode fgColor="#5e5e5e"level="M"size={128} value={SHA256(ticketId).toString()}/>
-                    </div>
-                    <Link class="MijnTicketsLink" to="/MijnTickets">
-                      <button class="MijnTicketsButton" type="submit" onClick={generateICal}>Download je ticket</button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="MijnTicketsField">
+        <div class="MijnTicketsInfo">
+          <h2>{title}</h2>
+          <h5>Gekocht op: {ticketPurchaseDateFormatted}</h5>
+          <p>Naam: {ticketHolder}</p>
+          <h>Begint om: {startDateTimeFormatted}</h>
         </div>
+        <div class="MijnTicketsQR">
+          <QRCode fgColor="#5e5e5e" level="M" size={128} value={SHA256(ticketId).toString()} />
+        </div>
+        <Link class="MijnTicketsLink" to="/MijnTickets">
+          <button class="MijnTicketsButton" type="submit" onClick={generateICal}>Download je ticket</button>
+        </Link>
       </div>
     </>
   );
