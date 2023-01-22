@@ -14,7 +14,7 @@ const TicketsComponent = ({ ticket }) => {
   const [ticketHolder, setTicketHolder] = useState('');
   const UserInformation = JSON.parse(Cookies.get("UserInformation"));
   useEffect(() => {
-    axios.get(`https://mohieddin.nl/showapi/api/File/Show/${ticket.showId}`)
+    axios.get(`https://mohieddin.nl/showapi/api/File/Show/perID/${ticket.showId}`)
     .then(res => {
         setTitle(res.data.showName);
     }).catch(err => console.log(err))
