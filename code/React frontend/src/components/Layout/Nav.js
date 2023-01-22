@@ -16,6 +16,7 @@ const Nav = ({ isLoggedIn, updateIsLoggedIn }) => {
     setIsLoggedIn(false);
     updateIsLoggedIn(false);
     navigate("/login");
+    localStorage.removeItem("selectedSeats");
   }
 
   return (

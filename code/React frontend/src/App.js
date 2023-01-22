@@ -49,7 +49,7 @@ const ProtectedComponent = ({component: WrappedComponent, roles}) => {
     if(!loggedIn) {
       navigate('/Unauthorized');
     } 
-    else if (!loggedIn.roles && roles.includes("empty")) {
+    else if (loggedIn && !loggedIn.roles && roles.includes("empty")) {
       console.log("empty");
     }
     else {
@@ -100,32 +100,30 @@ function App() {
           <Route path="wachtwoordvergeten" element={<WachtwoordVergeten />} />
           <Route path="nieuwwachtwoordopvragen" element={<NieuwWachtwoordOpvragen />} />
           <Route path="uitloggen" element={<Uitloggen />} />
-          <Route path="gebruikersportaal" element={<GebruikersPortaal />} />
-          <Route path="mijntickets" element={<MijnTickets />} />
-          <Route path="ticketsoverzetten" element={<TicketsOverzetten />} />
-          <Route path="medewerkersportaal" element={<MedewerkersPortaal />} />
-          <Route path="voorstellingbeheren" element={<VoorstellingBeheren />} />
-          <Route path="kortingsregelsbeheren" element={<KortingsRegelsBeheren />} />
-          <Route path="adminportaal" element={<AdminPortaal />} />
-          <Route path="ticketsbeheren" element={<TicketsBeheren />} />
-          <Route path="zalenbeheren" element={<ZalenBeheren />} />
-          <Route path="begunstigersportaal" element={<BegunstigersPortaal />} />
-          <Route path="conceptplanningbekijken" element={<ConceptPlanningBekijken />} />
-          <Route path="betrokkenpersonenportaal" element={<BetrokkenPersonenPortaal />} />
-          <Route path="ruimtereserveren" element={<RuimteReserveren />} />
-          <Route path="mijnvoorstellingen" element={<MijnVoorstellingen />} />
           <Route path="gegevenswijzigen" element={<GegevensWijzigen />} />
+          <Route path="gebruikersportaal" element={<ProtectedComponent component={GebruikersPortaal}  roles={['empty']} />} />
+          <Route path="mijntickets" element={<ProtectedComponent component={MijnTickets}  roles={['empty']} />} />
+          <Route path="ticketsoverzetten" element={<ProtectedComponent component={TicketsOverzetten}  roles={['empty']} />} />
+          <Route path="medewerkersportaal" element={<ProtectedComponent component={MedewerkersPortaal}  roles={['admin','medewerker']} />} />
+          <Route path="voorstellingbeheren" element={<ProtectedComponent component={VoorstellingBeheren}  roles={['admin','medewerker']} />} />
+          <Route path="kortingsregelsbeheren" element={<ProtectedComponent component={KortingsRegelsBeheren}  roles={['admin','medewerker']} />} />
+          <Route path="adminportaal" element={<ProtectedComponent component={AdminPortaal}  roles={['admin']} />} />
+          <Route path="ticketsbeheren" element={<ProtectedComponent component={TicketsBeheren}  roles={['admin']} />} />
+          <Route path="zalenbeheren" element={<ProtectedComponent component={ZalenBeheren}  roles={['admin']} />} />
+          <Route path="begunstigersportaal" element={<ProtectedComponent component={BegunstigersPortaal}  roles={['begunstiger','admin']} />} />
+          <Route path="conceptplanningbekijken" element={<ProtectedComponent component={ConceptPlanningBekijken}  roles={['begunstiger','admin']} />} />
+          <Route path="betrokkenpersonenportaal" element={<ProtectedComponent component={BetrokkenPersonenPortaal}  roles={['betrokkenPersoon','admin']} />} />
+          <Route path="ruimtereserveren" element={<ProtectedComponent component={RuimteReserveren}  roles={['betrokkenPersoon','admin']} />} />
+          <Route path="mijnvoorstellingen" element={<ProtectedComponent component={MijnVoorstellingen}  roles={['betrokkenPersoon','admin']} />} />
           <Route path="disclaimer" element={<Disclaimer />} />
           <Route path="cookies" element={<CookiesPage />} />
           <Route path="privacystatement" element={<PrivacyStatement />} />
-          <Route path="admin"  element={<ProtectedComponent component={Admin}  roles={['admin']} />} />
           <Route path="agenda" element={<Agenda />} />
           <Route path="cart" element={<Cart />} />
           <Route path="unauthorized" element={<Unauthorized />} />
-          <Route path="forma" element={<Forma />} />
-          <Route path="payed" element={<Payed />} />
+          <Route path="forma" element={<ProtectedComponent component={Forma}  roles={['admin','medewerker','empty']} />} />
+          <Route path="payed" element={<ProtectedComponent component={Payed}  roles={['admin','medewerker','empty']} />} />
           <Route path="portaal" element={<Portaal />} />
-
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
