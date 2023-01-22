@@ -10,7 +10,7 @@ import { SHA256 } from 'crypto-js';
 
 const TicketsComponent = ({ ticket }) => {
   console.log(ticket.id);
-  const ticketId = ticket.Id;
+  const ticketId = ticket.id;
   console.log(ticketId);
   const startDateTime = ticket.showDate;
   const endDateTime = ticket.showDate;
