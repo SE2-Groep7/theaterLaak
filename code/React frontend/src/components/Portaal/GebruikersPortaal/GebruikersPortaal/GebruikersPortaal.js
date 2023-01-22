@@ -25,14 +25,6 @@ const GebruikersPortaal = () => {
               </div>
             </div>
             <div class="GebruikersPortaalContentWrapper">
-              <h2 class="GebruikersPortaalContentTitle">Mijn Portaal</h2>
-              <div class="GebruikersPortaalField">
-                <Link to="/mijnportaal">
-                  <button type="submit">Mijn Portaal</button>
-                </Link>
-              </div>
-            </div>
-            <div class="GebruikersPortaalContentWrapper">
               <h2 class="GebruikersPortaalContentTitle">Tickets Overzetten</h2>
               <div class="GebruikersPortaalField">
                 <Link to="/ticketsoverzetten">

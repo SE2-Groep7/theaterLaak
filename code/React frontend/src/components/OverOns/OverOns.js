@@ -10,7 +10,7 @@ function OverOns() {
   return (
     <div className="about-us">
       <div className="about-us-title">
-        <h2>Over Ons</h2>
+        <h2 class="font-medium leading-tight text-4xl mt-0 mb-2 text-black-600">Over Ons</h2>
       </div>
       <div className="about-usWrapper">
         <div className="about-us-text">

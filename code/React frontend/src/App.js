@@ -16,14 +16,12 @@ import Uitloggen from './components/Account/Uitloggen/Uitloggen';
 import GebruikersPortaal from './components/Portaal/GebruikersPortaal/GebruikersPortaal/GebruikersPortaal';
 import MijnTickets from "./components/Portaal/GebruikersPortaal/MijnTickets/MijnTickets";
 import TicketsOverzetten from "./components/Portaal/GebruikersPortaal/TicketsOverzetten/TicketsOverzetten";
-import MijnPortaal from "./components/Portaal/MijnPortaal/MijnPortaal/MijnPortaal";
 import MedewerkersPortaal from "./components/Portaal/MedewerkersPortaal/MedewerkersPortaal/MedewerkersPortaal";
 import VoorstellingBeheren from "./components/Portaal/MedewerkersPortaal/VoorstellingBeheren/VoorstellingBeheren";
 import KortingsRegelsBeheren from "./components/Portaal/MedewerkersPortaal/KortingsRegelsBeheren/KortingsRegelsBeheren";
 import AdminPortaal from "./components/Portaal/AdminPortaal/AdminPortaal/AdminPortaal";
 import TicketsBeheren from "./components/Portaal/AdminPortaal/TicketsBeheren/TicketsBeheren";
 import ZalenBeheren from "./components/Portaal/AdminPortaal/ZalenBeheren/ZalenBeheren";
-import Template from "./components/Portaal/Template/Template";
 import BegunstigersPortaal from "./components/Portaal/BegunstigersPortaal/BegunstigersPortaal/BegunstigersPortaal";
 import ConceptPlanningBekijken from "./components/Portaal/BegunstigersPortaal/ConceptPlanningBekijken/ConceptPlanningBekijken";
 import BetrokkenPersonenPortaal from "./components/Portaal/BetrokkenPersonenPortaal/BetrokkenPersonenPortaal/BetrokkenPersonenPortaal";
@@ -105,14 +103,12 @@ function App() {
           <Route path="gebruikersportaal" element={<GebruikersPortaal />} />
           <Route path="mijntickets" element={<MijnTickets />} />
           <Route path="ticketsoverzetten" element={<TicketsOverzetten />} />
-          <Route path="mijnportaal" element={<MijnPortaal />} />
           <Route path="medewerkersportaal" element={<MedewerkersPortaal />} />
           <Route path="voorstellingbeheren" element={<VoorstellingBeheren />} />
           <Route path="kortingsregelsbeheren" element={<KortingsRegelsBeheren />} />
           <Route path="adminportaal" element={<AdminPortaal />} />
           <Route path="ticketsbeheren" element={<TicketsBeheren />} />
           <Route path="zalenbeheren" element={<ZalenBeheren />} />
-          <Route path="template" element={<Template />} />
           <Route path="begunstigersportaal" element={<BegunstigersPortaal />} />
           <Route path="conceptplanningbekijken" element={<ConceptPlanningBekijken />} />
           <Route path="betrokkenpersonenportaal" element={<BetrokkenPersonenPortaal />} />
