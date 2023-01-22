@@ -19,7 +19,7 @@ const RegistreerStap1 = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (passwordMatch) {
+    if (passwordMatch && userName !== "" && password !== "" && confirmPassword !== "") {
       SetStap2(true);
     }
   }
