@@ -29,7 +29,7 @@ const TicketsComponent = ({ ticket }) => {
   const startDateTimeFormatted = moment(startDateTime, 'YYYYMMDDTHHmmss').format('MM/DD/YYYY hh:mm a');
 
   function generateICal() {
-    var icalContent = `BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:Theater Ticket - ${title}\nDTSTART:${startDateTime}\nDTEND:${endDateTime}\nLOCATION:${ticketHolder}\nDESCRIPTION:Ticket ID: ${ticketId}\nEND:VEVENT\nEND:VCALENDAR`;
+    var icalContent = `BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:Theater Ticket - ${title}\nDTSTART:${ticket.showDate}\nDTEND:${ticket.showDate}\nLOCATION:${ticketHolder}\nDESCRIPTION:Ticket ID: ${ticket.id}\nEND:VEVENT\nEND:VCALENDAR`;
     var file = new Blob([icalContent], { type: 'text/calendar' });
     var fileUrl = URL.createObjectURL(file);
 
@@ -48,7 +48,7 @@ const TicketsComponent = ({ ticket }) => {
         <div class="MijnTicketsInfo">
           <h2>{title}</h2>
           <p>Naam: {ticketHolder}</p>
-          <h>Begint om: {startDateTimeFormatted}</h>
+          <h>Begint om: {moment(ticket.showDate, 'YYYYMMDDTHHmmss').format('MM/DD/YYYY hh:mm a')}</h>
           
         </div>
         <div class="MijnTicketsQR">
