@@ -31,7 +31,7 @@ function VoorstellingenOphalen(props) {
       <p>Zaal : {props.show.zaalId}</p>
     </div>
     <div class="VoorstellingButtonDiv">
-      <button class="VoorstellingenButton" onClick={() => window.location.href = `tickets?zaal=${props.show.zaalId}&&datum=${props.show.date}&&showName=${props.show.showName}&&showId=${props.show.id}`}>Tickets Bestellen</button>
+      <button class="VoorstellingenButton" onClick={() => window.location.href = `tickets?zaal=${props.show.zaalId}&&datum=${props.show.date}&&showName=${props.show.showName}&&showId=${props.show.showId}`}>Tickets Bestellen</button>
     </div>
   </div>
 }

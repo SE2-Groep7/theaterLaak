@@ -48,6 +48,7 @@ const Voorstelling = () => {
 
             setShows(schedule);
 
+
             setLoading(false);
 
         }
@@ -60,9 +61,10 @@ const Voorstelling = () => {
     }, []);
 
     useEffect(() => {
-        console.log("im here");
+        console.log(showFinal.id);
         if (showFinal.id)
             getSchedule(showFinal.id)
+        console.log(shows);
     }, [showFinal]);
 
     return <main>

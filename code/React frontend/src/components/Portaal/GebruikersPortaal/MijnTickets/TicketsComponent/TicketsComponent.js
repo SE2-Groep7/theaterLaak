@@ -9,8 +9,9 @@ import moment from 'moment';
 import { SHA256 } from 'crypto-js';
 
 const TicketsComponent = ({ ticket }) => {
-  console.log(ticket);
-  const ticketId = ticket.id;
+  console.log(ticket.id);
+  const ticketId = ticket.Id;
+  console.log(ticketId);
   const startDateTime = ticket.showDate;
   const endDateTime = ticket.showDate;
   const [title, setTitle] = useState('');
@@ -51,7 +52,7 @@ const TicketsComponent = ({ ticket }) => {
           
         </div>
         <div class="MijnTicketsQR">
-          <QRCode fgColor="#5e5e5e" level="M" size={128} value={SHA256(ticketId).toString()} />
+          <QRCode fgColor="#fffff" level="M" size={128} value={String(SHA256(String(ticket.id)))} />
         </div>
         <Link class="MijnTicketsLink" to="/MijnTickets">
           <button class="MijnTicketsButton" type="submit" onClick={generateICal}>Download je ticket</button>

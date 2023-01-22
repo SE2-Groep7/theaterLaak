@@ -50,13 +50,14 @@ const Forma = () => {
                   } catch (error) {
                       console.log(error);
                   }
+                  console.log(initArray[index].showId);
               });
 
           });
           alert("Betaald.");
 
-          // window.location.href = 'payed';
-          // localStorage.removeItem("selectedSeats");
+          window.location.href = 'payed';
+          localStorage.removeItem("selectedSeats");
     }
     else {
       alert("Het account heeft niet genoeg geld.");
