@@ -34,7 +34,7 @@ import Unauthorized from './components/NoPage/Unauthorized';
 import Cookies  from "js-cookie";
 import Forma from './components/Testi/Forma';
 import Payed from './components/Testi/Payed';
-
+import Portaal from './components/Portaal/Portaal';
 
 const ProtectedComponent = ({component: WrappedComponent, roles}) => {
   const navigate = useNavigate();
@@ -43,13 +43,25 @@ const ProtectedComponent = ({component: WrappedComponent, roles}) => {
     const loggedIn = JSON.parse(Cookies.get("loggedIn"));
     if(!loggedIn) {
       navigate('/Unauthorized');
-    } else {
+    } 
+    else if (!loggedIn.roles && roles.includes("empty")) {
+      console.log("empty");
+    }
+    else {
       // check if user has a specific role
       
       const userRoles = loggedIn.roles;
       console.log(userRoles);
-      if (roles && !userRoles.some(role => roles.includes(role))) {
-        navigate('/Unauthorized');
+      if (roles) {
+        if (Array.isArray(userRoles)) {
+          if (!userRoles.some(role => roles.includes(role))) {
+            navigate('/Unauthorized');
+          }
+        } else {
+          if (!roles.includes(userRoles)) {
+            navigate('/Unauthorized');
+          }
+        }
       }
     }}
     else if (!Cookies.get("loggedIn")){
@@ -88,7 +100,7 @@ function App() {
           <Route path="ticketsoverzetten" element={<TicketsOverzetten />} />
           <Route path="mijnportaal" element={<MijnPortaal />} />
           <Route path="medewerkersportaal" element={<MedewerkersPortaal />} />
-          <Route path="adminportaal" element={<AdminPortaal />} />
+          <Route path="adminportaal" element={<ProtectedComponent component={AdminPortaal}   roles={['admin']} />} />
           <Route path="template" element={<Template />} />
           <Route path="begunstigersportaal" element={<BegunstigersPortaal />} />
           <Route path="betrokkenpersonenportaal" element={<BetrokkenPersonenPortaal />} />
@@ -102,6 +114,7 @@ function App() {
           <Route path="unauthorized" element={<Unauthorized />} />
           <Route path="forma" element={<Forma />} />
           <Route path="payed" element={<Payed />} />
+          <Route path="portaal" element={<Portaal />} />
 
           <Route path="*" element={<NoPage />} />
         </Route>
