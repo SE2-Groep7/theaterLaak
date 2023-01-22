@@ -9,7 +9,10 @@ import moment from 'moment';
 import { SHA256 } from 'crypto-js';
 
 const TicketsComponent = ({ ticket }) => {
-  const { ticketId, startDateTime, endDateTime } = ticket;
+  console.log(ticket);
+  const ticketId = ticket.id;
+  const startDateTime = ticket.showDate;
+  const endDateTime = ticket.showDate;
   const [title, setTitle] = useState('');
   const [ticketHolder, setTicketHolder] = useState('');
   const UserInformation = JSON.parse(Cookies.get("UserInformation"));

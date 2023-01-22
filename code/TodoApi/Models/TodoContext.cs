@@ -44,4 +44,6 @@ public class TodoContext : DbContext
             .WithMany(t => t.Interesses)
             .HasForeignKey(t => t.UserId);
     }
+
+    public DbSet<User> User { get; set; } = default!;
 }
