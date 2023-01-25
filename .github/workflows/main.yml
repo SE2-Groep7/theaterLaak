@@ -43,6 +43,8 @@ jobs:
           cd reverse_proxy
           echo "${{ secrets.SSL_KEY }}" >> mohieddin.nl.key
           echo "${{ secrets.SSL_CERT }}" >> mohieddin.nl.pem
+          echo "${{ secrets.CLOUDFLARE_CERT }}" >> cloudflare.pem
+          
           cd ..
           cd docker-compose
           echo "SA_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
@@ -56,3 +58,4 @@ jobs:
           cd reverse_proxy
           rm mohieddin.nl.key
           rm mohieddin.nl.pem
+          rm cloudflare.pem
